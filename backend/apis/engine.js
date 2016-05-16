@@ -9,7 +9,7 @@ if(master.Status == "dev"){
     res.end("GOOD TEST");
   });
 
-  router.get('/',  isLoggedIn, (req, res) => {
+  router.get('/', (req, res) => {
     res.send(req.user);
   });
 }
