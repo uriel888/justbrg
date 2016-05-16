@@ -8,7 +8,7 @@ import  session                       from  "express-session"
 import  cookieParser                  from  "cookie-parser"
 import  bodyParser                    from  "body-parser"
 import  { Strategy as LocalStrategy } from  "passport-local"
-
+import  { isLoggedIn }                from  "./tools/isLoggedIn.js"
 
 //import apis
 import  users         from "./apis/users.js"
