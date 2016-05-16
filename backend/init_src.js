@@ -12,6 +12,7 @@ import  { isLoggedIn }                from  "./tools/isLoggedIn.js"
 
 //import apis
 import  users         from "./apis/users.js"
+import  search         from "./apis/engine.js"
 // import  users         from "./apis/compile/users.js"
 
 
@@ -68,7 +69,8 @@ app.use( passport.session() );
 
 //apis for users
 app.use('/users', users);
-
+app.use(isLoggedIn);
+app.use('/search', search);
 
 app.listen(port);
 console.log(`Server ${master.Status} is listening on ${master.port}`);
