@@ -83,4 +83,4 @@ app.use(isLoggedIn);
 app.use('/search', search);
 
 app.listen(port);
-console.log(`Server ${master.Status} is listening on ${master.port}`);
+console.log(`Server ${master.Status} is listening on ${port}`);

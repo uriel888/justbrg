@@ -4,7 +4,7 @@ import morgan from "morgan"
 import bodyParser from "body-parser"
 import {
   encrypt, decrypt
-} from "../tools/crpyt.js"
+} from "./tools/crpyt.js"
 
 
 let app = express();
