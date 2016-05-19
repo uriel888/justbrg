@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 app.get('/:encode', (req, res) => {
   let url = decrypt(req.params.encode);
   //TODO: ADD VERIFICATION
-
+  console.log(url);
   horseman
   .open(url)
   .then((text)=>{
