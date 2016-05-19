@@ -85,7 +85,7 @@ router.post('/', (req, res) => {
   if (source == '') {
     return res.status(500).end('Wrong source');
   }
-  res.end(source);
+  res.end(encrypt(source));
 
 
 });
