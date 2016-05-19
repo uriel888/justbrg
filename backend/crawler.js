@@ -4,7 +4,7 @@ import morgan from "morgan"
 import bodyParser from "body-parser"
 import {
   encrypt, decrypt
-} from "./tools/crpyt.js"
+} from "./tools/crypt.js"
 
 
 let app = express();
@@ -28,4 +28,4 @@ app.get('/:encode', (req, res) => {
   res.end(decrypt(req.params.encode));
 });
 app.listen(port);
-console.log(`Server ${master.Status} is listening on ${master.port}`);
+console.log(`Server ${master.Status} is listening on ${port}`);
