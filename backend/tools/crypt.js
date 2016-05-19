@@ -1,3 +1,4 @@
+import crypto from "crypto"
 export function encrypt(text) {
   var cipher = crypto.createCipher(master.algorithm, master.password)
   var crypted = cipher.update(text, 'utf8', 'hex')

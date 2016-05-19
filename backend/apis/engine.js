@@ -1,13 +1,12 @@
 import express from "express"
 import passport from "passport"
-import crypto from "crypto"
 import * as master from "../configs/master.json"
 import User from "../models/users.js"
 import * as countryConverter from "../tools/countryConverter.json"
 import * as stateConverter from "../tools/stateConverter.json"
 import {
   encrypt, decrypt
-} from "../tools/crpyt.js"
+} from "../tools/crypt.js"
 
 let router = express.Router()
 
