@@ -34,6 +34,9 @@ router.post('/', (req, res) => {
 
 
   let country = convert[req.query.country.toLowerCase()];
+  if(!country){
+    return res.status(500).send("country Wrong");
+  }
   res.end(country);
 
 
