@@ -46,6 +46,10 @@ router.post('/', (req, res) => {
     state = convert[req.query.state.toLowerCase()];
   }
 
+  if(!state){
+    return res.status(500).send("state Wrong");
+  }
+
   res.end(country + " " + state);
 
 
