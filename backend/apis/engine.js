@@ -4,7 +4,7 @@ import * as master from "../configs/master.json"
 import User from "../models/users.js"
 import {
   list as convert
-} from "./tools/countryConverter.js"
+} from "../tools/countryConverter.js"
 
 
 let router = express.Router()
