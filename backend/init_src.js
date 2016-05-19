@@ -1,23 +1,27 @@
-import  * as  master                  from  "./configs/master.json"
-import  * as  db_config               from  "./configs/db.json"
-import  express                       from  'express'
-import  mongoose                      from  "mongoose"
-import  passport                      from  "passport"
-import  morgan                        from  "morgan"
-import  session                       from  "express-session"
-import  cookieParser                  from  "cookie-parser"
-import  bodyParser                    from  "body-parser"
-import  { Strategy as LocalStrategy } from  "passport-local"
-import  { isLoggedIn }                from  "./tools/isLoggedIn.js"
+import * as master from "./configs/master.json"
+import * as db_config from "./configs/db.json"
+import express from 'express'
+import mongoose from "mongoose"
+import passport from "passport"
+import morgan from "morgan"
+import session from "express-session"
+import cookieParser from "cookie-parser"
+import bodyParser from "body-parser"
+import {
+  Strategy as LocalStrategy
+} from "passport-local"
+import {
+  isLoggedIn
+} from "./tools/isLoggedIn.js"
 
 //import apis
-import  users         from "./apis/users.js"
-import  search         from "./apis/engine.js"
+import users from "./apis/users.js"
+import search from "./apis/engine.js"
 // import  users         from "./apis/compile/users.js"
 
 
 //import models
-import  userSchema    from  "./models/users.js"
+import userSchema from "./models/users.js"
 // import  userSchema    from  "./models/compile/users.js"
 
 
@@ -50,22 +54,25 @@ let app = express();
 const port = process.env.PORT || master.port;
 
 //Enable logs on requests
-app.use(morgan(`${master.Status}`));
+if (master.Status == "dev") {
+  app.use(morgan(`${master.Status}`));
+}
 
 //Enable cookie parser
 app.use(cookieParser());
 
 //Enable body parser
-app.use( bodyParser.json() );
-app.use( bodyParser.urlencoded({     // to support URL-encoded bodies
-    extended: true
-  })
-);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
+  extended: true
+}));
 
 //Enable session and password
-app.use( session({secret:`${master.secret.sesson_secret}`}) );
-app.use( passport.initialize() );
-app.use( passport.session() );
+app.use(session({
+  secret: `${master.secret.sesson_secret}`
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 //apis for users
 app.use('/users', users);

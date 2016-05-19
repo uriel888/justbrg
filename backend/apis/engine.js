@@ -5,23 +5,11 @@ import * as master from "../configs/master.json"
 import User from "../models/users.js"
 import * as countryConverter from "../tools/countryConverter.json"
 import * as stateConverter from "../tools/stateConverter.json"
+import {
+  encrypt, decrypt
+} from "../tools/crpyt.js"
 
 let router = express.Router()
-
-
-function encrypt(text) {
-  var cipher = crypto.createCipher(master.algorithm, master.password)
-  var crypted = cipher.update(text, 'utf8', 'hex')
-  crypted += cipher.final('hex');
-  return crypted;
-}
-
-function decrypt(text) {
-  var decipher = crypto.createDecipher(master.algorithm, master.password)
-  var dec = decipher.update(text, 'hex', 'utf8')
-  dec += decipher.final('utf8');
-  return dec;
-}
 
 if (master.Status == "dev") {
   router.get(`/test${master.Status}`, (req, res) => {
