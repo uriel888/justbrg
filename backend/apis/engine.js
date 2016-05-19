@@ -2,9 +2,7 @@ import express from "express"
 import passport from "passport"
 import * as master from "../configs/master.json"
 import User from "../models/users.js"
-import {
-  list as convert
-} from "../tools/countryConverter.js"
+import convert from "../tools/countryConverter.js"
 
 
 let router = express.Router()
