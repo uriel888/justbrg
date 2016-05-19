@@ -2,8 +2,8 @@ import express from "express"
 import passport from "passport"
 import * as master from "../configs/master.json"
 import User from "../models/users.js"
-import * as convert from "../tools/countryConverter.json"
-
+import * as countryConverter from "../tools/countryConverter.json"
+import * as stateConverter from "../tools/stateConverter.json"
 
 let router = express.Router()
 
@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
   }
 
 
-  let country = convert[req.query.country.toLowerCase()];
+  let country = countryConverter[req.query.country.toLowerCase()];
   let state = ""
   if (!country) {
     return res.status(500).send("country Wrong");
@@ -43,10 +43,10 @@ router.post('/', (req, res) => {
     if (!req.query.state) {
       return res.status(500).send("state Wrong");
     }
-    state = convert[req.query.state.toLowerCase()];
+    state = stateConverter[req.query.state.toLowerCase()];
   }
 
-  if(!state){
+  if( !state && country == 'us' ){
     return res.status(500).send("state Wrong");
   }
 
