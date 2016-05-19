@@ -46,11 +46,30 @@ router.post('/', (req, res) => {
     state = stateConverter[req.query.state.toLowerCase()];
   }
 
-  if( !state && country == 'us' ){
+  if (!state && country == 'us') {
     return res.status(500).send("state Wrong");
   }
 
-  res.end(country + " " + state);
+
+  let arrivalDate = req.query.checkin;
+  let departureDate = req.query.checkout;
+  let city = req.query.city.replace(' ', '+');
+  let source = req.query.source;
+  if (source == 'spg') {
+    if (country != '') {
+      source = "http://www.starwoodhotels.com/preferredguest/search/results/grid.html?localeCode=en_US&city=" + city + "&stateCode=" + state + "&countryCode=" + country + "&searchType=location&hotelName=&" + "currencyCode=USD&arrivalDate=" + arrivalDate + "&departureDate=" + departureDate + "&numberOfRooms=1&numberOfAdults=1&numberOfChildren=0&iataNumber=";
+    } else {
+      source = "http://www.starwoodhotels.com/preferredguest/search/results/grid.html?departureDate=" + departureDate + "&searchType=&complexSearchField=" + city + "&propertyIds=&arrivalDate=" + arrivalDate + "&localeCode=en_US&numberOfRooms=1&numberOfAdults=1&skinCode=SPG&iATANumber=&numberOfChildren=0&currencyCode=USD"
+        // source = "http://www.starwoodhotels.com/preferredguest/search/results/grid.html?localeCode=en_US&complexSearchField=" + city + "&searchType=location&hotelName=&"+"currencyCode=USD&arrivalDate=" + arrivalDate + "&departureDate=" + departureDate + "&numberOfRooms=1&numberOfAdults=1&numberOfChildren=0&iataNumber=";
+    }
+  } else {
+    source = ''
+  }
+
+  if (source == '') {
+    return res.status(500).end('Wrong source');
+  }
+  res.end(source);
 
 
 });
