@@ -51,11 +51,14 @@ db.once('open', function() {
 
 //Initilize Server with Express
 let app = express();
-const port = process.env.PORT || master.port;
+let port = process.env.PORT || master.dev_port;
 
 //Enable logs on requests
 if (master.Status == "dev") {
   app.use(morgan(`${master.Status}`));
+}
+else{
+  port = process.env.PORT || master.port
 }
 
 //Enable cookie parser

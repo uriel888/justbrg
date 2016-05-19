@@ -1,11 +1,12 @@
 {
-  "App": "KK",
+  "App": "justbrg",
   "Version": 0.0,
   "Date": "2016-2-28",
   "Author": "Zhuosheng Jiang",
   "Email": "zhuoshengjiang@icloud.com",
   "Status": "dev",
-  "port": 8888,
+  "dev_port": 8888,
+  "port": 80,
   "secret": {
     "sesson_secret": "This is a session secret"
   },
