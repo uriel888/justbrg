@@ -32,14 +32,9 @@ router.post('/', (req, res) => {
     return res.status(500).send("source Wrong");
   }
 
-  let country = '';
-  req.query.country = req.query.country.toLowerCase();
-  req.query.country = convert[req.query.country];
-  if (req.query.country == undefined) {
-    return res.status(500).send("Country wrong")
-  }
-  country = req.query.country;
 
+  let country = convert[req.query.country.toLowerCase()];
+  res.end(country);
 
 
 });
