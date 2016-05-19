@@ -33,7 +33,7 @@ app.get('/:encode', (req, res) => {
   console.log(url);
   horseman
   .open(url)
-  .text('.propertyName .rateOptionsInner')
+  .text('.propertyInner')
   .then((text)=>{
     res.end(text);
   })
