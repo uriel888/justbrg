@@ -2,8 +2,10 @@ import express from 'express'
 import passport from "passport"
 import morgan from "morgan"
 import bodyParser from "body-parser"
+import * as master from "./configs/master.json"
 import {
-  encrypt, decrypt
+  encrypt,
+  decrypt
 } from "./tools/crypt.js"
 
 
@@ -13,8 +15,7 @@ let port = process.env.PORT || master.dev_port;
 //Enable logs on requests
 if (master.Status == "dev") {
   app.use(morgan(`${master.Status}`));
-}
-else{
+} else {
   port = process.env.PORT || master.port;
 }
 
