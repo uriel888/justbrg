@@ -1,5 +1,5 @@
-var list = {
-  "afghanistan":"af",
+{
+  "afghanistan": "af",
   "åland islands": "ax",
   "albania": "al",
   "algeria": "dz",
@@ -300,6 +300,4 @@ var list = {
   "west virginia": "wv",
   "wisconsin": "wi",
   "wyoming": "wy"
-};
-
-module.exports  = list;
+}

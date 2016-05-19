@@ -2,7 +2,7 @@ import express from "express"
 import passport from "passport"
 import * as master from "../configs/master.json"
 import User from "../models/users.js"
-import { list as convert } from "../tools/countryConverter.js"
+import * as convert from "../tools/countryConverter.js"
 
 
 let router = express.Router()
@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
     return res.status(500).send("checkout Wrong");
   } else if (!req.query.city) {
     return res.status(500).send("city Wrong");
-  } else if (!req.query.country){
+  } else if (!req.query.country) {
     return res.status(500).send("country Wrong");
   } else if (!req.query.source) {
     return res.status(500).send("source Wrong");
