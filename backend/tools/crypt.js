@@ -1,4 +1,6 @@
 import crypto from "crypto"
+import * as master from "../configs/master.json"
+
 export function encrypt(text) {
   var cipher = crypto.createCipher(master.algorithm, master.password)
   var crypted = cipher.update(text, 'utf8', 'hex')
