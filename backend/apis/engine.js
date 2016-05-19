@@ -34,10 +34,19 @@ router.post('/', (req, res) => {
 
 
   let country = convert[req.query.country.toLowerCase()];
-  if(!country){
+  let state = ""
+  if (!country) {
     return res.status(500).send("country Wrong");
   }
-  res.end(country);
+
+  if (country == 'us') {
+    if (!req.query.state) {
+      return res.status(500).send("state Wrong");
+    }
+    state = convert[req.query.state.toLowerCase()];
+  }
+
+  res.end(country + " " + state);
 
 
 });
