@@ -89,17 +89,21 @@ app.get('/:encode', (req, res) => {
               if (current[++j] == "Find Available Dates" || current[j] == "Please contact us to redeem your Free Nights.") {
                 continue
               }
-              result.SPGFN = current[++j].replace(',', '').match(/\d+/)[0]
+              result.FN = current[++j].replace(',', '').match(/\d+/)[0]
             } else if (current[j] == "SPG Cash & Points") {
               if (current[++j] == "Find Available Dates") {
                 continue
               }
-              result.SPGCP = {
+              result.CP = {
                 "p": current[++j].replace(',', '').match(/\d+/)[0],
                 "c": current[++j].match(/\d+/)[0]
               }
             }
           }
+          //DNS SOLUTION for fetching data
+          let fileName = result.hotel_name.replace(" ", "_")
+          let r = Math.floor(Math.random() * 10000000) / 10000000
+          result.targetURL = `http://www.hotelscombined.com/Hotel/SearchResults?destination=place:${req.query.city}&radius=0mi&checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${random}`
           hotel_results.push(result)
         }
         res.end(JSON.stringify(hotel_results));
