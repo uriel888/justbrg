@@ -43,7 +43,7 @@ app.get('/:encode', (req, res) => {
       .open(url)
       .text('.propertyInner')
       .then((text) => {
-        text = text.replace(/Dates flexible\?/g,'').replace(/Find Availability/g,'').replace(/\n/g, ' ').trim().replace(/\s\s+/g, '\n').replace(/New\n/g,'')
+        text = text.replace(/Dates flexible\?/g, '').replace(/Find Availability/g, '').replace(/\n/g, ' ').trim().replace(/\s\s+/g, '\n').replace(/New\n/g, '')
         let count = 0;
         let start = 0;
         let end = 0;
@@ -62,7 +62,10 @@ app.get('/:encode', (req, res) => {
           }
         }
         let hotels = text.split("\n\n")
-        for(let i = 0 ; i < hotels.length ; i++){
+        for (let i = 0; i < hotels.length; i++) {
+          if (hotels[i].indexOf('This hotel is not currently accepting reservations.') > -1) {
+            continue
+          }
           console.log("---------------------");
           console.log(hotels[i]);
         }
