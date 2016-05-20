@@ -32,7 +32,7 @@ app.get('/:encode', (req, res) => {
   let url = decrypt(req.params.encode);
 
   if (!url) {
-    res.status(500).end('Something went wrong!');
+    return res.status(500).end('Something went wrong!');
   }
   //TODO: ADD VERIFICATION
   console.log(`url: ${url}`);
