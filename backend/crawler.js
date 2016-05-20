@@ -40,7 +40,7 @@ app.get('/:encode', (req, res) => {
     .open(url)
     .text('.propertyInner')
     .then((text) => {
-      text = text.split("\n+");
+      text = text.split(/\r?\n/);
       for (let a = 0; a < text.length; a++) {
         console.log(a + " : " + text[a].trim());
       }
