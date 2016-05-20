@@ -36,8 +36,9 @@ app.get('/:encode', (req, res) => {
   }
   //TODO: ADD VERIFICATION
   console.log(`url: ${url}`);
-  //Only for spg
   if (url.indexOf('starwoodhotels') > -1) {
+    //Only for spg
+
     horseman
       .open(url)
       .text('.propertyInner')
@@ -60,14 +61,11 @@ app.get('/:encode', (req, res) => {
             }
           }
         }
-        // let lines = text.split(/\n/);
-        // for (let a = 0; a < lines.length; a++) {
-        //   lines[a] = lines[a].trim();
-        //   if(lines[a] == ""){
-        //     continue;
-        //   }
-        //   console.log(a + " : " + lines[a]);
-        // }
+        let hotels = text.split("\n\n")
+        for(let i = 0 ; i < hotels.length ; i++){
+          console.log("---------------------");
+          console.log(hotes[i]);
+        }
         res.end(text);
       })
       .close();
