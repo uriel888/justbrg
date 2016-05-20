@@ -29,6 +29,13 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 }));
 
 app.get('/:encode', (req, res) => {
+  if (!req.query.checkin) {
+    return res.status(500).send("checkin Wrong");
+  } else if (!req.query.checkout) {
+    return res.status(500).send("checkout Wrong");
+  } else if (!req.query.city) {
+    return res.status(500).send("city Wrong");
+  }
   let horseman = new Horseman();
   let url = decrypt(req.params.encode);
 
