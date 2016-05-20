@@ -42,7 +42,7 @@ app.get('/:encode', (req, res) => {
     .then((text) => {
       text = text.split('\n');
       for (let a = 0; a < text.length; a++) {
-        console.log(a + " : " + text[a]);
+        console.log(a + " : " + text[a].trim());
       }
       res.end(text);
     })
