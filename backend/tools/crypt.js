@@ -14,11 +14,11 @@ export function decrypt(text) {
   try {
     dec = decipher.update(text, 'hex', 'utf8')
     dec += decipher.final('utf8');
+    return dec
   } catch (e) {
     if (master.Status == 'dev') {
       console.log(`Decryt wrong with input: ${text}`);
     }
-  } finally {
-    return dec
+    return ""
   }
 }
