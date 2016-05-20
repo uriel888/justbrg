@@ -62,14 +62,34 @@ app.get('/:encode', (req, res) => {
           }
         }
         let hotels = text.split("\n\n")
+        let hotel_results = []
+        let hotel_name = ""
+        let LSR = 9999
+        let SPGFN = 9999
+        let SPGCP = {
+          "c": 9999,
+          "p": 9999
+        }
         for (let i = 0; i < hotels.length; i++) {
           if (hotels[i].indexOf('This hotel is not currently accepting reservations.') > -1) {
             continue
           }
-          console.log("---------------------");
-          console.log(hotels[i]);
+          let current = hotels[i].split('\n')
+          let result = {}
+          for (let j = 0; j < current.length; j++) {
+            if (j == 0) {
+              result.hotel_name = current[j]
+            } else if (current[j] == "Lowest Standard Rate"){
+              if(current[++j] == "Find Available Dates"){
+                continue
+              }
+              result.LSR = current[++j].match(/\d+/)[0]
+            }
+          }
+
+          hotel_results.push(result)
         }
-        res.end(text);
+        res.end(hotel_results);
       })
       .close();
   }
