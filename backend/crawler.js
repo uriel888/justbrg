@@ -35,7 +35,7 @@ app.get('/:encode', (req, res) => {
     res.status(500).end('Something went wrong!');
   }
   //TODO: ADD VERIFICATION
-  console.log(url);
+  console.log(`url: ${url}`);
   horseman
     .open(url)
     .text('.propertyInner')
