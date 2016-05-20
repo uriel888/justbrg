@@ -64,7 +64,7 @@ app.get('/:encode', (req, res) => {
         let hotels = text.split("\n\n")
         for(let i = 0 ; i < hotels.length ; i++){
           console.log("---------------------");
-          console.log(hotes[i]);
+          console.log(hotels[i]);
         }
         res.end(text);
       })
