@@ -48,16 +48,14 @@ app.get('/:encode', (req, res) => {
         if (text.charAt(i) == '{' && count == 0) {
           start = i;
           count++;
-        }else if(text.charAt(i) == '{'){
+        } else if (text.charAt(i) == '{') {
           count++;
-        }else if(text.charAt(i) == '}'){
-          if(--count == 0){
+        } else if (text.charAt(i) == '}') {
+          if (--count == 0) {
             end = i;
-            text =  text.substr(0,start) + text.substr(end);
+            text = text.substr(0, start) + text.substr(end + 1);
           }
         }
-
-
       }
       // let lines = text.split(/\n/);
       // for (let a = 0; a < lines.length; a++) {
