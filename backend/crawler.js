@@ -12,7 +12,7 @@ import {
 
 
 let app = express();
-let port = process.env.PORT || master.dev_port;
+let port = process.env.PORT || master.dev_crawler_port;
 
 //Enable logs on requests
 if (master.Status == "dev") {
