@@ -103,7 +103,13 @@ app.get('/:encode', (req, res) => {
           //DNS SOLUTION for fetching data
           let fileName = result.hotel_name.replace(/ /g, "_")
           let r = Math.floor(Math.random() * 10000000) / 10000000
-          result.targetURL = `http://www.hotelscombined.com/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
+          if (master.cors == "DNS") {
+            result.targetURL = `http://hotels.justbrg.it/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
+          }
+          else{
+            result.targetURL = `http://www.hotelscombined.com/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
+          }
+          
           hotel_results.push(result)
         }
         res.end(JSON.stringify(hotel_results));
