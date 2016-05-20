@@ -29,18 +29,18 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 
 app.get('/:encode', (req, res) => {
   let url = decrypt(req.params.encode);
-  if(!url.contains('www.')){
+  if (url.indexOf('www.') < 0) {
     res.status(500).end('Something went wrong!');
   }
   //TODO: ADD VERIFICATION
   console.log(url);
   horseman
-  .open(url)
-  .text('.propertyInner')
-  .then((text)=>{
-    res.end(text);
-  })
-  .close();
+    .open(url)
+    .text('.propertyInner')
+    .then((text) => {
+      res.end(text);
+    })
+    .close();
 });
 app.listen(port);
 console.log(`Server ${master.Status} is listening on ${port}`);
