@@ -29,13 +29,15 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 
 app.get('/:encode', (req, res) => {
   let url = decrypt(req.params.encode);
+  if(!url.contains('www.')){
+    res.status(500).end('Something went wrong!');
+  }
   //TODO: ADD VERIFICATION
   console.log(url);
   horseman
   .open(url)
   .text('.propertyInner')
   .then((text)=>{
-    console.log(text);
     res.end(text);
   })
   .close();
