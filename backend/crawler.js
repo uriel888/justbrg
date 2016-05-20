@@ -43,7 +43,7 @@ app.get('/:encode', (req, res) => {
       .open(url)
       .text('.propertyInner')
       .then((text) => {
-        text = text.replace(/\n/g, ' ').trim().replace(/\s\s+/g, '\n').replace('Dates flexible?','').replace('Find Availability','')
+        text = text.replace(/'Dates flexible?'/g,'').replace(/'Find Availability'/g,'').replace(/\n/g, ' ').trim().replace(/\s\s+/g, '\n')
         let count = 0;
         let start = 0;
         let end = 0;
