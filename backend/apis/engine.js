@@ -1,11 +1,13 @@
 import express from "express"
 import passport from "passport"
+import moment from "moment"
 import * as master from "../configs/master.json"
 import User from "../models/users.js"
 import * as countryConverter from "../tools/countryConverter.json"
 import * as stateConverter from "../tools/stateConverter.json"
 import {
-  encrypt, decrypt
+  encrypt,
+  decrypt
 } from "../tools/crypt.js"
 
 let router = express.Router()
@@ -56,6 +58,12 @@ router.post('/', (req, res) => {
 
   let arrivalDate = req.query.checkin;
   let departureDate = req.query.checkout;
+
+  let arrivalMoment = moment(arrivalDate, "MM/DD/YYYY")
+  let departureMoment = moment(departureDate, "MM/DD/YYYY")
+  if (!arrivalMoment.isValid() || !departureMoment.isValid()) {
+    return res.status(500).send("Time Wrong");
+  }
   let city = req.query.city.replace(' ', '+');
   let source = req.query.source;
   if (source == 'spg') {
@@ -71,7 +79,7 @@ router.post('/', (req, res) => {
   if (source == '') {
     return res.status(500).end('Wrong source');
   }
-  res.end((encrypt(source)+`?checkin=${req.query.checkin}&checkout=${req.query.checkout}&city=${req.query.city}`));
+  res.end((encrypt(source) + `?checkin=${arrivalMoment.format("YYYY-MM-DD")}&checkout=${departureMoment.format("YYYY-MM-DD")}&city=${req.query.city}`));
 });
 
 module.exports = router;
