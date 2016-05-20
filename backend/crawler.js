@@ -41,6 +41,9 @@ app.get('/:encode', (req, res) => {
     .text('.propertyInner')
     .then((text) => {
       text = text.split('\n');
+      for (let a = 0; a < text.length; a++) {
+        console.log(a + " : " + text[a]);
+      }
       res.end(text);
     })
     .close();
