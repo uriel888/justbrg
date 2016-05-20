@@ -31,7 +31,7 @@ app.get('/:encode', (req, res) => {
   let horseman = new Horseman();
   let url = decrypt(req.params.encode);
 
-  if (url == "") {
+  if (!url) {
     res.status(500).end('Something went wrong!');
   }
   //TODO: ADD VERIFICATION
