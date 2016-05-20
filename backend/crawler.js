@@ -1,13 +1,14 @@
 import express from 'express'
-import passport from "passport"
-import morgan from "morgan"
-import bodyParser from "body-parser"
-import * as master from "./configs/master.json"
-import Horseman from "node-horseman"
+import passport from 'passport'
+import unidecode from 'unidecode'
+import morgan from 'morgan'
+import bodyParser from 'body-parser'
+import * as master from './configs/master.json'
+import Horseman from 'node-horseman'
 import {
   encrypt,
   decrypt
-} from "./tools/crypt.js"
+} from './tools/crypt.js'
 
 
 
@@ -63,13 +64,6 @@ app.get('/:encode', (req, res) => {
         }
         let hotels = text.split("\n\n")
         let hotel_results = []
-        let hotel_name = ""
-        let LSR = 9999
-        let SPGFN = 9999
-        let SPGCP = {
-          "c": 9999,
-          "p": 9999
-        }
         for (let i = 0; i < hotels.length; i++) {
           if (hotels[i].indexOf('This hotel is not currently accepting reservations.') > -1) {
             continue
@@ -78,25 +72,27 @@ app.get('/:encode', (req, res) => {
           let result = {}
           for (let j = 0; j < current.length; j++) {
             if (j == 0) {
-              result.hotel_name = current[j]
+              result.hotel_name = unidecode(current[j])
             } else if (current[j] == "Lowest Standard Rate") {
               if (current[++j] == "Find Available Dates") {
                 continue
               }
-              result.LSR = current[++j].match(/\d+/)[0]
+              result.BAR = current[++j].match(/\d+/)[0]
             } else if (current[j] == "SPG Free Nights") {
               if (current[++j] == "Find Available Dates" || current[j] == "Please contact us to redeem your Free Nights.") {
                 continue
               }
               result.SPGFN = current[++j].replace(',', '').match(/\d+/)[0]
-            } else if(current[j] == "SPG Cash & Points"){
+            } else if (current[j] == "SPG Cash & Points") {
               if (current[++j] == "Find Available Dates") {
                 continue
               }
-              result.SPGCP = {"p": current[++j].replace(',', '').match(/\d+/)[0], "c": current[++j].match(/\d+/)[0]}
+              result.SPGCP = {
+                "p": current[++j].replace(',', '').match(/\d+/)[0],
+                "c": current[++j].match(/\d+/)[0]
+              }
             }
           }
-
           hotel_results.push(result)
         }
         res.end(JSON.stringify(hotel_results));
