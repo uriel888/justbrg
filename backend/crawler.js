@@ -35,7 +35,8 @@ app.get('/:encode', (req, res) => {
   .open(url)
   .text('.propertyInner')
   .then((text)=>{
-    res.end(text);
+    console.log(${text});
+    res.end(${text});
   })
   .close();
 });
