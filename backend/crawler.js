@@ -40,15 +40,15 @@ app.get('/:encode', (req, res) => {
     .open(url)
     .text('.propertyInner')
     .then((text) => {
-      text = text.replace(/\n/g,' ').trim().replace(/\s\s+/g,'\n')
-      // let lines = text.split(/\n/);
-      // for (let a = 0; a < lines.length; a++) {
-      //   lines[a] = lines[a].trim();
-      //   if(lines[a] == ""){
-      //     continue;
-      //   }
-      //   console.log(a + " : " + lines[a]);
-      // }
+      text = text.replace(/\n/g, ' ').trim().replace(/\s\s+/g, '\n').replace(/{.*}/g, '')
+        // let lines = text.split(/\n/);
+        // for (let a = 0; a < lines.length; a++) {
+        //   lines[a] = lines[a].trim();
+        //   if(lines[a] == ""){
+        //     continue;
+        //   }
+        //   console.log(a + " : " + lines[a]);
+        // }
       res.end(text);
     })
     .close();
