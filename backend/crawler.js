@@ -54,6 +54,7 @@ app.get('/:encode', (req, res) => {
           if (--count == 0) {
             end = i;
             text = text.substr(0, start) + text.substr(end + 1);
+            i -= (end-start)
           }
         }
       }
