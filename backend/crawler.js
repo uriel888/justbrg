@@ -38,7 +38,7 @@ app.get('/:encode', (req, res) => {
   console.log(`url: ${url}`);
   horseman
     .open(url)
-    .text('.propertyInner')
+    .text('.propertyName')
     .then((text) => {
       text = text.replace(/(\n|\r)+/g,'\n')
       let lines = text.split(/\n/);
