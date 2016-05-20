@@ -41,7 +41,7 @@ app.get('/:encode', (req, res) => {
     .text('.propertyInner')
     .then((text) => {
       text = text.replace(/\n\n+/g,'\n')
-      lines = text.split(/\n/);
+      let lines = text.split(/\n/);
       for (let a = 0; a < lines.length; a++) {
         console.log(a + " : " + lines[a].trim());
       }
