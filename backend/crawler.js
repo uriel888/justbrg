@@ -84,6 +84,11 @@ app.get('/:encode', (req, res) => {
                 continue
               }
               result.LSR = current[++j].match(/\d+/)[0]
+            } else if(current[j]=="SPG Free Nights"){
+              if(current[++j] == "Find Available Dates" || current[++j] == "Please contact us to redeem your Free Nights." ){
+                continue
+              }
+              result.SPGFN = current[++j].replace(',','').match(/\d+/)[0]
             }
           }
 
