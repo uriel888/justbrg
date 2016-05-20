@@ -89,7 +89,7 @@ app.get('/:encode', (req, res) => {
 
           hotel_results.push(result)
         }
-        res.end(hotel_results);
+        res.end(JSON.stringify(hotel_results));
       })
       .close();
   }
