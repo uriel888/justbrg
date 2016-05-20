@@ -89,6 +89,11 @@ app.get('/:encode', (req, res) => {
                 continue
               }
               result.SPGFN = current[++j].replace(',', '').match(/\d+/)[0]
+            } else if(current[j] == "SPG Cash & Points"){
+              if (current[++j] == "Find Available Dates") {
+                continue
+              }
+              result.SPGCP = {"p": current[++j].replace(',', '').match(/\d+/)[0], "c": current[++j].match(/\d+/)[0]}
             }
           }
 
