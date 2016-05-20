@@ -40,6 +40,7 @@ app.get('/:encode', (req, res) => {
     .open(url)
     .text('.propertyInner')
     .then((text) => {
+      text = text.split('\n');
       res.end(text);
     })
     .close();
