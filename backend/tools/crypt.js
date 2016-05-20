@@ -10,7 +10,15 @@ export function encrypt(text) {
 
 export function decrypt(text) {
   var decipher = crypto.createDecipher(master.algorithm, master.password)
-  var dec = decipher.update(text, 'hex', 'utf8')
-  dec += decipher.final('utf8');
-  return dec;
+  let dec = ""
+  try {
+    dec = decipher.update(text, 'hex', 'utf8')
+    dec += decipher.final('utf8');
+  } catch (e) {
+    if (master.Status == 'dev') {
+      console.log(`Decryt wrong with input: ${text}`);
+    }
+  } finally {
+    return dec
+  }
 }
