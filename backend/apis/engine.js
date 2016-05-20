@@ -71,7 +71,7 @@ router.post('/', (req, res) => {
   if (source == '') {
     return res.status(500).end('Wrong source');
   }
-  res.end((encrypt(source)+`?checkin=${req.query.checkin}&checkout=${req.query.checkou}&city=${req.query.city}`));
+  res.end((encrypt(source)+`?checkin=${req.query.checkin}&checkout=${req.query.checkout}&city=${req.query.city}`));
 });
 
 module.exports = router;
