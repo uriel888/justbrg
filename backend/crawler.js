@@ -44,7 +44,7 @@ app.get('/:encode', (req, res) => {
       for (let a = 0; a < text.length; a++) {
         console.log(a + " : " + text[a].trim());
       }
-      res.end(text);
+      res.end("aa");
     })
     .close();
 });
