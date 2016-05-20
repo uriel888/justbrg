@@ -10,7 +10,7 @@ import {
 } from "./tools/crypt.js"
 
 
-let horseman = new Horseman();
+
 let app = express();
 let port = process.env.PORT || master.dev_port;
 
@@ -28,7 +28,9 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 }));
 
 app.get('/:encode', (req, res) => {
+  let horseman = new Horseman();
   let url = decrypt(req.params.encode);
+
   if (url.indexOf('www.') < 0) {
     res.status(500).end('Something went wrong!');
   }
