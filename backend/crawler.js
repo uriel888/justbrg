@@ -36,39 +36,42 @@ app.get('/:encode', (req, res) => {
   }
   //TODO: ADD VERIFICATION
   console.log(`url: ${url}`);
-  horseman
-    .open(url)
-    .text('.propertyInner')
-    .then((text) => {
-      text = text.replace(/\n/g, ' ').trim().replace(/\s\s+/g, '\n')
-      let count = 0;
-      let start = 0;
-      let end = 0;
-      for (let i = 0; i < text.length; i++) {
-        if (text.charAt(i) == '{' && count == 0) {
-          start = i;
-          count++;
-        } else if (text.charAt(i) == '{') {
-          count++;
-        } else if (text.charAt(i) == '}') {
-          if (--count == 0) {
-            end = i;
-            text = text.substr(0, start) + text.substr(end + 1);
-            i -= (end-start)
+  //Only for spg
+  if (url.indexOf('starwoodhotels') > -1) {
+    horseman
+      .open(url)
+      .text('.propertyInner')
+      .then((text) => {
+        text = text.replace(/\n/g, ' ').trim().replace(/\s\s+/g, '\n')
+        let count = 0;
+        let start = 0;
+        let end = 0;
+        for (let i = 0; i < text.length; i++) {
+          if (text.charAt(i) == '{' && count == 0) {
+            start = i;
+            count++;
+          } else if (text.charAt(i) == '{') {
+            count++;
+          } else if (text.charAt(i) == '}') {
+            if (--count == 0) {
+              end = i;
+              text = text.substr(0, start) + text.substr(end + 1);
+              i -= (end - start)
+            }
           }
         }
-      }
-      // let lines = text.split(/\n/);
-      // for (let a = 0; a < lines.length; a++) {
-      //   lines[a] = lines[a].trim();
-      //   if(lines[a] == ""){
-      //     continue;
-      //   }
-      //   console.log(a + " : " + lines[a]);
-      // }
-      res.end(text);
-    })
-    .close();
+        // let lines = text.split(/\n/);
+        // for (let a = 0; a < lines.length; a++) {
+        //   lines[a] = lines[a].trim();
+        //   if(lines[a] == ""){
+        //     continue;
+        //   }
+        //   console.log(a + " : " + lines[a]);
+        // }
+        res.end(text);
+      })
+      .close();
+  }
 });
 app.listen(port);
 console.log(`Server ${master.Status} is listening on ${port}`);
