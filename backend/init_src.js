@@ -60,13 +60,6 @@ if (master.Status == "dev") {
   port = process.env.PORT || master.port
 }
 
-if (master.Status == "dev") {
-  app.all('/', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-  });
-}
 //Enable cookie parser
 app.use(cookieParser());
 
@@ -82,6 +75,13 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+if (master.Status == "dev") {
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+  });
+}
 
 //apis for users
 app.use('/users', users);
