@@ -78,9 +78,20 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 }));
 
 //Enable session and password
-app.use(session({
-  secret: `${master.secret.sesson_secret}`
-}));
+if (master.Status === "dev") {
+  app.use(session({
+    secret: 'yoursecret',
+    cookie: {
+      path: '/',
+      domain: 'localhost:8080',
+      maxAge: 1000 * 60 * 24 // 24 hours
+    }
+  }));
+} else {
+  app.use(session({
+    secret: `${master.secret.sesson_secret}`
+  }));
+}
 app.use(passport.initialize());
 app.use(passport.session());
 
