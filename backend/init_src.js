@@ -55,6 +55,7 @@ let port = process.env.PORT || master.dev_port;
 
 //Enable logs on requests
 if (master.Status == "dev") {
+  console.log('DEV Mode Enabled');
   app.use(morgan(`${master.Status}`));
   app.use(function(req, res, next) {
     console.log("CORS!!!");
