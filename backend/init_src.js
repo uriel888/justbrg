@@ -56,6 +56,11 @@ let port = process.env.PORT || master.dev_port;
 //Enable logs on requests
 if (master.Status == "dev") {
   app.use(morgan(`${master.Status}`));
+  app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+  });
 } else {
   port = process.env.PORT || master.port
 }
@@ -75,13 +80,6 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-if (master.Status == "dev") {
-  app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-  });
-}
 
 //apis for users
 app.use('/users', users);
