@@ -88,7 +88,12 @@ if (master.Status === "dev") {
   //     next();
   //   });
   app.use(session({
-    secret: `${master.secret.sesson_secret}`
+    secret: `${master.secret.sesson_secret}`,
+    cookie: {
+      path: '/',
+      domain: 'localhost:8080',
+      maxAge: 1000 * 60 * 24 // 24 hours
+    }
   }));
 } else {
   app.use(session({
