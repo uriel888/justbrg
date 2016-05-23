@@ -91,7 +91,7 @@ if (master.Status === "dev") {
     secret: `${master.secret.sesson_secret}`,
     cookie: {
       path: '/',
-      domain: 'localhost:8080',
+      domain: 'localhost',
       maxAge: 1000 * 60 * 24 // 24 hours
     }
   }));
