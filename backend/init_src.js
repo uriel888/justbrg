@@ -57,6 +57,7 @@ let port = process.env.PORT || master.dev_port;
 if (master.Status == "dev") {
   app.use(morgan(`${master.Status}`));
   app.use(function(req, res, next) {
+    console.log("CORS!!!");
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
