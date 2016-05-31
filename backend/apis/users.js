@@ -36,7 +36,7 @@ router.post('/register', (req, res) => {
       if (loginErr) {
         return res.status(500).send(loginErr);
       }
-      return res.redirect('/users/');
+      return res.json({Status:"Ok"})
     });
   })(req, res);
 });
@@ -63,8 +63,8 @@ router.post('/login', (req, res) => {
 
 
 router.get('/logout', isLoggedIn, (req, res) => {
-  req.logout();
-  res.redirect('/users/');
+  req.logout()
+  res.json({Status:"Ok"})
 });
 
 
