@@ -56,7 +56,7 @@ router.post('/login', (req, res) => {
         return res.status(500).send(loginErr);
       }
       // return res.redirect('/users/');
-      res.end("Success")
+      res.json({Status:"Ok"})
     });
   })(req, res);
 });
