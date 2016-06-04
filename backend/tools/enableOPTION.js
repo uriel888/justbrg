@@ -8,7 +8,7 @@ let router = express.Router()
 export const enableOPTION = (req, res, next) => {
   console.log(req.method);
   if(req.method == "OPTIONS"){
-    return res.end({Status:"Ok"});
+    return res.json({Status:"Ok"});
   }
   return next();
 }
