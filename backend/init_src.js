@@ -14,6 +14,9 @@ import {
   isLoggedIn
 } from "./tools/isLoggedIn.js"
 
+import {
+  enableOPTION
+} from "./tools/enableOPTION.js"
 //import apis
 import users from "./apis/users.js"
 import search from "./apis/engine.js"
@@ -99,6 +102,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //apis for users
+app.use(enableOPTION);
 app.use('/users', users);
 app.use(isLoggedIn);
 app.use('/search', search);
