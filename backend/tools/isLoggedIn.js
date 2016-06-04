@@ -11,5 +11,5 @@ export const isLoggedIn = (req, res, next) => {
     return next();
 
   // if they aren't redirect them to the home page
-  res.status(401).send("Unauthorized");
+  res.status(401).send({message:"Unauthorized"});
 }
