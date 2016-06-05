@@ -79,7 +79,7 @@ router.post('/', (req, res) => {
   if (source == '') {
     return res.status(500).end('Wrong source');
   }
-  res.end((encrypt(source) + `?checkin=${arrivalMoment.format("YYYY-MM-DD")}&checkout=${departureMoment.format("YYYY-MM-DD")}&city=${req.query.city}`));
+  res.json({message:(encrypt(source) + `?checkin=${arrivalMoment.format("YYYY-MM-DD")}&checkout=${departureMoment.format("YYYY-MM-DD")}&city=${req.query.city}`)});
 });
 
 module.exports = router;
