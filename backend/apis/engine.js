@@ -26,46 +26,46 @@ if (master.Status == "dev") {
 router.post('/', (req, res) => {
   //Date format: mm/dd/yyyy
   if (!req.body.checkin) {
-    return res.status(500).send("checkin Wrong");
-  } else if (!req.query.checkout) {
-    return res.status(500).send("checkout Wrong");
-  } else if (!req.query.city) {
-    return res.status(500).send("city Wrong");
-  } else if (!req.query.country) {
-    return res.status(500).send("country Wrong");
-  } else if (!req.query.source) {
-    return res.status(500).send("source Wrong");
+    return res.status(500).send({message:"checkin Wrong"});
+  } else if (!req.body.checkout) {
+    return res.status(500).send({message:"checkout Wrong"});
+  } else if (!req.body.city) {
+    return res.status(500).send({message:"city Wrong"});
+  } else if (!req.body.country) {
+    return res.status(500).send({message:"country Wrong"});
+  } else if (!req.body.source) {
+    return res.status(500).send({message:"source Wrong"});
   }
 
 
-  let country = countryConverter[req.query.country.toLowerCase()];
+  let country = countryConverter[req.body.country.toLowerCase()];
   let state = ""
   if (!country) {
-    return res.status(500).send("country Wrong");
+    return res.status(500).send({message:"country Wrong"});
   }
 
   if (country == 'us') {
-    if (!req.query.state) {
-      return res.status(500).send("state Wrong");
+    if (!req.body.state) {
+      return res.status(500).send({message:"state Wrong"});
     }
-    state = stateConverter[req.query.state.toLowerCase()];
+    state = stateConverter[req.body.state.toLowerCase()];
   }
 
   if (!state && country == 'us') {
-    return res.status(500).send("state Wrong");
+    return res.status(500).send({message:"state Wrong"});
   }
 
 
-  let arrivalDate = req.query.checkin;
-  let departureDate = req.query.checkout;
+  let arrivalDate = req.body.checkin;
+  let departureDate = req.body.checkout;
 
   let arrivalMoment = moment(arrivalDate, "MM/DD/YYYY")
   let departureMoment = moment(departureDate, "MM/DD/YYYY")
   if (!arrivalMoment.isValid() || !departureMoment.isValid()) {
-    return res.status(500).send("Time Wrong");
+    return res.status(500).send({message:"Time Wrong"});
   }
-  let city = req.query.city.replace(' ', '+');
-  let source = req.query.source;
+  let city = req.body.city.replace(' ', '+');
+  let source = req.body.source;
   if (source == 'spg') {
     if (country != '') {
       source = "http://www.starwoodhotels.com/preferredguest/search/results/grid.html?localeCode=en_US&city=" + city + "&stateCode=" + state + "&countryCode=" + country + "&searchType=location&hotelName=&" + "currencyCode=USD&arrivalDate=" + arrivalDate + "&departureDate=" + departureDate + "&numberOfRooms=1&numberOfAdults=1&numberOfChildren=0&iataNumber=";
@@ -77,9 +77,9 @@ router.post('/', (req, res) => {
   }
 
   if (source == '') {
-    return res.status(500).end('Wrong source');
+    return res.status(500).end({message:'Wrong source'});
   }
-  res.json({message:(encrypt(source) + `?checkin=${arrivalMoment.format("YYYY-MM-DD")}&checkout=${departureMoment.format("YYYY-MM-DD")}&city=${req.query.city}`)});
+  res.json({message:(encrypt(source) + `?checkin=${arrivalMoment.format("YYYY-MM-DD")}&checkout=${departureMoment.format("YYYY-MM-DD")}&city=${req.body.city}`)});
 });
 
 module.exports = router;
