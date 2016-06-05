@@ -26,33 +26,33 @@ if (master.Status == "dev") {
 router.post('/', (req, res) => {
   //Date format: mm/dd/yyyy
   if (!req.body.checkin) {
-    return res.status(500).send({message:"checkin Wrong"});
+    return res.status(500).json({message:"checkin Wrong"});
   } else if (!req.body.checkout) {
-    return res.status(500).send({message:"checkout Wrong"});
+    return res.status(500).json({message:"checkout Wrong"});
   } else if (!req.body.city) {
-    return res.status(500).send({message:"city Wrong"});
+    return res.status(500).json({message:"city Wrong"});
   } else if (!req.body.country) {
-    return res.status(500).send({message:"country Wrong"});
+    return res.status(500).json({message:"country Wrong"});
   } else if (!req.body.source) {
-    return res.status(500).send({message:"source Wrong"});
+    return res.status(500).json({message:"source Wrong"});
   }
 
 
   let country = countryConverter[req.body.country.toLowerCase()];
   let state = ""
   if (!country) {
-    return res.status(500).send({message:"country Wrong"});
+    return res.status(500).json({message:"country Wrong"});
   }
 
   if (country == 'us') {
     if (!req.body.state) {
-      return res.status(500).send({message:"state Wrong"});
+      return res.status(500).json({message:"state Wrong"});
     }
     state = stateConverter[req.body.state.toLowerCase()];
   }
 
   if (!state && country == 'us') {
-    return res.status(500).send({message:"state Wrong"});
+    return res.status(500).json({message:"state Wrong"});
   }
 
 
@@ -62,7 +62,7 @@ router.post('/', (req, res) => {
   let arrivalMoment = moment(arrivalDate, "MM/DD/YYYY")
   let departureMoment = moment(departureDate, "MM/DD/YYYY")
   if (!arrivalMoment.isValid() || !departureMoment.isValid()) {
-    return res.status(500).send({message:"Time Wrong"});
+    return res.status(500).json({message:"Time Wrong"});
   }
   let city = req.body.city.replace(' ', '+');
   let source = req.body.source;
@@ -77,7 +77,7 @@ router.post('/', (req, res) => {
   }
 
   if (source == '') {
-    return res.status(500).end({message:'Wrong source'});
+    return res.status(500).json({message:'Wrong source'});
   }
   res.json({message:(encrypt(source) + `?checkin=${arrivalMoment.format("YYYY-MM-DD")}&checkout=${departureMoment.format("YYYY-MM-DD")}&city=${req.body.city}`)});
 });
