@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
     return res.status(500).json({message:"Time Wrong"});
   }
   let city = req.body.city.replace(' ', '+');
-  let source = req.body.source;
+  let source = req.body.source.toLowerCase();
   if (source == 'spg') {
     if (country != '') {
       source = "http://www.starwoodhotels.com/preferredguest/search/results/grid.html?localeCode=en_US&city=" + city + "&stateCode=" + state + "&countryCode=" + country + "&searchType=location&hotelName=&" + "currencyCode=USD&arrivalDate=" + arrivalDate + "&departureDate=" + departureDate + "&numberOfRooms=1&numberOfAdults=1&numberOfChildren=0&iataNumber=";
