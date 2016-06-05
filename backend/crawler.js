@@ -18,6 +18,13 @@ let port = process.env.PORT || master.dev_crawler_port;
 //Enable logs on requests
 if (master.Status == "dev") {
   app.use(morgan(`${master.Status}`));
+  app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE, OPTION');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+    next();
+  });
 } else {
   port = process.env.PORT || master.port;
 }
