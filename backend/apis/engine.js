@@ -25,7 +25,7 @@ if (master.Status == "dev") {
 
 router.post('/', (req, res) => {
   //Date format: mm/dd/yyyy
-  if (!req.query.checkin) {
+  if (!req.body.checkin) {
     return res.status(500).send("checkin Wrong");
   } else if (!req.query.checkout) {
     return res.status(500).send("checkout Wrong");
