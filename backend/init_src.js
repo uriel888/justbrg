@@ -14,6 +14,9 @@ import {
   isLoggedIn
 } from "./tools/isLoggedIn.js"
 
+import {
+  enableOPTION
+} from "./tools/enableOPTION.js"
 //import apis
 import users from "./apis/users.js"
 import search from "./apis/engine.js"
@@ -54,10 +57,10 @@ let app = express();
 let port = process.env.PORT || master.dev_port;
 
 //Enable logs on requests
-if (master.Status == "dev") {
+console.log("Current Mode:" + master.Status);
+if (master.Status === "dev") {
   app.use(morgan(`${master.Status}`));
-}
-else{
+} else {
   port = process.env.PORT || master.port
 }
 
@@ -71,13 +74,35 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 }));
 
 //Enable session and password
-app.use(session({
-  secret: `${master.secret.sesson_secret}`
-}));
+if (master.Status === "dev") {
+  //   app.use(session({
+  //     secret: 'yoursecret',
+  //     cookie: {
+  //       path: '/',
+  //       domain: 'localhost:8080',
+  //       maxAge: 1000 * 60 * 24 // 24 hours
+  //     }
+  //   }));
+    app.use(function(req, res, next) {
+      res.header('Access-Control-Allow-Credentials', true);
+      res.header('Access-Control-Allow-Origin', req.headers.origin);
+      res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE, OPTION');
+      res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+      next();
+    });
+  app.use(session({
+    secret: `${master.secret.sesson_secret}`
+  }));
+} else {
+  app.use(session({
+    secret: `${master.secret.sesson_secret}`
+  }));
+}
 app.use(passport.initialize());
 app.use(passport.session());
 
 //apis for users
+app.use(enableOPTION);
 app.use('/users', users);
 app.use(isLoggedIn);
 app.use('/search', search);

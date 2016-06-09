@@ -18,6 +18,13 @@ let port = process.env.PORT || master.dev_crawler_port;
 //Enable logs on requests
 if (master.Status == "dev") {
   app.use(morgan(`${master.Status}`));
+  app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Origin', req.headers.origin);
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE, OPTION');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+    next();
+  });
 } else {
   port = process.env.PORT || master.port;
 }
@@ -101,7 +108,7 @@ app.get('/:encode', (req, res) => {
             }
           }
           //DNS SOLUTION for fetching data
-          let fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g,"")
+          let fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g,"").replace(/_-_/g,"_")
           let r = Math.floor(Math.random() * 10000000) / 10000000
           if (master.cors == "DNS") {
             result.targetURL = `http://hotels.justbrg.it/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
