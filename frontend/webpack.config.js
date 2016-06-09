@@ -23,10 +23,26 @@ module.exports = {
     }, {
       test: /\.css$/,
       loader: "style!css"
-    }]
+    },
+   { test: /\.json$/, loader: "json-loader" }]
   },
   plugins: [
     new webpack.NoErrorsPlugin()
-  ]
+  ],
+  devServer: {
+    /* Send API requests on localhost to API server get around CORS */
+    proxy: {
+      '/*': {
+        target: 'http://52.37.71.194:8888/',
+        secure: false,
+        bypass: function(req, res, proxyOptions) {
+          if (req.headers.accept.indexOf('html') !== -1) {
+            console.log('Skipping proxy for browser request.');
+            return '/index.html';
+          }
+        }
+      }
+    }
+  }
 
 };
