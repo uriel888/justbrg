@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "0.0.0",
-  "description": "",
   "main": "script-compiled.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -37,5 +36,6 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0",
     "unidecode": "^0.1.8"
-  }
+  },
+  "description": ""
 }

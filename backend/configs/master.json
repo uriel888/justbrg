@@ -5,7 +5,7 @@
   "Author": "Zhuosheng Jiang",
   "Email": "zhuoshengjiang@icloud.com",
   "Status": "dev",
-  "dev_port": 8888,
+  "dev_port": 8081,
   "dev_crawler_port": 8889,
   "port": 80,
   "secret": {
