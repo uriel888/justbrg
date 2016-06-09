@@ -2,6 +2,7 @@ import express from "express"
 import passport from "passport"
 import * as master from "../configs/master.json"
 import User from "../models/users.js"
+import isEmail from 'validator/lib/isEmail'
 let router = express.Router()
 
 
@@ -25,6 +26,9 @@ if (master.Status == "dev") {
 }
 
 router.post('/register', (req, res) => {
+  if(!isEmail(req.body.username)){
+    return res.status(500).send({message:"Not a valid email address"})
+  }
   passport.authenticate('local-signup', function(err, user, info) {
     if (err) {
       return res.status(500).send(err);
@@ -44,6 +48,9 @@ router.post('/register', (req, res) => {
 
 
 router.post('/login', (req, res) => {
+  if(!isEmail(req.body.username)){
+    return res.status(500).send({message:"Not a valid email address"})
+  }
   passport.authenticate('local-login', function(err, user, info) {
     if (err) {
       return res.status(500).send(err);

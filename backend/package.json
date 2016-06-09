@@ -35,7 +35,8 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0",
-    "unidecode": "^0.1.8"
+    "unidecode": "^0.1.8",
+    "validator": "^5.4.0"
   },
   "description": ""
 }
