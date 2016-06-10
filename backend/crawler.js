@@ -4,6 +4,7 @@ import unidecode from 'unidecode'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import * as master from './configs/master.json'
+import * as hotelConverter from './configs/hotelscombinedFileNameConverter.json'
 import Horseman from 'node-horseman'
 import {
   encrypt,
@@ -115,7 +116,11 @@ app.get('/:encode', (req, res) => {
             }
           }
           //DNS SOLUTION for fetching data
-          let fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g, "").replace(/_-_/g, "_").replace(/\'/g,"").replace(/_&_/g, "_").replace(/\./g, "")
+          let fileName = ""
+          fileName = hotelConverter[result.hotel_name]
+          if(fileName == undefined){
+            fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g, "").replace(/_-_/g, "_").replace(/\'/g,"").replace(/_&_/g, "_").replace(/\./g, "")
+          }
           let r = Math.floor(Math.random() * 10000000) / 10000000
           if (master.cors == "DNS") {
             result.targetURL = `http://hotels.justbrg.it/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
