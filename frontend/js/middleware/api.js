@@ -3,10 +3,6 @@ import 'isomorphic-fetch'
 
 let API_ROOT = ""
 let CRAWLER_ROOT = ""
-let headers = {
-  'Accept': 'application/json',
-  'Content-Type': 'application/json'
-}
 if (master.Status == 'dev') {
   API_ROOT = master.dev_api_address
   CRAWLER_ROOT = master.dev_crawler_address
@@ -18,6 +14,10 @@ if (master.Status == 'dev') {
 function callApiwithPost(endpoint, body, func, mode) {
   let method = 'POST'
   let fullUrl = (endpoint.indexOf(API_ROOT) === -1) ? API_ROOT + endpoint : endpoint
+  let headers = {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  }
   if (mode == "crawler") {
     fullUrl = (endpoint.indexOf(CRAWLER_ROOT) === -1) ? CRAWLER_ROOT + endpoint : endpoint
     fullUrl += body
