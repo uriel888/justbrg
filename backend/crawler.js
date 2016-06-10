@@ -4,7 +4,7 @@ import unidecode from 'unidecode'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import * as master from './configs/master.json'
-import * as hotelConverter from './configs/hotelscombinedFileNameConverter.json'
+import * as hotelConverter from './tools/hotelscombinedFileNameConverter.json'
 import Horseman from 'node-horseman'
 import {
   encrypt,
