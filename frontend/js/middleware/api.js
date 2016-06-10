@@ -3,7 +3,7 @@ import 'isomorphic-fetch'
 
 let API_ROOT = ""
 let CRAWLER_ROOT = ""
-if (master.Status == 'dev') {
+if (master.Status === 'dev') {
   API_ROOT = master.dev_api_address
   CRAWLER_ROOT = master.dev_crawler_address
 } else {
