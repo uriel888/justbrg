@@ -102,10 +102,6 @@ export function redirectSearch(url) {
   return (dispatch, getState) => {
     return fetch("http://hotels.justbrg.it" + url, {
       method: 'GET',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
       credentials: 'include'
     }).then((response) => {
       response.text().then((text) => {

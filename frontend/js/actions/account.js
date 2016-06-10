@@ -32,7 +32,7 @@ export const REGISTER_FAIL = 'REGISTER_FAIL'
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
 export const REGISTER_REQUEST = 'REGISTER_REQUEST'
 
-function postRegisterUser(creds) {
+function postRegisterUser(creds, dispatch) {
   return {
     [CALL_API]: {
       types: [REGISTER_REQUEST, REGISTER_SUCCESS, REGISTER_FAIL],
@@ -54,6 +54,6 @@ export function registerUser(creds) {
     }
   }
   return (dispatch) => {
-    return dispatch(postRegisterUser(creds))
+    return dispatch(postRegisterUser(creds, dispatch))
   }
 }
