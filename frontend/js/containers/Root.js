@@ -3,4 +3,10 @@
 // } else {
 //   module.exports = require('./Root.dev')
 // }
-module.exports = require('./Root.dev')
+
+import * as master from '../../configs/master.json'
+if (master.Status === 'dev') {
+  module.exports = require('./Root.dev')
+} else {
+  module.exports = require('./Root.dev')  
+}

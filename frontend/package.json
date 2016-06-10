@@ -10,7 +10,8 @@
     "isomorphic-fetch": "^2.2.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "redux-router": "^1.0.0-beta8"
+    "redux-router": "^1.0.0-beta8",
+    "webpack-hot-middleware": "^2.10.0"
   },
   "devDependencies": {
     "babel-loader": "^6.2.4",
