@@ -79,10 +79,6 @@ export function competeSearch(getState) {
     if (current_index == 0) {
       return fetch("http://hotels.justbrg.it/", {
         method: 'GET',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
         credentials: 'include'
       }).then((response) => {
         response.text().then((text) => {

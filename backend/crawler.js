@@ -26,6 +26,13 @@ if (master.Status == "dev") {
     next();
   });
 } else {
+  app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Origin', "http://justbrg.it");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE, OPTION');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+    next();
+  });
   port = process.env.PORT || master.port;
 }
 
@@ -108,12 +115,11 @@ app.get('/:encode', (req, res) => {
             }
           }
           //DNS SOLUTION for fetching data
-          let fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g,"").replace(/_-_/g,"_")
+          let fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g, "").replace(/_-_/g, "_")
           let r = Math.floor(Math.random() * 10000000) / 10000000
           if (master.cors == "DNS") {
             result.targetURL = `http://hotels.justbrg.it/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
-          }
-          else{
+          } else {
             result.targetURL = `http://www.hotelscombined.com/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
           }
 

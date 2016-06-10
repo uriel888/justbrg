@@ -95,7 +95,7 @@ export default class SearchPage extends Component {
         <ul>
           {competeList.map(
             function(result, index){
-              return <HotelListEntry hotel={hotelList[index]} compete={result} redirectSearch={redirectSearchCreater}/>
+              return <HotelListEntry hotel={hotelList[index]} compete={result} redirectSearch={redirectSearchCreater} query={query}/>
             }
           )}
         </ul>

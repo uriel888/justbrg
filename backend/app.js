@@ -94,6 +94,13 @@ if (master.Status === "dev") {
     secret: `${master.secret.sesson_secret}`
   }));
 } else {
+  app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Origin', "http://justbrg.it");
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE, OPTION');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
+    next();
+  });
   app.use(session({
     secret: `${master.secret.sesson_secret}`
   }));
