@@ -9,6 +9,7 @@ export default class HotelListEntry extends Component {
     const {hotel, compete, redirectSearch, query} = this.props
     let competeRate = compete.competeRate
     let message = undefined
+    let bestPlan = undefined
     if(compete.competeRate != undefined){
       let arrivalMoment = moment(query.checkin, "MM/DD/YYYY")
       let departureMoment = moment(query.checkout, "MM/DD/YYYY")
@@ -24,10 +25,34 @@ export default class HotelListEntry extends Component {
       message = "No BRG"
     }
 
+    if (hotel.BAR && (hotel.FN || hotel.CP)) {
+      let fn = 0;
+      let cp = 0;
+      bestPlan = {}
+      if (hotel.FN) {
+        fn = hotel.BAR / hotel.FN
+      }
+
+      if (hotel.CP) {
+        cp = (hotel.BAR - hotel.CP.c) / hotel.CP.p
+      }
+      if (cp >= fn) {
+        bestPlan.plan = "Cash & Points"
+        bestPlan.potential_value = cp
+      }else{
+        bestPlan.plan = "Only Points"
+        bestPlan.potential_value = fn
+      }
+    }
 
     return (
       <div>
-        < li > Hotel Name:  {hotel.hotel_name} <br />  Hotel Officail Price($/day):  {hotel.BAR} <br />  BRG Rate($/day):  {message?message:competeRate}<br /> {message?false:<button onClick={() =>redirectSearch(compete.competeURL)}>Click me For BRG LINK</button>}<br />< /li>-------------------------<br />
+        < li > Hotel Name:  {hotel.hotel_name} <br />
+               {bestPlan?<div>Best Point Usage : {bestPlan.plan} With value($/Point) : {bestPlan.potential_value.toFixed(4)}<br /></div>:false}
+               Hotel Officail Price($/day):  {hotel.BAR} <br />
+               BRG Rate($/day):  {message?message:competeRate}<br />
+               {message?false:<button onClick={() =>redirectSearch(compete.competeURL)}>Click me For BRG LINK</button>}<br />
+        < /li>-------------------------<br />
       </div>
     )
   }
