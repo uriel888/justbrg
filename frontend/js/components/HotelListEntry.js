@@ -49,7 +49,7 @@ export default class HotelListEntry extends Component {
       <div>
         < li > Hotel Name:  {hotel.hotel_name} <br />
                {bestPlan?<div>Best Point Usage : {bestPlan.plan} With value($/Point) : {bestPlan.potential_value.toFixed(4)}<br /></div>:false}
-               Hotel Officail Price($/day):  {hotel.BAR} <br />
+               Hotel official Price($/day):  {hotel.BAR} <br />
                BRG Rate($/day):  {message?message:competeRate}<br />
                {message?false:<button onClick={() =>redirectSearch(compete.competeURL)}>Click me For BRG LINK</button>}<br />
         < /li>-------------------------<br />
