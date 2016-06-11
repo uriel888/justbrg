@@ -98,23 +98,19 @@ export const REDIRECT_SEARCH_FAIL = 'REDIRECT_SEARCH_FAIL'
 export const REDIRECT_SEARCH_SUCCESS = 'REDIRECT_SEARCH_SUCCESS'
 export const REDIRECT_SEARCH_REQUEST = 'REDIRECT_SEARCH_REQUEST'
 
-export function redirectSearch(url) {
+export function redirectSearch(url, hotel_name) {
   return (dispatch, getState) => {
     return fetch("http://hotels.justbrg.it" + url, {
       method: 'GET',
       credentials: 'include'
     }).then((response) => {
+      if(!response.ok){
+        console.log("BAD!");
+      }
       response.text().then((text) => {
         text = text.substr(text.indexOf('var url = \'') + ('var url = \'').length)
         text = text.substr(0, text.indexOf('\''))
-        let win = window.open(text, '_blank');
-        if (win) {
-          //Browser has allowed it to be opened
-          win.focus();
-        } else {
-          //Browser has blocked it
-          alert('Please allow popups for this website');
-        }
+        dispatch({type:"REDIRECT_SEARCH_SUCCESS", completeCompeteURL:text, hotel_name:hotel_name})
       })
     })
   }

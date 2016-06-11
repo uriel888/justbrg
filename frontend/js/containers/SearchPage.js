@@ -26,7 +26,8 @@ const mapStateToProps = (
     generalFetching: state.search.generalFetching,
     competeFetching: state.search.competeFetching,
     competeList: state.search.competeList,
-    hotelList: state.search.hotelList
+    hotelList: state.search.hotelList,
+    redirectList: state.search.redirectList
   }
 }
 
@@ -76,6 +77,7 @@ export default class SearchPage extends Component {
       generalFetching,
       competeFetching,
       hotelList,
+      redirectList,
       competeList
     } = this.props
     let competeSearchCreater = bindActionCreators(competeSearch, dispatch)
@@ -95,7 +97,7 @@ export default class SearchPage extends Component {
         <ul>
           {competeList.map(
             function(result, index){
-              return <HotelListEntry hotel={hotelList[index]} compete={result} redirectSearch={redirectSearchCreater} query={query}/>
+              return <HotelListEntry hotel={hotelList[index]} compete={result} redirectSearch={redirectSearchCreater} query={query} redirectList={redirectList}/>
             }
           )}
         </ul>

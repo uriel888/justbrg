@@ -8,15 +8,18 @@ import {
   COMPETE_SEARCH_FAIL,
   COMPETE_SEARCH_SUCCESS,
   COMPETE_SEARCH_REQUEST,
+  REDIRECT_SEARCH_SUCCESS,
   SEARCH_COMPLETE
 } from '../actions/search'
 const initialState = {
   generalFetching: false,
   crawlerFetching: false,
   competeFetching: false,
+  redirectFetching: false,
   encryptedMessage: "",
   hotelList: [],
   competeList: [],
+  redirectList: {},
   error: ""
 }
 
@@ -97,6 +100,14 @@ const search = (state = initialState, action) => {
       return Object.assign({}, state, {
         competeFetching: false,
         competeList: [...state.competeList, "error"],
+        error: ""
+      })
+    case REDIRECT_SEARCH_SUCCESS:
+      let new_redirect_list = state.redirectList
+      new_redirect_list[action.hotel_name] = action.completeCompeteURL
+      return Object.assign({}, state, {
+        redirectFetching: false,
+        redirectList: new_redirect_list,
         error: ""
       })
     case SEARCH_COMPLETE:

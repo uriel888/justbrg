@@ -6,7 +6,7 @@ import moment from "moment"
 
 export default class HotelListEntry extends Component {
   render() {
-    const {hotel, compete, redirectSearch, query} = this.props
+    const {hotel, compete, redirectSearch, query, redirectList} = this.props
     let competeRate = compete.competeRate
     let message = undefined
     let bestPlan = undefined
@@ -51,7 +51,18 @@ export default class HotelListEntry extends Component {
                {bestPlan?<div>Best Point Usage : {bestPlan.plan} With value($/Point) : {bestPlan.potential_value.toFixed(4)}<br /></div>:false}
                Hotel official Price($/day):  {hotel.BAR} <br />
                BRG Rate($/day):  {message?message:competeRate}<br />
-               {message?false:<button onClick={() =>redirectSearch(compete.competeURL)}>Click me For BRG LINK</button>}<br />
+               {
+                 (()=>{
+                   if(!message){
+                     if(redirectList[hotel.hotel_name]){
+                       return <a href={redirectList[hotel.hotel_name]} target="_blank">Link to the BRG site</a>
+                     }
+                     else{
+                       return <button onClick={() =>redirectSearch(compete.competeURL, hotel.hotel_name)}>Click me For BRG LINK</button>
+                     }
+                   }
+                 })()
+               }
         < /li>-------------------------<br />
       </div>
     )
