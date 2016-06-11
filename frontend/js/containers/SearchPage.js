@@ -11,14 +11,20 @@ import {
   push
 } from 'react-router-redux'
 
+import uuid from 'node-uuid'
 
 import {
   bindActionCreators
 } from 'redux'
 
-import { generalSearch, crawlerSearch, competeSearch, redirectSearch} from '../actions/search'
-import HotelListEntry from '../components/HotelListEntry'
+import {
+  generalSearch,
+  crawlerSearch,
+  competeSearch,
+  redirectSearch
+} from '../actions/search'
 
+import HotelListEntry from '../components/HotelListEntry'
 const mapStateToProps = (
   state
 ) => {
@@ -83,7 +89,7 @@ export default class SearchPage extends Component {
     let competeSearchCreater = bindActionCreators(competeSearch, dispatch)
     let redirectSearchCreater = bindActionCreators(redirectSearch, dispatch)
     if(generalFetching && competeList.length < hotelList.length && !competeFetching){
-      setTimeout(competeSearchCreater, 3000);
+      setTimeout(competeSearchCreater, 5000);
     }
     if(competeList.length == hotelList.length && generalFetching && hotelList.length > 0){
       dispatch({
@@ -97,7 +103,7 @@ export default class SearchPage extends Component {
         <ul>
           {competeList.map(
             function(result, index){
-              return <HotelListEntry hotel={hotelList[index]} compete={result} redirectSearch={redirectSearchCreater} query={query} redirectList={redirectList}/>
+              return <HotelListEntry key={uuid.v1()} hotel={hotelList[index]} compete={result} redirectSearch={redirectSearchCreater} query={query} redirectList={redirectList}/>
             }
           )}
         </ul>
