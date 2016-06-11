@@ -54,12 +54,7 @@ export default class HotelListEntry extends Component {
                {
                  (()=>{
                    if(!message){
-                     if(redirectList[hotel.hotel_name]){
-                       return <a href={redirectList[hotel.hotel_name]} target="_blank">Link to the BRG site</a>
-                     }
-                     else{
-                       return <button onClick={() =>redirectSearch(compete.competeURL, hotel.hotel_name)}>Click me For BRG LINK</button>
-                     }
+                     return <a href={"http://hotelscombined.com"+compete.competeURL} target="_blank">Link to the BRG site</a>
                    }
                  })()
                }

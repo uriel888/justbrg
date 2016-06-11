@@ -108,9 +108,9 @@ export function redirectSearch(url, hotel_name) {
         text = text.substr(text.indexOf('var url = \'') + ('var url = \'').length)
         text = text.substr(0, text.indexOf('\''))
         dispatch({type:"REDIRECT_SEARCH_SUCCESS", completeCompeteURL:text, hotel_name:hotel_name})
-      }).catch(
-        console.log("BAD!");
-      )
-    })
+      })
+    }).catch(
+      console.log("BAD!")
+    )
   }
 }
