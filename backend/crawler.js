@@ -118,6 +118,7 @@ app.get('/:encode', (req, res) => {
               }
             }
           }
+          console.log('i = ' + i);
           //DNS SOLUTION for fetching data
           let fileName = ""
           fileName = hotelConverter[result.hotel_name]
