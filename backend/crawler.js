@@ -87,6 +87,7 @@ app.get('/:encode', (req, res) => {
         let hotels = text.split("\n\n")
         let hotel_results = []
         for (let i = 0; i < hotels.length; i++) {
+          console.log(hotels);
           if (hotels[i].indexOf('This hotel is not currently accepting reservations.') > -1) {
             continue
           }
@@ -122,7 +123,7 @@ app.get('/:encode', (req, res) => {
             fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g, "").replace(/_-_/g, "_").replace(/\'/g,"").replace(/_&_/g, "_").replace(/\./g, "")
           }
           let r = Math.floor(Math.random() * 10000000) / 10000000
-          
+
           if (master.cors == "DNS") {
             result.targetURL = `http://hotels.justbrg.it/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
           } else {
