@@ -125,10 +125,10 @@ app.get('/:encode', (req, res) => {
 
           if (master.cors == "DNS") {
             result.targetURL = `http://hotels.justbrg.it/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
-            console.log(hotels);
           } else {
             result.targetURL = `http://www.hotelscombined.com/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
           }
+          console.log(hotels);
 
           hotel_results.push(result)
         }
