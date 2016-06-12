@@ -87,7 +87,6 @@ app.get('/:encode', (req, res) => {
         let hotels = text.split("\n\n")
         let hotel_results = []
         for (let i = 0; i < hotels.length; i++) {
-          console.log(hotels);
           if (hotels[i].indexOf('This hotel is not currently accepting reservations.') > -1) {
             continue
           }
@@ -116,6 +115,7 @@ app.get('/:encode', (req, res) => {
               }
             }
           }
+          console.log(hotels);
           //DNS SOLUTION for fetching data
           let fileName = ""
           fileName = hotelConverter[result.hotel_name]
