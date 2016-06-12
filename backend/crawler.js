@@ -86,6 +86,7 @@ app.get('/:encode', (req, res) => {
         }
         let hotels = text.split("\n\n")
         let hotel_results = []
+        console.log(hotels);
         for (let i = 0; i < hotels.length; i++) {
           if (hotels[i].indexOf('This hotel is not currently accepting reservations.') > -1) {
             continue
@@ -132,7 +133,6 @@ app.get('/:encode', (req, res) => {
 
           hotel_results.push(result)
         }
-        console.log(hotels);
         return res.end(JSON.stringify(hotel_results));
       })
       .close();
