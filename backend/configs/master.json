@@ -15,6 +15,6 @@
   "__model_dir": "./models/",
   "__config_dir": "./configs/",
   "algorithm": "aes-256-ctr",
-  "password": "We are fucking SPG",
+  "password": "I'm trying to be a best BRG tool",
   "cors": "DNS"
 }
