@@ -93,6 +93,7 @@ app.get('/:encode', (req, res) => {
           let current = hotels[i].split('\n')
           let result = {}
           for (let j = 0; j < current.length; j++) {
+            console.log('i = ' + i + ", j = " + j);
             if (j == 0) {
               result.hotel_name = unidecode(current[j])
             } else if (current[j] == "Lowest Standard Rate") {
