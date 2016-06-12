@@ -115,7 +115,6 @@ app.get('/:encode', (req, res) => {
               }
             }
           }
-          console.log(hotels);
           //DNS SOLUTION for fetching data
           let fileName = ""
           fileName = hotelConverter[result.hotel_name]
@@ -123,6 +122,7 @@ app.get('/:encode', (req, res) => {
             fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g, "").replace(/_-_/g, "_").replace(/\'/g,"").replace(/_&_/g, "_").replace(/\./g, "")
           }
           let r = Math.floor(Math.random() * 10000000) / 10000000
+          console.log(hotels);
 
           if (master.cors == "DNS") {
             result.targetURL = `http://hotels.justbrg.it/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
