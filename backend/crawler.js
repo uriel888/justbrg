@@ -86,8 +86,6 @@ app.get('/:encode', (req, res) => {
         }
         let hotels = text.split("\n\n")
         let hotel_results = []
-        console.log(hotels);
-        console.log(hotels.length);
         for (let i = 0; i < hotels.length; i++) {
           if (hotels[i].indexOf('This hotel is not currently accepting reservations.') > -1) {
             continue
@@ -95,11 +93,6 @@ app.get('/:encode', (req, res) => {
           let current = hotels[i].split('\n')
           let result = {}
           for (let j = 0; j < current.length; j++) {
-            console.log('i = ' + i + ", j = " + j);
-            if((i==17 || i==16) && j == 0){
-              console.log(current);
-            }
-
             if (j == 0) {
               result.hotel_name = unidecode(current[j])
             } else if (current[j] == "Lowest Standard Rate") {
@@ -122,7 +115,6 @@ app.get('/:encode', (req, res) => {
               }
             }
           }
-          console.log('i = ' + i);
           //DNS SOLUTION for fetching data
           let fileName = ""
           fileName = hotelConverter[result.hotel_name]
