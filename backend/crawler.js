@@ -99,6 +99,9 @@ app.get('/:encode', (req, res) => {
             if((i==17 || i==16) && j == 0){
               console.log(current);
             }
+            if(current[j] == "This hotel has Limited Participation in the Starwood Preferred Guest® Program."){
+              continue
+            }
             if (j == 0) {
               result.hotel_name = unidecode(current[j])
             } else if (current[j] == "Lowest Standard Rate") {
