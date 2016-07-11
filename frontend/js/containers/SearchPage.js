@@ -98,6 +98,14 @@ export default class SearchPage extends Component {
     }
     return (
       <div>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_s-xclick" />
+          <input type="hidden" name="hosted_button_id" value="FV9N6YUBXCSY8" />
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+        </form>
+
+
         <label>{generalFetching?<i className="fa fa-spinner fa-spin" style={{"fontSize":"24px"}}></i>:false}</label><br />
         <label>{hotelList.length!=0&&generalFetching?<div>Found {hotelList.length} hotels in request area, current search BRG for {competeList.length}/{hotelList.length}</div>:false}</label><br />
         <ul>
