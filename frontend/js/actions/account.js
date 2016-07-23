@@ -2,6 +2,7 @@ import { CALL_API } from '../middleware/api'
 import {
   push
 } from 'react-router-redux'
+import ReactGA from 'react-ga'
 export const LOGIN_FAIL = 'LOGIN_FAIL'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_REQUEST = 'LOGIN_REQUEST'
@@ -13,6 +14,7 @@ function fetchUser(creds, dispatch) {
       endpoint: `users/login`,
       body: creds,
       func: ()=>{
+        ReactGA.ga('send', 'pageview', '/');
         dispatch(push('/'))
       },
       mode: 'api'
@@ -39,6 +41,7 @@ function postRegisterUser(creds, dispatch) {
       endpoint: `users/register`,
       body: creds,
       func: ()=>{
+        ReactGA.ga('send', 'pageview', '/');
         dispatch(push('/'))
       },
       mode: 'api'

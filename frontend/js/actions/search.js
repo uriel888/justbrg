@@ -4,9 +4,11 @@ import {
 import {
   push
 } from 'react-router-redux'
+import ReactGA from 'react-ga'
 
 export function search(city, state, country, checkin, checkout, source) {
   return (dispatch) => {
+    ReactGA.ga('send', 'pageview', '/search?city=' + city + '&state=' + state + '&country=' + country + '&checkin=' + checkin + '&checkout=' + checkout + "&source=" + source);
     return dispatch(push('/search?city=' + city + '&state=' + state + '&country=' + country + '&checkin=' + checkin + '&checkout=' + checkout + "&source=" + source))
   }
 }
@@ -78,7 +80,7 @@ export function competeSearch(getState) {
     let target_hotel = state.search.hotelList[current_index]
     let url = target_hotel.targetURL
     if (current_index == 0) {
-      return fetch("http://hotels.justbrg.it/", {
+      return fetch("http://hotels.justbrg.com/", {
         method: 'GET',
         credentials: 'include'
       }).then((response) => {
@@ -101,7 +103,7 @@ export const REDIRECT_SEARCH_REQUEST = 'REDIRECT_SEARCH_REQUEST'
 
 export function redirectSearch(url, hotel_name) {
   return (dispatch, getState) => {
-    return fetch("http://hotels.justbrg.it" + url, {
+    return fetch("http://hotels.justbrg.com" + url, {
       method: 'GET',
       credentials: 'include'
     }).then((response) => {

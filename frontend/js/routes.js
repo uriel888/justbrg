@@ -4,6 +4,13 @@ import App from './containers/App'
 import LoginPage from './containers/LoginPage'
 import RegisterPage from './containers/RegisterPage'
 import SearchPage from './containers/SearchPage'
+import ReactGA from 'react-ga'
+
+ReactGA.initialize('UA-81192750-1');
+function logPageView() {
+  ReactGA.set({ page: window.location.pathname });
+  ReactGA.pageview(window.location.pathname);
+}
 // import UserPage from './containers/UserPage'
 // import RepoPage from './containers/RepoPage'
 
@@ -33,10 +40,10 @@ export default(store) =>{
 
 
   return (
-    <Route path="/" component={App}>
-    <Route path="/register" component={RegisterPage} onEnter={redirectAuth}/>
-    <Route path="/login" component={LoginPage} onEnter={redirectAuth} />
-    <Route path="/search" component={SearchPage} onEnter={requireAuth}/>
+    <Route path="/" onUpdate={logPageView} component={App}>
+    <Route path="/register" onUpdate={logPageView} component={RegisterPage} onEnter={redirectAuth}/>
+    <Route path="/login" onUpdate={logPageView} component={LoginPage} onEnter={redirectAuth} />
+    <Route path="/search" onUpdate={logPageView} component={SearchPage} onEnter={requireAuth}/>
     </Route>
   )
 }
