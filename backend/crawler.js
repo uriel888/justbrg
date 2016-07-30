@@ -118,9 +118,9 @@ app.get('/:encode', (req, res) => {
           }
           //DNS SOLUTION for fetching data
           let fileName = ""
-          
+
           fileName = hotelConverter[result.hotel_name]
-          if(fileName != undefined){
+          if(fileName != undefined || fileName != 'TOADD'){
 
             fileName = fileName.target;
           }
