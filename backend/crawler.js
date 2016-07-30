@@ -4,7 +4,8 @@ import unidecode from 'unidecode'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
 import * as master from './configs/master.json'
-import * as hotelConverter from './tools/hotelscombinedFileNameConverter.json'
+// import * as hotelConverter from './tools/hotelscombinedFileNameConverter.json'
+import * as hotelConverter from './tools/SPGCONVERTER.json'
 import Horseman from 'node-horseman'
 import {
   encrypt,
@@ -66,7 +67,7 @@ app.get('/:encode', (req, res) => {
       .open(url)
       .text('.propertyInner')
       .then((text) => {
-        text = text.replace(/Dates flexible\?/g, '').replace(/Find Availability/g, '').replace(/\n/g, ' ').trim().replace(/\s\s+/g, '\n').replace(/New\n/g, '')
+        text = text.replace(/Dates flexible\?/g, '').replace(/Find Availability/g, '').replace(/\n/g, ' ').trim().replace(/\s\s+/g, '\n').replace(/New\n/g, '').replace(/,\n/g,', ')
         let count = 0;
         let start = 0;
         let end = 0;
@@ -117,16 +118,21 @@ app.get('/:encode', (req, res) => {
           }
           //DNS SOLUTION for fetching data
           let fileName = ""
+          
           fileName = hotelConverter[result.hotel_name]
-          if(fileName == undefined){
-            fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g, "").replace(/_-_/g, "_").replace(/\'/g,"").replace(/_&_/g, "_").replace(/\./g, "")
+          if(fileName != undefined){
+
+            fileName = fileName.target;
           }
+          // if(fileName == undefined){
+          //   fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g, "").replace(/_-_/g, "_").replace(/\'/g,"").replace(/_&_/g, "_").replace(/\./g, "")
+          // }
           let r = Math.floor(Math.random() * 10000000) / 10000000
 
           if (master.cors == "DNS") {
-            result.targetURL = `http://hotels.justbrg.com/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
+            result.targetURL = fileName==undefined?undefined:`http://hotels.justbrg.com/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
           } else {
-            result.targetURL = `http://www.hotelscombined.com/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
+            result.targetURL = fileName==undefined?undefined:`http://www.hotelscombined.com/Hotel/SearchResults?checkin=${req.query.checkin}&checkout=${req.query.checkout}&Rooms=1&adults_1=2&fileName=${fileName}&r=${r}`
           }
 
           hotel_results.push(result)
