@@ -14,6 +14,7 @@ import {
 import { bindActionCreators } from 'redux'
 
 import Searchbox from '../components/Searchbox'
+import FreshEntry from './FreshEntry'
 import { search } from '../actions/search'
 
 const mapStateToProps = (
@@ -42,7 +43,7 @@ export default class App extends Component {
     let searchCreater = bindActionCreators(search, dispatch)
     return (
       < div >
-        {isLoggedIn?<Searchbox searchButtonClick={searchCreater} query={query} generalFetching={generalFetching} dispatch={dispatch}/>:<div><Link to='/login'>login</Link> <Link to='/register'>register</Link></div>}
+        {isLoggedIn?<Searchbox searchButtonClick={searchCreater} query={query} generalFetching={generalFetching} dispatch={dispatch}/>:<FreshEntry />}
         {this.props.children}
       < /div>
     )

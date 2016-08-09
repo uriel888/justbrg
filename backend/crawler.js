@@ -124,6 +124,9 @@ app.get('/:encode', (req, res) => {
 
             fileName = fileName.target;
           }
+          else{
+            fileName = undefined
+          }
           // if(fileName == undefined){
           //   fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g, "").replace(/_-_/g, "_").replace(/\'/g,"").replace(/_&_/g, "_").replace(/\./g, "")
           // }
