@@ -120,13 +120,14 @@ app.get('/:encode', (req, res) => {
           let fileName = ""
 
           fileName = hotelConverter[result.hotel_name]
-          if(fileName != undefined || fileName != 'TOADD'){
+          if(typeof fileName !== 'undefined' && fileName){
 
             fileName = fileName.target;
           }
-          else{
+          if(fileName == 'TOADD'){
             fileName = undefined
           }
+
           // if(fileName == undefined){
           //   fileName = result.hotel_name.replace(/ /g, "_").replace(/,/g, "").replace(/_-_/g, "_").replace(/\'/g,"").replace(/_&_/g, "_").replace(/\./g, "")
           // }
