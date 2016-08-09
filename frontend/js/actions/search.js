@@ -30,7 +30,6 @@ function postEncryptSearch(detail) {
 
 
 export function generalSearch(detail) {
-  console.log(detail);
   return (dispatch) => {
     return dispatch(postEncryptSearch(detail))
   }

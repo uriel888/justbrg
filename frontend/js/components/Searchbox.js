@@ -56,44 +56,49 @@ export default class Searchbox extends Component {
       state_code = val.value
     }
 
+    const searchBox_style = {
+      padding:"10px"
+    }
     return (
-      <form onSubmit={(e)=>{
-        e.preventDefault()
-        let checkin = moment(this.refs.checkin.value,"YYYY-MM-DD").format("MM/DD/YYYY")
-        let checkout = moment(this.refs.checkout.value,"YYYY-MM-DD").format("MM/DD/YYYY")
+      <div style={searchBox_style}>
+        <form onSubmit={(e)=>{
+          e.preventDefault()
+          let checkin = moment(this.refs.checkin.value,"YYYY-MM-DD").format("MM/DD/YYYY")
+          let checkout = moment(this.refs.checkout.value,"YYYY-MM-DD").format("MM/DD/YYYY")
 
-        searchButtonClick(this.refs.city.value, this.state.state_code, this.state.country_code, checkin, checkout, this.refs.source.value)
-      }}>
-        <label>City:  <input ref="city" placeholder="city" defaultValue={query.city?query.city:"Chicago"} /></label><br />
-        <label>State(Only need for united states):
-        < Select
-        name = "form-field-name"
-        value = {this.state.state_code}
-        options = {
-          states_options
-        }
-        onChange = {
-          this.updateState
-        }
-        />
-        </label><br />
-        <label>Country:
-        < Select
-        name = "form-field-name"
-        value = {this.state.country_code}
-        options = {
-          countries_options
-        }
-        onChange = {
-          this.updateCountry
-        }
-        />
-        </label><br />
-        <label>Date of Arraving:  <input type="date" ref="checkin" placeholder="checkin" defaultValue={input_checkin_date}/></label><br />
-        <label>Date of Departing: <input type="date" ref="checkout" placeholder="checkout" defaultValue={input_checkout_date}/></label><br />
-        <label>Source: <input ref="source" placeholder="source" defaultValue={query.source?query.source:"SPG"}/></label><br />
-        {generalFetching?<button type="button" onClick={() =>dispatch({type:"SEARCH_COMPLETE"})}>Cancel</button>:<button type="submit">Search</button>}
-      </form>
+          searchButtonClick(this.refs.city.value, this.state.state_code, this.state.country_code, checkin, checkout, this.refs.source.value)
+        }}>
+          <label>City:  <input ref="city" placeholder="city" defaultValue={query.city?query.city:"Chicago"} /></label><br />
+          <label>State(Only need for united states):
+          < Select
+          name = "form-field-name"
+          value = {this.state.state_code}
+          options = {
+            states_options
+          }
+          onChange = {
+            this.updateState
+          }
+          />
+          </label><br />
+          <label>Country:
+          < Select
+          name = "form-field-name"
+          value = {this.state.country_code}
+          options = {
+            countries_options
+          }
+          onChange = {
+            this.updateCountry
+          }
+          />
+          </label><br />
+          <label>Date of Arraving:  <input type="date" ref="checkin" placeholder="checkin" defaultValue={input_checkin_date}/></label><br />
+          <label>Date of Departing: <input type="date" ref="checkout" placeholder="checkout" defaultValue={input_checkout_date}/></label><br />
+          <label>Source: <input ref="source" placeholder="source" defaultValue={query.source?query.source:"SPG"}/></label><br />
+          {generalFetching?<button type="button" onClick={() =>dispatch({type:"SEARCH_COMPLETE"})}>Cancel</button>:<button type="submit">Search</button>}
+        </form>
+      </div>
     )
   }
 }

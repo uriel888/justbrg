@@ -14,11 +14,12 @@ import {
 import Root from './containers/Root'
 import MainPage from './containers/App.js'
 import configureStore from './store/configureStore.js'
-
+import injectTapEventPlugin from 'react-tap-event-plugin';
 
 const app = document.getElementById('app');
 const store = configureStore()
 const history = syncHistoryWithStore(browserHistory, store)
+injectTapEventPlugin();
 render( < Root store = {
     store
   }

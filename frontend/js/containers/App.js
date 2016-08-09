@@ -8,14 +8,22 @@ import {
 } from 'react-redux';
 
 import {
-  browserHistory,
-  Link
+  browserHistory
 } from 'react-router'
+
 import { bindActionCreators } from 'redux'
 
 import Searchbox from '../components/Searchbox'
 import FreshEntry from './FreshEntry'
+import Login_Register_Buttons from '../components/Login_Register_Buttons'
 import { search } from '../actions/search'
+
+
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
+
 
 const mapStateToProps = (
   state
@@ -40,12 +48,39 @@ export default class App extends Component {
     const {
       query
     } = this.props.location
+
+    const barStyle = {
+      backgroundColor: "black"
+    };
+
+    const titleStyle = {
+      color: "#D3D3D3"
+    }
+
     let searchCreater = bindActionCreators(search, dispatch)
     return (
-      < div >
+
+      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+        <div>
+        <AppBar
+          title="JustBRG"
+          style={barStyle}
+          titleStyle={titleStyle}
+          showMenuIconButton={false}
+          iconElementRight={isLoggedIn ? null : <Login_Register_Buttons /> }
+        />
+
         {isLoggedIn?<Searchbox searchButtonClick={searchCreater} query={query} generalFetching={generalFetching} dispatch={dispatch}/>:<FreshEntry />}
         {this.props.children}
-      < /div>
+        </div>
+      </MuiThemeProvider>
+      // <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+      // <AppBar title="My AppBar" />
+      // // < div >
+      // //   {isLoggedIn?<Searchbox searchButtonClick={searchCreater} query={query} generalFetching={generalFetching} dispatch={dispatch}/>:<FreshEntry />}
+      // //   {this.props.children}
+      // //   < /div>
+      // </MuiThemeProvider>
     )
     }
   }

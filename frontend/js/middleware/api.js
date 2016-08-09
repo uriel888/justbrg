@@ -1,4 +1,6 @@
 import * as master from '../../configs/master.json'
+
+import {BRGBlackList} from '../static/json/lists'
 import 'isomorphic-fetch'
 
 let API_ROOT = ""
@@ -53,29 +55,70 @@ function callApiwithPost(endpoint, body, func, mode) {
       response
     }) => {
       if (!response.ok && mode == 'compete') {
-        return Promise.reject({message: json})
-      }else if(!response.ok){
+        return Promise.reject({
+          message: json
+        })
+      } else if (!response.ok) {
         return Promise.reject(json)
       }
       if (typeof func === 'function') {
         func()
       }
 
-      if(mode == 'compete'){
+      if (mode == 'compete') {
         let html = json
-        let el = document.createElement( 'html' );
+        let el = document.createElement('html');
         el.innerHTML = html
         let candidate = el.getElementsByTagName("span")[0];
-        json = {competeRate: candidate.getAttribute('data-lowestrate'), competeURL: candidate.getAttribute('data-lowestrateredirection')}
-        if(html.indexOf(" No prices found for your travel dates") >= 0){
-          json.competeRate="9999"
-          json.competeURL="NOURL"
+
+        json = {
+          competeRate: candidate.getAttribute('data-lowestrate'),
+          competeURL: candidate.getAttribute('data-lowestrateredirection')
         }
-        if(json.competeRate == "" && json.competeURL == ""){
-          return Promise.reject( {message: "LOADING"})
+        if (html.indexOf(" No prices found for your travel dates") >= 0) {
+          json.competeRate = "9999"
+          json.competeURL = "NOURL"
         }
+        if (json.competeRate == "" && json.competeURL == "") {
+          return Promise.reject({
+            message: "LOADING"
+          })
+        }
+
+        json.competeRate = "9999"
+        json.competeURL = "NOURL"
+
+        //Retreive and Compare price one by one and then return the most cheapest that is not in the black list
+        let rates = el.getElementsByClassName('hc_evt_priceMatrixRow')
+        for (let rate in rates) {
+          let temp = rates[rate]
+          if (typeof temp.getAttribute === 'function') {
+            let temp_provider = temp.getAttribute('data-providername').toLowerCase();
+            let flag = true
+
+            for (let blackList in BRGBlackList) {
+              if (temp_provider.indexOf(BRGBlackList[blackList]) > 0) {
+                flag = false
+                break;
+              }
+            }
+
+            if(flag){
+              let temp_col = temp.getElementsByClassName('hc_tbl_col2')[0]
+              let temp_price = temp_col.innerText.replace( /[^0-9]/g, '')
+              if(temp_price < json.competeRate){
+                json.competeRate = temp_price
+                json.competeURL = temp.getElementsByClassName('hc_f_btn_v11')[0].getAttribute('href')
+              }
+            }
+          }
+        }
+
+
+        return json
+      } else {
+        return json
       }
-      return json
     })
 }
 

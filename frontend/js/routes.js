@@ -41,9 +41,9 @@ export default(store) =>{
 
   return (
     <Route path="/" onUpdate={logPageView} component={App}>
-    <Route path="/register" onUpdate={logPageView} component={RegisterPage} onEnter={redirectAuth}/>
-    <Route path="/login" onUpdate={logPageView} component={LoginPage} onEnter={redirectAuth} />
-    <Route path="/search" onUpdate={logPageView} component={SearchPage} onEnter={requireAuth}/>
+      <Route path="/register" onUpdate={logPageView} component={RegisterPage} onEnter={redirectAuth}/>
+      <Route path="/login" onUpdate={logPageView} component={LoginPage} onEnter={redirectAuth} />
+      <Route path="/search" onUpdate={logPageView} component={SearchPage} onEnter={requireAuth}/>
     </Route>
   )
 }
