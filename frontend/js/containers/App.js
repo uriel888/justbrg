@@ -60,7 +60,7 @@ export default class App extends Component {
     let searchCreater = bindActionCreators(search, dispatch)
     return (
 
-      <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+      <MuiThemeProvider>
         <div>
         <AppBar
           title="JustBRG"
