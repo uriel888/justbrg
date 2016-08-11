@@ -1,0 +1,14 @@
+{
+  "App": "justbrg",
+  "Version": 0.0,
+  "Date": "2016-5-28",
+  "Author": "Zhuosheng Jiang",
+  "Email": "zhuoshengjiang@icloud.com",
+  "Status": "prod",
+  "dev_api_address": "http://apis.justbrg.com/",
+  "prod_api_address":"http://apis.justbrg.com/",
+  "dev_crawler_address": "http://52.37.71.194:8889/",
+  "prod_crawler_address": "http://52.37.71.194:8889/",
+  "dev_compete_address": "http://hotels.justbrg.com/",
+  "prod_compete_address": "http://hotels.justbrg.com/"
+}

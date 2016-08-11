@@ -1,8 +1,1 @@
 node_modules
-configs
-.elasticbeanstalk
-npm-debug.log
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
