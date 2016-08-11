@@ -86,7 +86,7 @@ export default class HotelListEntry extends Component {
         <CardHeader
           title={hotel.hotel_name}
           subtitle={bestPlan?<div>Best Point Usage : {bestPlan.plan} With value($/Point) : {bestPlan.potential_value.toFixed(4)} {(bestPlan.potential_value>0.025)?<ThumbIcon style={iconStyles} color={green500}/>:false}<br /></div>:false}
-          avatar={message?(message.indexOf('error')>0?(<div><ErrorIcon style={iconStyles} color={red500}/><p>If you are not using Chrome, access  <a href="http://hotels.justbrg.com/" target='_blank'> this </a> before your search might fixed the issue. </p></div>):<CrossIcon style={iconStyles} color={red500}/>):<CheckIcon style={iconStyles} color={green500}/>}
+          avatar={message?(message.indexOf('error')>0?(<div><ErrorIcon style={iconStyles} color={red500}/><p>If you are not using Chrome, access  <a href="http://hotels.justbrg.com/" target='_blank'> this page </a> before your search might fixed the issue. </p></div>):<CrossIcon style={iconStyles} color={red500}/>):<CheckIcon style={iconStyles} color={green500}/>}
         />
 
         <CardText>
@@ -96,6 +96,9 @@ export default class HotelListEntry extends Component {
         </CardText>
         <CardActions>
           <FlatButton label="BRG" href={"http://hotelscombined.com"+compete.competeURL} target="_blank" disabled={message?true:false}/>
+          {
+            hotel.officialURL?<FlatButton label="Official" href={hotel.officialURL} target="_blank" />:false
+          }
           {message?false:
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style={{display:'inline-block',}}>
               <input type="hidden" name="cmd" value="_s-xclick" />
