@@ -122,7 +122,7 @@ app.get('/:encode', (req, res) => {
           fileName = hotelConverter[result.hotel_name]
           if(typeof fileName !== 'undefined' && fileName){
             if(fileName.propertyId){
-              result.officialURL = `http://www.starwoodhotels.com/preferredguest/rates/room.html?departureDate=${req.query.checkout}&refPage=property&ctx=search&arrivalDate=${req.query.checkin}&priceMin=&iataNumber=&iATANumber=&sortOrder=&propertyId=${fileName.propertyId}&accessible=&numberOfRooms=1&numberOfAdults=1&bedType=&priceMax=&numberOfChildren=0&nonSmoking=`
+              result.officialURL = `http://www.starwoodhotels.com/preferredguest/rates/room.html?departureDate=${req.query.checkout}&refPage=property&ctx=search&arrivalDate=${req.query.checkin}&priceMin=&iataNumber=&iATANumber=&sortOrder=&propertyId=${fileName.propertyId}&accessible=&numberOfRooms=1&numberOfAdults=1&bedType=&priceMax=&numberOfChildren=0&nonSmoking=&currencyCode=USD`
             }
             fileName = fileName.target;
           }
