@@ -30,7 +30,8 @@ const mapStateToProps = (
 ) => {
   return {
     isLoggedIn: state.account.isAuthenticated,
-    generalFetching: state.search.generalFetching
+    generalFetching: state.search.generalFetching,
+    candidate: state.autocomplete.candidate
   }
 }
 
@@ -42,7 +43,8 @@ export default class App extends Component {
     const {
       isLoggedIn,
       generalFetching,
-      dispatch
+      dispatch,
+      candidate
     } = this.props
 
     const {
@@ -50,7 +52,7 @@ export default class App extends Component {
     } = this.props.location
 
     const barStyle = {
-      backgroundColor: "black"
+      backgroundColor: "black",
     };
 
     const titleStyle = {
@@ -59,28 +61,19 @@ export default class App extends Component {
 
     let searchCreater = bindActionCreators(search, dispatch)
     return (
-
       <MuiThemeProvider>
         <div>
-        <AppBar
-          title="JustBRG"
-          style={barStyle}
-          titleStyle={titleStyle}
-          showMenuIconButton={false}
-          iconElementRight={isLoggedIn ? null : <Login_Register_Buttons /> }
-        />
-
-        {isLoggedIn?<Searchbox searchButtonClick={searchCreater} query={query} generalFetching={generalFetching} dispatch={dispatch}/>:<FreshEntry />}
-        {this.props.children}
+          <AppBar
+            title="JustBRG"
+            style={barStyle}
+            titleStyle={titleStyle}
+            showMenuIconButton={false}
+            iconElementRight={isLoggedIn ? null : <Login_Register_Buttons /> }
+          />
+          {isLoggedIn?<Searchbox searchButtonClick={searchCreater} query={query} generalFetching={generalFetching} candidate={candidate} dispatch={dispatch}/>:<FreshEntry />}
+          {this.props.children}
         </div>
       </MuiThemeProvider>
-      // <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-      // <AppBar title="My AppBar" />
-      // // < div >
-      // //   {isLoggedIn?<Searchbox searchButtonClick={searchCreater} query={query} generalFetching={generalFetching} dispatch={dispatch}/>:<FreshEntry />}
-      // //   {this.props.children}
-      // //   < /div>
-      // </MuiThemeProvider>
     )
     }
   }

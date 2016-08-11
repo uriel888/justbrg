@@ -20,6 +20,7 @@ import {
 //import apis
 import users from "./apis/users.js"
 import search from "./apis/engine.js"
+import autoComplete from "./apis/autoComplete.js"
 // import  users         from "./apis/compile/users.js"
 
 
@@ -75,14 +76,6 @@ app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
 
 //Enable session and password
 if (master.Status === "dev") {
-  //   app.use(session({
-  //     secret: 'yoursecret',
-  //     cookie: {
-  //       path: '/',
-  //       domain: 'localhost:8080',
-  //       maxAge: 1000 * 60 * 24 // 24 hours
-  //     }
-  //   }));
     app.use(function(req, res, next) {
       res.header('Access-Control-Allow-Credentials', true);
       res.header('Access-Control-Allow-Origin', req.headers.origin);
@@ -110,6 +103,7 @@ app.use(passport.session());
 
 //apis for users
 app.use(enableOPTION);
+app.use('/autoComplete', autoComplete);
 app.use('/users', users);
 app.use(isLoggedIn);
 app.use('/search', search);

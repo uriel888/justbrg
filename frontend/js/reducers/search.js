@@ -20,11 +20,20 @@ const initialState = {
   hotelList: [],
   competeList: [],
   redirectList: {},
+  remain: 0,
   error: ""
 }
 
 const search = (state = initialState, action) => {
   switch (action.type) {
+    case 'REMAIN_REQUEST':
+      return Object.assign({}, state, {
+        remain: 1
+      })
+    case 'REMAIN_DONE':
+      return Object.assign({}, state, {
+        remain: 0
+      })
     case ENCRPTY_SEARCH_REQUEST:
       return Object.assign({}, state, {
         generalFetching: true,
@@ -35,6 +44,7 @@ const search = (state = initialState, action) => {
       })
     case ENCRPTY_SEARCH_SUCCESS:
       return Object.assign({}, state, {
+        generalFetching: true,
         encryptedMessage: action.response.message,
         error: ""
       })

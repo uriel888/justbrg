@@ -13,6 +13,22 @@ if (master.Status === 'dev') {
   CRAWLER_ROOT = master.prod_crawler_address
 }
 
+function getAllElementsWithAttribute(source, tag,attribute)
+{
+  var matchingElements = [];
+  var allElements = source.getElementsByTagName(tag);
+  for (var i = 0, n = allElements.length; i < n; i++)
+  {
+    if (allElements[i].getAttribute(attribute) !== null)
+    {
+      // Element exists with attribute. Add to array.
+      matchingElements.push(allElements[i]);
+    }
+  }
+  return matchingElements;
+}
+
+
 function callApiwithPost(endpoint, body, func, mode) {
   let method = 'POST'
   let fullUrl = (endpoint.indexOf(API_ROOT) === -1) ? API_ROOT + endpoint : endpoint
@@ -30,7 +46,13 @@ function callApiwithPost(endpoint, body, func, mode) {
     method = 'GET'
     body = undefined
     headers = undefined
+  } else if(mode == 'autocomplete'){
+    fullUrl = fullUrl+"?hint="+body
+    method = 'GET';
+    body = undefined;
+    headers = undefined;
   }
+
   return fetch(fullUrl, {
       method: method,
       headers: headers,
@@ -69,7 +91,42 @@ function callApiwithPost(endpoint, body, func, mode) {
         let html = json
         let el = document.createElement('html');
         el.innerHTML = html
-        let candidate = el.getElementsByTagName("span")[0];
+
+        let candidate = el.getElementsByTagName("table")[0];
+
+        if(candidate && candidate.getAttribute('data-iscomplete') == 'True'){
+          json = {
+            competeRate: candidate.getAttribute('data-lowestrate'),
+            competeURL: candidate.getAttribute('data-lowestrateredirection')
+          }
+          json.competeRate = "9999"
+          json.competeURL = "NOURL"
+          let list = getAllElementsWithAttribute(el,'tr','data-providerredirecturl');
+          for(let i in list){
+            let text = list[i].innerText;
+            let flag = true;
+            for (let blackList in BRGBlackList) {
+              if (text.indexOf(BRGBlackList[blackList]) > 0) {
+                flag = false;
+                break;
+              }
+            }
+            if(flag){
+              let temp_price = text.substring(text.indexOf('$')).replace( /[^0-9]/g, '')
+              if(temp_price < json.competeRate){
+                json.competeRate = temp_price;
+                json.competeURL = list[i].getAttribute('data-providerredirecturl');
+              }
+            }
+          }
+          return json;
+        }else if(candidate && candidate.getAttribute('data-iscomplete') == 'False'){
+          return Promise.reject({
+            message: "LOADING"
+          })
+        }
+
+        candidate = el.getElementsByTagName("span")[0];
 
         json = {
           competeRate: candidate.getAttribute('data-lowestrate'),

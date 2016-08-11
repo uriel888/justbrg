@@ -1,0 +1,4759 @@
+{
+    "Birmingham": {
+        "region": [
+            "Alabama, United States"
+        ]
+    },
+    "Homewood": {
+        "region": [
+            "Alabama, United States"
+        ]
+    },
+    "Huntsville": {
+        "region": [
+            "Alabama, United States"
+        ]
+    },
+    "Anchorage": {
+        "region": [
+            "Alaska, United States"
+        ]
+    },
+    "Juneau": {
+        "region": [
+            "Alaska, United States"
+        ]
+    },
+    "Chandler": {
+        "region": [
+            "Arizona, United States"
+        ]
+    },
+    "Goodyear": {
+        "region": [
+            "Arizona, United States"
+        ]
+    },
+    "Mesa": {
+        "region": [
+            "Arizona, United States"
+        ]
+    },
+    "Phoenix": {
+        "region": [
+            "Arizona, United States"
+        ]
+    },
+    "Scottsdale": {
+        "region": [
+            "Arizona, United States"
+        ]
+    },
+    "Tempe": {
+        "region": [
+            "Arizona, United States"
+        ]
+    },
+    "Tucson": {
+        "region": [
+            "Arizona, United States"
+        ]
+    },
+    "Bentonville": {
+        "region": [
+            "Arkansas, United States"
+        ]
+    },
+    "Little Rock": {
+        "region": [
+            "Arkansas, United States"
+        ]
+    },
+    "Rogers": {
+        "region": [
+            "Arkansas, United States"
+        ]
+    },
+    "Agoura Hills": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Anaheim": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Bakersfield": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Buena Park": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Carlsbad": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Cerritos": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Costa Mesa": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Culver City": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Cupertino": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Dublin": {
+        "region": [
+            "California, United States",
+            "Ireland"
+        ]
+    },
+    "El Segundo": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Emeryville": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Garden Grove": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Glendale": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Hollywood": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "La Jolla": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Long Beach": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Los Angeles": {
+        "region": [
+            "California, United States",
+            "Chile"
+        ]
+    },
+    "Mammoth Lakes": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Millbrae": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Milpitas": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Mountain View": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Napa": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Newark": {
+        "region": [
+            "California, United States",
+            "Delaware, United States"
+        ]
+    },
+    "Ontario": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Palm Desert": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Palm Springs": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Palmdale": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Palo Alto": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Pasadena": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Petaluma": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Pleasanton": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Pomona": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Rancho Cucamonga": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Rancho Mirage": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Redding": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Sacramento": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "San Diego": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "San Francisco": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "San Gabriel": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "San Jose": {
+        "region": [
+            "California, United States",
+            "Costa Rica"
+        ]
+    },
+    "San Rafael": {
+        "region": [
+            "California, United States",
+            "Mexico"
+        ]
+    },
+    "Santa Monica": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "South San Francisco": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "St. Helena": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Sunnyvale": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Universal City": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Ventura": {
+        "region": [
+            "California, United States"
+        ]
+    },
+    "Aspen": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Aurora": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Avon": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Basalt": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Broomfield": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Centennial": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Denver": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Greenwood Village": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Lakewood": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Lone Tree": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Snowmass Village": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Steamboat Springs": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Superior": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Telluride": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "Westminster": {
+        "region": [
+            "Colorado, United States"
+        ]
+    },
+    "East Hartford": {
+        "region": [
+            "Connecticut, United States"
+        ]
+    },
+    "Meriden": {
+        "region": [
+            "Connecticut, United States"
+        ]
+    },
+    "Rocky Hill": {
+        "region": [
+            "Connecticut, United States"
+        ]
+    },
+    "Stamford": {
+        "region": [
+            "Connecticut, United States"
+        ]
+    },
+    "Windsor Locks": {
+        "region": [
+            "Connecticut, United States"
+        ]
+    },
+    "New Castle": {
+        "region": [
+            "Delaware, United States"
+        ]
+    },
+    "Wilmington": {
+        "region": [
+            "Delaware, United States",
+            "North Carolina, United States"
+        ]
+    },
+    "Washington": {
+        "region": [
+            "District of Columbia, United States",
+            "Utah, United States"
+        ]
+    },
+    "Aventura": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Bal Harbour - Miami Beach": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Cape Coral": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Clearwater Beach": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Cocoa Beach": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Coral Gables": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Dania": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Dania Beach": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Daytona Beach": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Delray Beach": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Doral": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Fort Lauderdale": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Fort Myers": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Fort Walton Beach": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Gainesville": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Jacksonville": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Jacksonville Beach": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Key West": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Lake Buena Vista": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Lake Mary": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Maitland": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Miami": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Miami Beach": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Orlando": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Panama City Beach": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Pensacola": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Plantation": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Port St. Lucie": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Punta Gorda": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Sarasota": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Tallahassee": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Tampa": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Weston": {
+        "region": [
+            "Florida, United States"
+        ]
+    },
+    "Alpharetta": {
+        "region": [
+            "Georgia, United States"
+        ]
+    },
+    "Atlanta": {
+        "region": [
+            "Georgia, United States"
+        ]
+    },
+    "Augusta": {
+        "region": [
+            "Georgia, United States"
+        ]
+    },
+    "Jekyll Island": {
+        "region": [
+            "Georgia, United States"
+        ]
+    },
+    "Savannah": {
+        "region": [
+            "Georgia, United States"
+        ]
+    },
+    "Tamuning": {
+        "region": [
+            "Guam, United States"
+        ]
+    },
+    "Tumon": {
+        "region": [
+            "Guam, United States"
+        ]
+    },
+    "Honolulu": {
+        "region": [
+            "Hawaii, United States"
+        ]
+    },
+    "Kailua-Kona": {
+        "region": [
+            "Hawaii, United States"
+        ]
+    },
+    "Kauai": {
+        "region": [
+            "Hawaii, United States"
+        ]
+    },
+    "Lahaina": {
+        "region": [
+            "Hawaii, United States"
+        ]
+    },
+    "Maui": {
+        "region": [
+            "Hawaii, United States"
+        ]
+    },
+    "Arlington Heights": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Bedford Park": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Bolingbrook": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Buffalo Grove": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Chicago": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Elk Grove Village": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Fairview Heights": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Itasca": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Lisle": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Lombard": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Moline": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Mount Prospect": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Northbrook": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Oak Brook": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Peoria": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Rolling Meadows": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Rosemont": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Schiller Park": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Westchester": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Wheeling": {
+        "region": [
+            "Illinois, United States"
+        ]
+    },
+    "Elkhart": {
+        "region": [
+            "Indiana, United States"
+        ]
+    },
+    "Indianapolis": {
+        "region": [
+            "Indiana, United States"
+        ]
+    },
+    "Jeffersonville": {
+        "region": [
+            "Indiana, United States"
+        ]
+    },
+    "South Bend": {
+        "region": [
+            "Indiana, United States"
+        ]
+    },
+    "West Lafayette": {
+        "region": [
+            "Indiana, United States"
+        ]
+    },
+    "Iowa City": {
+        "region": [
+            "Iowa, United States"
+        ]
+    },
+    "West Des Moines": {
+        "region": [
+            "Iowa, United States"
+        ]
+    },
+    "Leawood": {
+        "region": [
+            "Kansas, United States"
+        ]
+    },
+    "Manhattan": {
+        "region": [
+            "Kansas, United States"
+        ]
+    },
+    "Mission": {
+        "region": [
+            "Kansas, United States"
+        ]
+    },
+    "Overland Park": {
+        "region": [
+            "Kansas, United States"
+        ]
+    },
+    "Wichita": {
+        "region": [
+            "Kansas, United States"
+        ]
+    },
+    "Lexington": {
+        "region": [
+            "Kentucky, United States",
+            "Massachusetts, United States"
+        ]
+    },
+    "Louisville": {
+        "region": [
+            "Kentucky, United States"
+        ]
+    },
+    "Newport": {
+        "region": [
+            "Kentucky, United States"
+        ]
+    },
+    "Metairie": {
+        "region": [
+            "Louisiana, United States"
+        ]
+    },
+    "New Orleans": {
+        "region": [
+            "Louisiana, United States"
+        ]
+    },
+    "Bangor": {
+        "region": [
+            "Maine, United States"
+        ]
+    },
+    "Portland": {
+        "region": [
+            "Maine, United States",
+            "Oregon, United States"
+        ]
+    },
+    "Annapolis": {
+        "region": [
+            "Maryland, United States"
+        ]
+    },
+    "Baltimore": {
+        "region": [
+            "Maryland, United States"
+        ]
+    },
+    "Beltsville": {
+        "region": [
+            "Maryland, United States"
+        ]
+    },
+    "Bethesda": {
+        "region": [
+            "Maryland, United States"
+        ]
+    },
+    "Columbia": {
+        "region": [
+            "Maryland, United States",
+            "South Carolina, United States"
+        ]
+    },
+    "Hanover": {
+        "region": [
+            "Maryland, United States"
+        ]
+    },
+    "Linthicum": {
+        "region": [
+            "Maryland, United States"
+        ]
+    },
+    "Linthicum Heights": {
+        "region": [
+            "Maryland, United States"
+        ]
+    },
+    "National Harbor": {
+        "region": [
+            "Maryland, United States"
+        ]
+    },
+    "Rockville": {
+        "region": [
+            "Maryland, United States"
+        ]
+    },
+    "Silver Spring": {
+        "region": [
+            "Maryland, United States"
+        ]
+    },
+    "Towson": {
+        "region": [
+            "Maryland, United States"
+        ]
+    },
+    "Boston": {
+        "region": [
+            "Massachusetts, United States"
+        ]
+    },
+    "Cambridge": {
+        "region": [
+            "Canada",
+            "Massachusetts, United States"
+        ]
+    },
+    "Eastham": {
+        "region": [
+            "Massachusetts, United States"
+        ]
+    },
+    "Framingham": {
+        "region": [
+            "Massachusetts, United States"
+        ]
+    },
+    "Lenox": {
+        "region": [
+            "Massachusetts, United States"
+        ]
+    },
+    "Needham": {
+        "region": [
+            "Massachusetts, United States"
+        ]
+    },
+    "North Chelmsford": {
+        "region": [
+            "Massachusetts, United States"
+        ]
+    },
+    "Norwood": {
+        "region": [
+            "Massachusetts, United States"
+        ]
+    },
+    "Revere": {
+        "region": [
+            "Massachusetts, United States"
+        ]
+    },
+    "Springfield": {
+        "region": [
+            "Massachusetts, United States"
+        ]
+    },
+    "Wakefield": {
+        "region": [
+            "Massachusetts, United States"
+        ]
+    },
+    "Waltham": {
+        "region": [
+            "Massachusetts, United States"
+        ]
+    },
+    "Ann Arbor": {
+        "region": [
+            "Michigan, United States"
+        ]
+    },
+    "Detroit": {
+        "region": [
+            "Michigan, United States"
+        ]
+    },
+    "Kalamazoo": {
+        "region": [
+            "Michigan, United States"
+        ]
+    },
+    "Novi": {
+        "region": [
+            "Michigan, United States"
+        ]
+    },
+    "Romulus": {
+        "region": [
+            "Michigan, United States"
+        ]
+    },
+    "Saginaw": {
+        "region": [
+            "Michigan, United States"
+        ]
+    },
+    "Southfield": {
+        "region": [
+            "Michigan, United States"
+        ]
+    },
+    "Troy": {
+        "region": [
+            "Michigan, United States"
+        ]
+    },
+    "Duluth": {
+        "region": [
+            "Minnesota, United States"
+        ]
+    },
+    "Edina": {
+        "region": [
+            "Minnesota, United States"
+        ]
+    },
+    "Minneapolis": {
+        "region": [
+            "Minnesota, United States"
+        ]
+    },
+    "Minnetonka": {
+        "region": [
+            "Minnesota, United States"
+        ]
+    },
+    "Richfield": {
+        "region": [
+            "Minnesota, United States"
+        ]
+    },
+    "Woodbury": {
+        "region": [
+            "Minnesota, United States"
+        ]
+    },
+    "Jackson": {
+        "region": [
+            "Mississippi, United States"
+        ]
+    },
+    "Kansas City": {
+        "region": [
+            "Missouri, United States"
+        ]
+    },
+    "St. Louis": {
+        "region": [
+            "Missouri, United States"
+        ]
+    },
+    "Bozeman": {
+        "region": [
+            "Montana, United States"
+        ]
+    },
+    "Omaha": {
+        "region": [
+            "Nebraska, United States"
+        ]
+    },
+    "Crystal Bay": {
+        "region": [
+            "Nevada, United States"
+        ]
+    },
+    "Henderson": {
+        "region": [
+            "Nevada, United States"
+        ]
+    },
+    "Las Vegas": {
+        "region": [
+            "Nevada, United States"
+        ]
+    },
+    "Lebanon": {
+        "region": [
+            "New Hampshire, United States"
+        ]
+    },
+    "Portsmouth": {
+        "region": [
+            "New Hampshire, United States"
+        ]
+    },
+    "Atlantic City": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Eatontown": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Edison": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Ewing": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Harrison": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Hoboken": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Jersey City": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Mahwah": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Morristown": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Mount Laurel": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Parsippany": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Princeton": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Secaucus": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Weehawken": {
+        "region": [
+            "New Jersey, United States"
+        ]
+    },
+    "Albuquerque": {
+        "region": [
+            "New Mexico, United States"
+        ]
+    },
+    "Santa Fe": {
+        "region": [
+            "New Mexico, United States"
+        ]
+    },
+    "Brooklyn": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "Buffalo": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "Elmhurst": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "Flushing": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "Jamaica": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "Long Island City": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "New York": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "Newburgh": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "Niagara Falls": {
+        "region": [
+            "Canada",
+            "New York, United States"
+        ]
+    },
+    "Plainview": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "Spring Valley": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "Syracuse": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "Tarrytown": {
+        "region": [
+            "New York, United States"
+        ]
+    },
+    "Asheville": {
+        "region": [
+            "North Carolina, United States"
+        ]
+    },
+    "Chapel Hill": {
+        "region": [
+            "North Carolina, United States"
+        ]
+    },
+    "Charlotte": {
+        "region": [
+            "North Carolina, United States"
+        ]
+    },
+    "Durham": {
+        "region": [
+            "North Carolina, United States"
+        ]
+    },
+    "Greensboro": {
+        "region": [
+            "North Carolina, United States"
+        ]
+    },
+    "Huntersville": {
+        "region": [
+            "North Carolina, United States"
+        ]
+    },
+    "Morrisville": {
+        "region": [
+            "North Carolina, United States"
+        ]
+    },
+    "Pineville": {
+        "region": [
+            "North Carolina, United States"
+        ]
+    },
+    "Raleigh": {
+        "region": [
+            "North Carolina, United States"
+        ]
+    },
+    "Fargo": {
+        "region": [
+            "North Dakota, United States"
+        ]
+    },
+    "West Fargo": {
+        "region": [
+            "North Dakota, United States"
+        ]
+    },
+    "Williston": {
+        "region": [
+            "North Dakota, United States"
+        ]
+    },
+    "Beachwood": {
+        "region": [
+            "Ohio, United States"
+        ]
+    },
+    "Cincinnati": {
+        "region": [
+            "Ohio, United States"
+        ]
+    },
+    "Cleveland": {
+        "region": [
+            "Ohio, United States"
+        ]
+    },
+    "Columbus": {
+        "region": [
+            "Ohio, United States"
+        ]
+    },
+    "Cuyahoga Falls": {
+        "region": [
+            "Ohio, United States"
+        ]
+    },
+    "North Olmsted": {
+        "region": [
+            "Ohio, United States"
+        ]
+    },
+    "West Chester": {
+        "region": [
+            "Ohio, United States"
+        ]
+    },
+    "Westerville": {
+        "region": [
+            "Ohio, United States"
+        ]
+    },
+    "Midwest City": {
+        "region": [
+            "Oklahoma, United States"
+        ]
+    },
+    "Oklahoma City": {
+        "region": [
+            "Oklahoma, United States"
+        ]
+    },
+    "Tulsa": {
+        "region": [
+            "Oklahoma, United States"
+        ]
+    },
+    "Hillsboro": {
+        "region": [
+            "Oregon, United States"
+        ]
+    },
+    "Coraopolis": {
+        "region": [
+            "Pennsylvania, United States"
+        ]
+    },
+    "Erie": {
+        "region": [
+            "Pennsylvania, United States"
+        ]
+    },
+    "Frazer": {
+        "region": [
+            "Pennsylvania, United States"
+        ]
+    },
+    "Harrisburg": {
+        "region": [
+            "Pennsylvania, United States"
+        ]
+    },
+    "King of Prussia": {
+        "region": [
+            "Pennsylvania, United States"
+        ]
+    },
+    "Langhorne": {
+        "region": [
+            "Pennsylvania, United States"
+        ]
+    },
+    "Philadelphia": {
+        "region": [
+            "Pennsylvania, United States"
+        ]
+    },
+    "Pittsburgh": {
+        "region": [
+            "Pennsylvania, United States"
+        ]
+    },
+    "Scranton": {
+        "region": [
+            "Pennsylvania, United States"
+        ]
+    },
+    "York": {
+        "region": [
+            "Pennsylvania, United States"
+        ]
+    },
+    "Caguas": {
+        "region": [
+            "Puerto Rico, United States"
+        ]
+    },
+    "Rio Grande": {
+        "region": [
+            "Puerto Rico, United States"
+        ]
+    },
+    "San Juan": {
+        "region": [
+            "Puerto Rico, United States"
+        ]
+    },
+    "Vieques Island": {
+        "region": [
+            "Puerto Rico, United States"
+        ]
+    },
+    "Warwick": {
+        "region": [
+            "Rhode Island, United States"
+        ]
+    },
+    "Charleston": {
+        "region": [
+            "South Carolina, United States",
+            "West Virginia, United States"
+        ]
+    },
+    "Greenville": {
+        "region": [
+            "South Carolina, United States"
+        ]
+    },
+    "Hilton Head Island": {
+        "region": [
+            "South Carolina, United States"
+        ]
+    },
+    "Myrtle Beach": {
+        "region": [
+            "South Carolina, United States"
+        ]
+    },
+    "North Charleston": {
+        "region": [
+            "South Carolina, United States"
+        ]
+    },
+    "Spartanburg": {
+        "region": [
+            "South Carolina, United States"
+        ]
+    },
+    "Sioux Falls": {
+        "region": [
+            "South Dakota, United States"
+        ]
+    },
+    "Brentwood": {
+        "region": [
+            "Tennessee, United States"
+        ]
+    },
+    "Chattanooga": {
+        "region": [
+            "Tennessee, United States"
+        ]
+    },
+    "Franklin": {
+        "region": [
+            "Tennessee, United States"
+        ]
+    },
+    "Knoxville": {
+        "region": [
+            "Tennessee, United States"
+        ]
+    },
+    "Memphis": {
+        "region": [
+            "Tennessee, United States"
+        ]
+    },
+    "Nashville": {
+        "region": [
+            "Tennessee, United States"
+        ]
+    },
+    "Allen": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Amarillo": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Arlington": {
+        "region": [
+            "Texas, United States",
+            "Virginia, United States"
+        ]
+    },
+    "Austin": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "College Station": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Coppell": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Corpus Christi": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Dallas": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "El Paso": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Fort Worth": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Frisco": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Galveston": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Georgetown": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Houston": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Irving": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Katy": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Lubbock": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "McAllen": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "McKinney": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Midland": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Plano": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Richardson": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Round Rock": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "San Antonio": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Shenandoah": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "The Woodlands": {
+        "region": [
+            "Texas, United States"
+        ]
+    },
+    "Park City": {
+        "region": [
+            "Utah, United States"
+        ]
+    },
+    "Salt Lake City": {
+        "region": [
+            "Utah, United States"
+        ]
+    },
+    "Burlington": {
+        "region": [
+            "Vermont, United States"
+        ]
+    },
+    "Manchester Village": {
+        "region": [
+            "Vermont, United States"
+        ]
+    },
+    "St. John": {
+        "region": [
+            "Virgin Islands, United States"
+        ]
+    },
+    "Alexandria": {
+        "region": [
+            "Egypt",
+            "Virginia, United States"
+        ]
+    },
+    "Ashburn": {
+        "region": [
+            "Virginia, United States"
+        ]
+    },
+    "Chesapeake": {
+        "region": [
+            "Virginia, United States"
+        ]
+    },
+    "Falls Church": {
+        "region": [
+            "Virginia, United States"
+        ]
+    },
+    "Glen Allen": {
+        "region": [
+            "Virginia, United States"
+        ]
+    },
+    "Herndon": {
+        "region": [
+            "Virginia, United States"
+        ]
+    },
+    "Norfolk": {
+        "region": [
+            "Virginia, United States"
+        ]
+    },
+    "Reston": {
+        "region": [
+            "Virginia, United States"
+        ]
+    },
+    "Richmond": {
+        "region": [
+            "Canada",
+            "Virginia, United States"
+        ]
+    },
+    "Roanoke": {
+        "region": [
+            "Virginia, United States"
+        ]
+    },
+    "Tysons": {
+        "region": [
+            "Virginia, United States"
+        ]
+    },
+    "Virginia Beach": {
+        "region": [
+            "Virginia, United States"
+        ]
+    },
+    "Winchester": {
+        "region": [
+            "Virginia, United States"
+        ]
+    },
+    "Bellevue": {
+        "region": [
+            "Washington, United States"
+        ]
+    },
+    "Bellingham": {
+        "region": [
+            "Washington, United States"
+        ]
+    },
+    "Des Moines": {
+        "region": [
+            "Washington, United States"
+        ]
+    },
+    "Redmond": {
+        "region": [
+            "Washington, United States"
+        ]
+    },
+    "SeaTac": {
+        "region": [
+            "Washington, United States"
+        ]
+    },
+    "Seattle": {
+        "region": [
+            "Washington, United States"
+        ]
+    },
+    "Brookfield": {
+        "region": [
+            "Wisconsin, United States"
+        ]
+    },
+    "Green Bay": {
+        "region": [
+            "Wisconsin, United States"
+        ]
+    },
+    "Madison": {
+        "region": [
+            "Wisconsin, United States"
+        ]
+    },
+    "Milwaukee": {
+        "region": [
+            "Wisconsin, United States"
+        ]
+    },
+    "Calgary": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Edmonton": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Grande Prairie": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Nisku": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Red Deer": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Sherwood Park": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Burnaby": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Kamloops": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Kelowna": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Prince George": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Surrey": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Vancouver": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Victoria": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Whistler": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Winnipeg": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Edmundston": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Moncton": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "St. Johns": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Halifax": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Barrie": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Blue Mountains": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Brantford": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Chatham-Kent": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Concord": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Hamilton": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Kingston": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "London": {
+        "region": [
+            "Canada",
+            "United Kingdom"
+        ]
+    },
+    "Mississauga": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Ottawa": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Point Edward": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Richmond Hill": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Thorold": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Toronto": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Vaughan": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Waterloo": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Gatineau": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Laval": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Levis": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Mont Tremblant": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Montreal": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Quebec City": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Regina": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Saskatoon": {
+        "region": [
+            "Canada"
+        ]
+    },
+    "Grand Cayman": {
+        "region": [
+            "Cayman Islands"
+        ]
+    },
+    "Havana": {
+        "region": [
+            "Cuba"
+        ]
+    },
+    "Punta Cana": {
+        "region": [
+            "Dominican Republic"
+        ]
+    },
+    "Santo Domingo": {
+        "region": [
+            "Dominican Republic"
+        ]
+    },
+    "Grenada": {
+        "region": [
+            "Grenada"
+        ]
+    },
+    "Tijuana": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Los Cabos": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Campeche": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Uayamon": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Chihuahua": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Saltillo": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Acapulco": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Guadalajara": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Puerto Vallarta": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Mexico City": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Punta de Mita": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Guadalupe": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Monterrey": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "San Pedro Garza Garcia": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Puerto Escondido": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Puebla": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Queretaro": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Cancun": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Cozumel": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Isla de Cozumel": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Puerto Juarez": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Riviera Maya": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Hermosillo": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Boca del Rio": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Coatzacoalcos": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Monte Gordo": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Poza Rica": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Merida": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Santa Rosa": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Temozon Sur": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "Tixkokob": {
+        "region": [
+            "Mexico"
+        ]
+    },
+    "St. Maarten": {
+        "region": [
+            "Sint Maarten"
+        ]
+    },
+    "Algiers": {
+        "region": [
+            "Algeria"
+        ]
+    },
+    "Annaba": {
+        "region": [
+            "Algeria"
+        ]
+    },
+    "Oran": {
+        "region": [
+            "Algeria"
+        ]
+    },
+    "Plateau de Serpent": {
+        "region": [
+            "Djibouti"
+        ]
+    },
+    "Cairo": {
+        "region": [
+            "Egypt"
+        ]
+    },
+    "Dahab": {
+        "region": [
+            "Egypt"
+        ]
+    },
+    "El Gouna": {
+        "region": [
+            "Egypt"
+        ]
+    },
+    "Hurghada": {
+        "region": [
+            "Egypt"
+        ]
+    },
+    "Red Sea": {
+        "region": [
+            "Egypt"
+        ]
+    },
+    "Sharm El Sheikh": {
+        "region": [
+            "Egypt"
+        ]
+    },
+    "Addis Ababa": {
+        "region": [
+            "Ethiopia"
+        ]
+    },
+    "Libreville": {
+        "region": [
+            "Gabon"
+        ]
+    },
+    "Conakry": {
+        "region": [
+            "Guinea"
+        ]
+    },
+    "Nairobi": {
+        "region": [
+            "Kenya"
+        ]
+    },
+    "Tripoli": {
+        "region": [
+            "Libya"
+        ]
+    },
+    "Bamako": {
+        "region": [
+            "Mali"
+        ]
+    },
+    "Nouakchott": {
+        "region": [
+            "Mauritania"
+        ]
+    },
+    "Le Morne": {
+        "region": [
+            "Mauritius"
+        ]
+    },
+    "Pointe aux Piments": {
+        "region": [
+            "Mauritius"
+        ]
+    },
+    "St. Felix": {
+        "region": [
+            "Mauritius"
+        ]
+    },
+    "Turtle Bay": {
+        "region": [
+            "Mauritius"
+        ]
+    },
+    "Casablanca": {
+        "region": [
+            "Morocco"
+        ]
+    },
+    "Marrakech": {
+        "region": [
+            "Morocco"
+        ]
+    },
+    "Abuja": {
+        "region": [
+            "Nigeria"
+        ]
+    },
+    "Ikot Ekpene": {
+        "region": [
+            "Nigeria"
+        ]
+    },
+    "Uyo": {
+        "region": [
+            "Nigeria"
+        ]
+    },
+    "Ikeja": {
+        "region": [
+            "Nigeria"
+        ]
+    },
+    "Lagos": {
+        "region": [
+            "Nigeria"
+        ]
+    },
+    "Ibadan": {
+        "region": [
+            "Nigeria"
+        ]
+    },
+    "Port Harcourt": {
+        "region": [
+            "Nigeria"
+        ]
+    },
+    "Kigali": {
+        "region": [
+            "Rwanda"
+        ]
+    },
+    "Dakar": {
+        "region": [
+            "Senegal"
+        ]
+    },
+    "Mahe": {
+        "region": [
+            "Seychelles"
+        ]
+    },
+    "Cape Town": {
+        "region": [
+            "South Africa"
+        ]
+    },
+    "Johannesburg": {
+        "region": [
+            "South Africa"
+        ]
+    },
+    "Pretoria": {
+        "region": [
+            "South Africa"
+        ]
+    },
+    "Juba": {
+        "region": [
+            "South Sudan"
+        ]
+    },
+    "Dar es Salaam": {
+        "region": [
+            "Tanzania, United Republic Of"
+        ]
+    },
+    "Tunis": {
+        "region": [
+            "Tunisia"
+        ]
+    },
+    "Kampala": {
+        "region": [
+            "Uganda"
+        ]
+    },
+    "Sydney": {
+        "region": [
+            "Australia"
+        ]
+    },
+    "Brisbane": {
+        "region": [
+            "Australia"
+        ]
+    },
+    "Coolum": {
+        "region": [
+            "Australia"
+        ]
+    },
+    "Gold Coast": {
+        "region": [
+            "Australia"
+        ]
+    },
+    "Port Douglas": {
+        "region": [
+            "Australia"
+        ]
+    },
+    "Adelaide": {
+        "region": [
+            "Australia"
+        ]
+    },
+    "Melbourne": {
+        "region": [
+            "Australia"
+        ]
+    },
+    "Perth": {
+        "region": [
+            "Australia"
+        ]
+    },
+    "Baluka": {
+        "region": [
+            "Bangladesh"
+        ]
+    },
+    "Dhaka": {
+        "region": [
+            "Bangladesh"
+        ]
+    },
+    "Paro": {
+        "region": [
+            "Bhutan"
+        ]
+    },
+    "Thimphu": {
+        "region": [
+            "Bhutan"
+        ]
+    },
+    "Siem Reap": {
+        "region": [
+            "Cambodia"
+        ]
+    },
+    "Bengbu": {
+        "region": [
+            "China"
+        ]
+    },
+    "Chuzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Hefei": {
+        "region": [
+            "China"
+        ]
+    },
+    "Huangshan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Lu'an": {
+        "region": [
+            "China"
+        ]
+    },
+    "Maanshan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Wuhu": {
+        "region": [
+            "China"
+        ]
+    },
+    "Beijing": {
+        "region": [
+            "China"
+        ]
+    },
+    "Chongqing": {
+        "region": [
+            "China"
+        ]
+    },
+    "Fuqing": {
+        "region": [
+            "China"
+        ]
+    },
+    "Fuzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Putian": {
+        "region": [
+            "China"
+        ]
+    },
+    "Quanzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Shishi": {
+        "region": [
+            "China"
+        ]
+    },
+    "Xiamen": {
+        "region": [
+            "China"
+        ]
+    },
+    "Zhangzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Dongguan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Foshan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Guangzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Heshan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Heyuan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Huizhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Qingyuan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Shantou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Shanwei": {
+        "region": [
+            "China"
+        ]
+    },
+    "Shenzhen": {
+        "region": [
+            "China"
+        ]
+    },
+    "Yunfu": {
+        "region": [
+            "China"
+        ]
+    },
+    "Zhanjiang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Zhongshan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Zhuhai": {
+        "region": [
+            "China"
+        ]
+    },
+    "Guilin": {
+        "region": [
+            "China"
+        ]
+    },
+    "Bijie": {
+        "region": [
+            "China"
+        ]
+    },
+    "Guiyang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Renhuai": {
+        "region": [
+            "China"
+        ]
+    },
+    "Zunyi": {
+        "region": [
+            "China"
+        ]
+    },
+    "Haikou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Lingshui": {
+        "region": [
+            "China"
+        ]
+    },
+    "Sanya": {
+        "region": [
+            "China"
+        ]
+    },
+    "Sanya Bay": {
+        "region": [
+            "China"
+        ]
+    },
+    "Sanya Haitang Bay": {
+        "region": [
+            "China"
+        ]
+    },
+    "Sanya Yalong Bay": {
+        "region": [
+            "China"
+        ]
+    },
+    "Wanning": {
+        "region": [
+            "China"
+        ]
+    },
+    "Wanning Shenzhou Peninsula": {
+        "region": [
+            "China"
+        ]
+    },
+    "Wanning Shimei Bay": {
+        "region": [
+            "China"
+        ]
+    },
+    "Langfang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Qinhuangdao": {
+        "region": [
+            "China"
+        ]
+    },
+    "Shijiazhuang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Zhangjiakou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Daqing": {
+        "region": [
+            "China"
+        ]
+    },
+    "Harbin": {
+        "region": [
+            "China"
+        ]
+    },
+    "Kaifeng": {
+        "region": [
+            "China"
+        ]
+    },
+    "Luohe": {
+        "region": [
+            "China"
+        ]
+    },
+    "Luoyang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Xinxiang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Zhengzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Macheng": {
+        "region": [
+            "China"
+        ]
+    },
+    "Wuhan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Changde": {
+        "region": [
+            "China"
+        ]
+    },
+    "Changsha": {
+        "region": [
+            "China"
+        ]
+    },
+    "Hengyang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Xiangtan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Yangshahu": {
+        "region": [
+            "China"
+        ]
+    },
+    "Zhuzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Hohhot": {
+        "region": [
+            "China"
+        ]
+    },
+    "Changzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Jiangyin": {
+        "region": [
+            "China"
+        ]
+    },
+    "Nanjing": {
+        "region": [
+            "China"
+        ]
+    },
+    "Qidong": {
+        "region": [
+            "China"
+        ]
+    },
+    "Suzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Wuxi": {
+        "region": [
+            "China"
+        ]
+    },
+    "Yancheng": {
+        "region": [
+            "China"
+        ]
+    },
+    "Yangzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Yixing": {
+        "region": [
+            "China"
+        ]
+    },
+    "Zhenjiang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Nanchang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Pingxiang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Changbaishan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Changchun": {
+        "region": [
+            "China"
+        ]
+    },
+    "Benxi": {
+        "region": [
+            "China"
+        ]
+    },
+    "Dalian": {
+        "region": [
+            "China"
+        ]
+    },
+    "Jinzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Shenyang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Yinchuan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Xining": {
+        "region": [
+            "China"
+        ]
+    },
+    "Xian": {
+        "region": [
+            "China"
+        ]
+    },
+    "Haiyang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Jinan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Qingdao": {
+        "region": [
+            "China"
+        ]
+    },
+    "Rizhao": {
+        "region": [
+            "China"
+        ]
+    },
+    "Taian": {
+        "region": [
+            "China"
+        ]
+    },
+    "Weifang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Yantai": {
+        "region": [
+            "China"
+        ]
+    },
+    "Zibo": {
+        "region": [
+            "China"
+        ]
+    },
+    "Shanghai": {
+        "region": [
+            "China"
+        ]
+    },
+    "Jinzhong": {
+        "region": [
+            "China"
+        ]
+    },
+    "Shuozhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Xiaoyi": {
+        "region": [
+            "China"
+        ]
+    },
+    "Yuncheng": {
+        "region": [
+            "China"
+        ]
+    },
+    "Chengdu": {
+        "region": [
+            "China"
+        ]
+    },
+    "Deyang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Jiuzhaigou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Leshan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Yibin": {
+        "region": [
+            "China"
+        ]
+    },
+    "Tianjin": {
+        "region": [
+            "China"
+        ]
+    },
+    "Lhasa": {
+        "region": [
+            "China"
+        ]
+    },
+    "Urumqi": {
+        "region": [
+            "China"
+        ]
+    },
+    "Jinghong": {
+        "region": [
+            "China"
+        ]
+    },
+    "Lijiang": {
+        "region": [
+            "China"
+        ]
+    },
+    "Mile": {
+        "region": [
+            "China"
+        ]
+    },
+    "Tengchong": {
+        "region": [
+            "China"
+        ]
+    },
+    "Hangzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Huzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Ningbo": {
+        "region": [
+            "China"
+        ]
+    },
+    "Taizhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Taizhou Wenling": {
+        "region": [
+            "China"
+        ]
+    },
+    "Wenzhou": {
+        "region": [
+            "China"
+        ]
+    },
+    "Zhoushan": {
+        "region": [
+            "China"
+        ]
+    },
+    "Mamanuca Islands": {
+        "region": [
+            "Fiji"
+        ]
+    },
+    "Nadi": {
+        "region": [
+            "Fiji"
+        ]
+    },
+    "Bora Bora": {
+        "region": [
+            "French Polynesia"
+        ]
+    },
+    "Tahiti": {
+        "region": [
+            "French Polynesia"
+        ]
+    },
+    "Hong Kong": {
+        "region": [
+            "Hong Kong"
+        ]
+    },
+    "Hyderabad": {
+        "region": [
+            "India"
+        ]
+    },
+    "Vijayawada": {
+        "region": [
+            "India"
+        ]
+    },
+    "Visakhapatnam": {
+        "region": [
+            "India"
+        ]
+    },
+    "Bodhgaya": {
+        "region": [
+            "India"
+        ]
+    },
+    "Calangute": {
+        "region": [
+            "India"
+        ]
+    },
+    "Goa": {
+        "region": [
+            "India"
+        ]
+    },
+    "Ahmedabad": {
+        "region": [
+            "India"
+        ]
+    },
+    "Gandhinagar": {
+        "region": [
+            "India"
+        ]
+    },
+    "Vadodara": {
+        "region": [
+            "India"
+        ]
+    },
+    "Gurgaon": {
+        "region": [
+            "India"
+        ]
+    },
+    "Sohna-Gurgaon": {
+        "region": [
+            "India"
+        ]
+    },
+    "Sonmarg": {
+        "region": [
+            "India"
+        ]
+    },
+    "Srinagar": {
+        "region": [
+            "India"
+        ]
+    },
+    "Bengaluru": {
+        "region": [
+            "India"
+        ]
+    },
+    "Bekal": {
+        "region": [
+            "India"
+        ]
+    },
+    "Kochi": {
+        "region": [
+            "India"
+        ]
+    },
+    "Thavanakkadavu": {
+        "region": [
+            "India"
+        ]
+    },
+    "Bhopal": {
+        "region": [
+            "India"
+        ]
+    },
+    "Aurangabad": {
+        "region": [
+            "India"
+        ]
+    },
+    "Mahabaleshwar": {
+        "region": [
+            "India"
+        ]
+    },
+    "Mumbai": {
+        "region": [
+            "India"
+        ]
+    },
+    "Nagpur": {
+        "region": [
+            "India"
+        ]
+    },
+    "Pune": {
+        "region": [
+            "India"
+        ]
+    },
+    "New Delhi": {
+        "region": [
+            "India"
+        ]
+    },
+    "Amritsar": {
+        "region": [
+            "India"
+        ]
+    },
+    "District Mohali": {
+        "region": [
+            "India"
+        ]
+    },
+    "Zirakpur": {
+        "region": [
+            "India"
+        ]
+    },
+    "Jaipur": {
+        "region": [
+            "India"
+        ]
+    },
+    "Pushkar": {
+        "region": [
+            "India"
+        ]
+    },
+    "Chennai": {
+        "region": [
+            "India"
+        ]
+    },
+    "Coimbatore": {
+        "region": [
+            "India"
+        ]
+    },
+    "Tiruchirappalli": {
+        "region": [
+            "India"
+        ]
+    },
+    "Agra": {
+        "region": [
+            "India"
+        ]
+    },
+    "Lucknow": {
+        "region": [
+            "India"
+        ]
+    },
+    "Noida": {
+        "region": [
+            "India"
+        ]
+    },
+    "Dehradun": {
+        "region": [
+            "India"
+        ]
+    },
+    "Narender Nagar": {
+        "region": [
+            "India"
+        ]
+    },
+    "Kolkata": {
+        "region": [
+            "India"
+        ]
+    },
+    "Denpasar": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Jimbaran": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Kuta": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "North Kuta, Badung": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Nusa Dua": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Ubud": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Surabaya": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Jakarta": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Jakarta Pusat": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Bandar": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Manado": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Bintan": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Makassar": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Bandung": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Lombok": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Yogyakarta": {
+        "region": [
+            "Indonesia"
+        ]
+    },
+    "Nagoya": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Urayasu": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Hiroshima City": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Abuta-gun": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Yoichi-gun": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Awaji": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Kobe": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Yokohama": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Kyoto": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Sendai": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Miyazaki": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Kunigami-gun": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Osaka": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Chiyoda-ku": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Meguro-ku": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Minato-ku": {
+        "region": [
+            "Japan"
+        ]
+    },
+    "Busan": {
+        "region": [
+            "Korea (South)"
+        ]
+    },
+    "Daegu": {
+        "region": [
+            "Korea (South)"
+        ]
+    },
+    "Incheon": {
+        "region": [
+            "Korea (South)"
+        ]
+    },
+    "Seoul": {
+        "region": [
+            "Korea (South)"
+        ]
+    },
+    "Cotai": {
+        "region": [
+            "Macau"
+        ]
+    },
+    "Iskandar": {
+        "region": [
+            "Malaysia"
+        ]
+    },
+    "Kota Kinabalu": {
+        "region": [
+            "Malaysia"
+        ]
+    },
+    "Kuala Lumpur": {
+        "region": [
+            "Malaysia"
+        ]
+    },
+    "Langkawi": {
+        "region": [
+            "Malaysia"
+        ]
+    },
+    "Penang": {
+        "region": [
+            "Malaysia"
+        ]
+    },
+    "Pengerang": {
+        "region": [
+            "Malaysia"
+        ]
+    },
+    "Petaling Jaya": {
+        "region": [
+            "Malaysia"
+        ]
+    },
+    "Puchong": {
+        "region": [
+            "Malaysia"
+        ]
+    },
+    "Putrajaya": {
+        "region": [
+            "Malaysia"
+        ]
+    },
+    "Sandakan": {
+        "region": [
+            "Malaysia"
+        ]
+    },
+    "Seri Kembangan": {
+        "region": [
+            "Malaysia"
+        ]
+    },
+    "North Ari Atoll": {
+        "region": [
+            "Maldives"
+        ]
+    },
+    "North Male Atoll": {
+        "region": [
+            "Maldives"
+        ]
+    },
+    "Vommuli": {
+        "region": [
+            "Maldives"
+        ]
+    },
+    "Yangon": {
+        "region": [
+            "Myanmar"
+        ]
+    },
+    "Kathmandu": {
+        "region": [
+            "Nepal"
+        ]
+    },
+    "Nagarkot": {
+        "region": [
+            "Nepal"
+        ]
+    },
+    "Bourail": {
+        "region": [
+            "New Caledonia"
+        ]
+    },
+    "Ile des Pins": {
+        "region": [
+            "New Caledonia"
+        ]
+    },
+    "Noumea": {
+        "region": [
+            "New Caledonia"
+        ]
+    },
+    "Koror": {
+        "region": [
+            "Palau"
+        ]
+    },
+    "Cebu": {
+        "region": [
+            "Philippines"
+        ]
+    },
+    "Manila": {
+        "region": [
+            "Philippines"
+        ]
+    },
+    "Apia": {
+        "region": [
+            "Samoa"
+        ]
+    },
+    "Mulifanua": {
+        "region": [
+            "Samoa"
+        ]
+    },
+    "Singapore": {
+        "region": [
+            "Singapore"
+        ]
+    },
+    "Colombo": {
+        "region": [
+            "Sri Lanka"
+        ]
+    },
+    "Kosgoda": {
+        "region": [
+            "Sri Lanka"
+        ]
+    },
+    "Hsinchu County": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Hualian": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Hualien": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Hualien City": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Kinmen": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Magong": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "New Taipei City": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Taichung": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Tainan": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Taipei": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Taitung": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Taoyuan": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Yilan": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Zhubei City": {
+        "region": [
+            "Taiwan"
+        ]
+    },
+    "Bangkok": {
+        "region": [
+            "Thailand"
+        ]
+    },
+    "Chiang Mai": {
+        "region": [
+            "Thailand"
+        ]
+    },
+    "Chiang Rai": {
+        "region": [
+            "Thailand"
+        ]
+    },
+    "Hua Hin": {
+        "region": [
+            "Thailand"
+        ]
+    },
+    "Khao Lak": {
+        "region": [
+            "Thailand"
+        ]
+    },
+    "Koh Samui": {
+        "region": [
+            "Thailand"
+        ]
+    },
+    "Phuket": {
+        "region": [
+            "Thailand"
+        ]
+    },
+    "Pran Buri": {
+        "region": [
+            "Thailand"
+        ]
+    },
+    "Samut Prakan": {
+        "region": [
+            "Thailand"
+        ]
+    },
+    "Danang": {
+        "region": [
+            "Vietnam"
+        ]
+    },
+    "Ha long Bay": {
+        "region": [
+            "Vietnam"
+        ]
+    },
+    "Hanoi": {
+        "region": [
+            "Vietnam"
+        ]
+    },
+    "Ho Chi Minh City": {
+        "region": [
+            "Vietnam"
+        ]
+    },
+    "Nha Trang City": {
+        "region": [
+            "Vietnam"
+        ]
+    },
+    "Phu Quoc Island": {
+        "region": [
+            "Vietnam"
+        ]
+    },
+    "Tam Ky": {
+        "region": [
+            "Vietnam"
+        ]
+    },
+    "Cordoba": {
+        "region": [
+            "Argentina"
+        ]
+    },
+    "Iguazu": {
+        "region": [
+            "Argentina"
+        ]
+    },
+    "Mendoza": {
+        "region": [
+            "Argentina"
+        ]
+    },
+    "Buenos Aires": {
+        "region": [
+            "Argentina"
+        ]
+    },
+    "Mar del Plata": {
+        "region": [
+            "Argentina"
+        ]
+    },
+    "Pilar": {
+        "region": [
+            "Argentina"
+        ]
+    },
+    "Salta": {
+        "region": [
+            "Argentina"
+        ]
+    },
+    "Tucuman": {
+        "region": [
+            "Argentina"
+        ]
+    },
+    "Santa Cruz de la Sierra": {
+        "region": [
+            "Bolivia"
+        ]
+    },
+    "Salvador": {
+        "region": [
+            "Brazil"
+        ]
+    },
+    "Vitoria": {
+        "region": [
+            "Brazil"
+        ]
+    },
+    "Curitiba": {
+        "region": [
+            "Brazil"
+        ]
+    },
+    "Cabo de Santo Agostinho": {
+        "region": [
+            "Brazil"
+        ]
+    },
+    "Macae": {
+        "region": [
+            "Brazil"
+        ]
+    },
+    "Rio de Janeiro": {
+        "region": [
+            "Brazil"
+        ]
+    },
+    "Porto Alegre": {
+        "region": [
+            "Brazil"
+        ]
+    },
+    "Santos": {
+        "region": [
+            "Brazil"
+        ]
+    },
+    "Sao Paulo": {
+        "region": [
+            "Brazil"
+        ]
+    },
+    "Santiago": {
+        "region": [
+            "Chile"
+        ]
+    },
+    "Vina del Mar": {
+        "region": [
+            "Chile"
+        ]
+    },
+    "Barranquilla": {
+        "region": [
+            "Colombia"
+        ]
+    },
+    "Bogota": {
+        "region": [
+            "Colombia"
+        ]
+    },
+    "Cali": {
+        "region": [
+            "Colombia"
+        ]
+    },
+    "Cartagena": {
+        "region": [
+            "Colombia"
+        ]
+    },
+    "Medellin": {
+        "region": [
+            "Colombia"
+        ]
+    },
+    "Cabo Velas": {
+        "region": [
+            "Costa Rica"
+        ]
+    },
+    "Cuenca": {
+        "region": [
+            "Ecuador"
+        ]
+    },
+    "Guayaquil": {
+        "region": [
+            "Ecuador"
+        ]
+    },
+    "Quito": {
+        "region": [
+            "Ecuador"
+        ]
+    },
+    "San Salvador": {
+        "region": [
+            "El Salvador"
+        ]
+    },
+    "Guatemala City": {
+        "region": [
+            "Guatemala"
+        ]
+    },
+    "Costa del Este": {
+        "region": [
+            "Panama"
+        ]
+    },
+    "Panama City": {
+        "region": [
+            "Panama"
+        ]
+    },
+    "Santa Clara": {
+        "region": [
+            "Panama"
+        ]
+    },
+    "Asuncion": {
+        "region": [
+            "Paraguay"
+        ]
+    },
+    "Ciudad del Este": {
+        "region": [
+            "Paraguay"
+        ]
+    },
+    "Cusco": {
+        "region": [
+            "Peru"
+        ]
+    },
+    "Lima": {
+        "region": [
+            "Peru"
+        ]
+    },
+    "Paracas": {
+        "region": [
+            "Peru"
+        ]
+    },
+    "Urubamba": {
+        "region": [
+            "Peru"
+        ]
+    },
+    "Colonia Del Sacramento": {
+        "region": [
+            "Uruguay"
+        ]
+    },
+    "Montevideo": {
+        "region": [
+            "Uruguay"
+        ]
+    },
+    "Tirana": {
+        "region": [
+            "Albania"
+        ]
+    },
+    "Dornbirn": {
+        "region": [
+            "Austria"
+        ]
+    },
+    "Ehrenhausen": {
+        "region": [
+            "Austria"
+        ]
+    },
+    "Hof bei Salzburg": {
+        "region": [
+            "Austria"
+        ]
+    },
+    "Kappl": {
+        "region": [
+            "Austria"
+        ]
+    },
+    "Langenlois": {
+        "region": [
+            "Austria"
+        ]
+    },
+    "Salzburg": {
+        "region": [
+            "Austria"
+        ]
+    },
+    "Vienna": {
+        "region": [
+            "Austria"
+        ]
+    },
+    "Baku": {
+        "region": [
+            "Azerbaijan"
+        ]
+    },
+    "Brussels": {
+        "region": [
+            "Belgium"
+        ]
+    },
+    "Sofia": {
+        "region": [
+            "Bulgaria"
+        ]
+    },
+    "Mlini": {
+        "region": [
+            "Croatia"
+        ]
+    },
+    "Split": {
+        "region": [
+            "Croatia"
+        ]
+    },
+    "Zagreb": {
+        "region": [
+            "Croatia"
+        ]
+    },
+    "Limassol": {
+        "region": [
+            "Cyprus"
+        ]
+    },
+    "Prague 1": {
+        "region": [
+            "Czech Republic"
+        ]
+    },
+    "Helsinki": {
+        "region": [
+            "Finland"
+        ]
+    },
+    "Dijon": {
+        "region": [
+            "France"
+        ]
+    },
+    "Nice": {
+        "region": [
+            "France"
+        ]
+    },
+    "Paris": {
+        "region": [
+            "France"
+        ]
+    },
+    "Roissy": {
+        "region": [
+            "France"
+        ]
+    },
+    "Saint Tropez": {
+        "region": [
+            "France"
+        ]
+    },
+    "Batumi": {
+        "region": [
+            "Georgia"
+        ]
+    },
+    "Tbilisi": {
+        "region": [
+            "Georgia"
+        ]
+    },
+    "Berlin": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Dresden": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Dusseldorf": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Essen": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Frankfurt": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Frankfurt/Offenbach": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Hamburg": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Hannover": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Leipzig": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Munich": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Nuremberg": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Stuttgart": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Weimar": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Weissach (Rottach-Egern)": {
+        "region": [
+            "Germany"
+        ]
+    },
+    "Athens": {
+        "region": [
+            "Greece"
+        ]
+    },
+    "Athens - Vouliagmeni": {
+        "region": [
+            "Greece"
+        ]
+    },
+    "Costa Navarino": {
+        "region": [
+            "Greece"
+        ]
+    },
+    "Mykonos": {
+        "region": [
+            "Greece"
+        ]
+    },
+    "Sithonia Halkidiki": {
+        "region": [
+            "Greece"
+        ]
+    },
+    "Thessaloniki": {
+        "region": [
+            "Greece"
+        ]
+    },
+    "Elounda": {
+        "region": [
+            "Greece"
+        ]
+    },
+    "Rhodes": {
+        "region": [
+            "Greece"
+        ]
+    },
+    "Santorini": {
+        "region": [
+            "Greece"
+        ]
+    },
+    "Kecskemet": {
+        "region": [
+            "Hungary"
+        ]
+    },
+    "Nesjavellir": {
+        "region": [
+            "Iceland"
+        ]
+    },
+    "Reykjavik": {
+        "region": [
+            "Iceland"
+        ]
+    },
+    "Athlone": {
+        "region": [
+            "Ireland"
+        ]
+    },
+    "Bolzano-Bozen": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Cassago Brianza": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Catania": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Como": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Duino Aurisina": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Florence": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "La Thuile": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Malpensa": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Milan": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Padova": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Porto Cervo": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Ragusa": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Rome": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Venice": {
+        "region": [
+            "Italy"
+        ]
+    },
+    "Astana": {
+        "region": [
+            "Kazakhstan"
+        ]
+    },
+    "St. Julians": {
+        "region": [
+            "Malta"
+        ]
+    },
+    "Monte Carlo": {
+        "region": [
+            "Monaco"
+        ]
+    },
+    "Amsterdam": {
+        "region": [
+            "Netherlands"
+        ]
+    },
+    "Maastricht": {
+        "region": [
+            "Netherlands"
+        ]
+    },
+    "Rotterdam": {
+        "region": [
+            "Netherlands"
+        ]
+    },
+    "The Hague": {
+        "region": [
+            "Netherlands"
+        ]
+    },
+    "Krakow": {
+        "region": [
+            "Poland"
+        ]
+    },
+    "Poznan": {
+        "region": [
+            "Poland"
+        ]
+    },
+    "Sopot": {
+        "region": [
+            "Poland"
+        ]
+    },
+    "Warsaw": {
+        "region": [
+            "Poland"
+        ]
+    },
+    "Albufeira": {
+        "region": [
+            "Portugal"
+        ]
+    },
+    "Altura - Castro Marim": {
+        "region": [
+            "Portugal"
+        ]
+    },
+    "Cascais": {
+        "region": [
+            "Portugal"
+        ]
+    },
+    "Evora": {
+        "region": [
+            "Portugal"
+        ]
+    },
+    "Furnas": {
+        "region": [
+            "Portugal"
+        ]
+    },
+    "Lisbon": {
+        "region": [
+            "Portugal"
+        ]
+    },
+    "Moncarapacho": {
+        "region": [
+            "Portugal"
+        ]
+    },
+    "Ponta Delgada": {
+        "region": [
+            "Portugal"
+        ]
+    },
+    "Porto": {
+        "region": [
+            "Portugal"
+        ]
+    },
+    "Bucharest": {
+        "region": [
+            "Romania"
+        ]
+    },
+    "Kaluga": {
+        "region": [
+            "Russian Federation"
+        ]
+    },
+    "Krasnodar": {
+        "region": [
+            "Russian Federation"
+        ]
+    },
+    "Moscow": {
+        "region": [
+            "Russian Federation"
+        ]
+    },
+    "Perm": {
+        "region": [
+            "Russian Federation"
+        ]
+    },
+    "Rostov-on-Don": {
+        "region": [
+            "Russian Federation"
+        ]
+    },
+    "St. Petersburg": {
+        "region": [
+            "Russian Federation"
+        ]
+    },
+    "Ufa": {
+        "region": [
+            "Russian Federation"
+        ]
+    },
+    "Voronezh": {
+        "region": [
+            "Russian Federation"
+        ]
+    },
+    "Belgrade": {
+        "region": [
+            "Serbia"
+        ]
+    },
+    "Bratislava": {
+        "region": [
+            "Slovakia"
+        ]
+    },
+    "Ljubljana": {
+        "region": [
+            "Slovenia"
+        ]
+    },
+    "Alicante": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Barcelona": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "El Vendrell": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Elciego": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Madrid": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Marbella": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Salamanca": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "San Sebastian": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Seville": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Valencia": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Calvia": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Mallorca": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Adeje Tenerife": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Fuerteventura": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Maspalomas": {
+        "region": [
+            "Spain"
+        ]
+    },
+    "Nacka Strand": {
+        "region": [
+            "Sweden"
+        ]
+    },
+    "Stockholm": {
+        "region": [
+            "Sweden"
+        ]
+    },
+    "Adelboden": {
+        "region": [
+            "Switzerland"
+        ]
+    },
+    "Ascona": {
+        "region": [
+            "Switzerland"
+        ]
+    },
+    "Geneva": {
+        "region": [
+            "Switzerland"
+        ]
+    },
+    "Minusio-Locarno": {
+        "region": [
+            "Switzerland"
+        ]
+    },
+    "Rougemont": {
+        "region": [
+            "Switzerland"
+        ]
+    },
+    "Silvaplana": {
+        "region": [
+            "Switzerland"
+        ]
+    },
+    "Verbier": {
+        "region": [
+            "Switzerland"
+        ]
+    },
+    "Zurich": {
+        "region": [
+            "Switzerland"
+        ]
+    },
+    "Dushanbe": {
+        "region": [
+            "Tajikistan"
+        ]
+    },
+    "Adana": {
+        "region": [
+            "Turkey"
+        ]
+    },
+    "Ankara": {
+        "region": [
+            "Turkey"
+        ]
+    },
+    "Bodrum": {
+        "region": [
+            "Turkey"
+        ]
+    },
+    "Bursa": {
+        "region": [
+            "Turkey"
+        ]
+    },
+    "Istanbul": {
+        "region": [
+            "Turkey"
+        ]
+    },
+    "Izmir": {
+        "region": [
+            "Turkey"
+        ]
+    },
+    "Samsun": {
+        "region": [
+            "Turkey"
+        ]
+    },
+    "Kiev": {
+        "region": [
+            "Ukraine"
+        ]
+    },
+    "Brighton": {
+        "region": [
+            "United Kingdom"
+        ]
+    },
+    "Hayes": {
+        "region": [
+            "United Kingdom"
+        ]
+    },
+    "Liverpool": {
+        "region": [
+            "United Kingdom"
+        ]
+    },
+    "West Drayton": {
+        "region": [
+            "United Kingdom"
+        ]
+    },
+    "Ayrshire": {
+        "region": [
+            "United Kingdom"
+        ]
+    },
+    "Edinburgh": {
+        "region": [
+            "United Kingdom"
+        ]
+    },
+    "Manama": {
+        "region": [
+            "Bahrain"
+        ]
+    },
+    "Dohuk": {
+        "region": [
+            "Iraq"
+        ]
+    },
+    "Erbil": {
+        "region": [
+            "Iraq"
+        ]
+    },
+    "Tel Aviv": {
+        "region": [
+            "Israel"
+        ]
+    },
+    "Amman": {
+        "region": [
+            "Jordan"
+        ]
+    },
+    "Aqaba": {
+        "region": [
+            "Jordan"
+        ]
+    },
+    "Kuwait City": {
+        "region": [
+            "Kuwait"
+        ]
+    },
+    "Beirut": {
+        "region": [
+            "Lebanon"
+        ]
+    },
+    "Broumana": {
+        "region": [
+            "Lebanon"
+        ]
+    },
+    "Muscat": {
+        "region": [
+            "Oman"
+        ]
+    },
+    "Doha": {
+        "region": [
+            "Qatar"
+        ]
+    },
+    "Lusail": {
+        "region": [
+            "Qatar"
+        ]
+    },
+    "Al Khobar": {
+        "region": [
+            "Saudi Arabia"
+        ]
+    },
+    "Dammam": {
+        "region": [
+            "Saudi Arabia"
+        ]
+    },
+    "Dhahran": {
+        "region": [
+            "Saudi Arabia"
+        ]
+    },
+    "Jeddah": {
+        "region": [
+            "Saudi Arabia"
+        ]
+    },
+    "Makkah": {
+        "region": [
+            "Saudi Arabia"
+        ]
+    },
+    "Medina": {
+        "region": [
+            "Saudi Arabia"
+        ]
+    },
+    "Riyadh": {
+        "region": [
+            "Saudi Arabia"
+        ]
+    },
+    "Taif": {
+        "region": [
+            "Saudi Arabia"
+        ]
+    },
+    "Unaizah": {
+        "region": [
+            "Saudi Arabia"
+        ]
+    },
+    "Abu Dhabi": {
+        "region": [
+            "United Arab Emirates"
+        ]
+    },
+    "Ajman": {
+        "region": [
+            "United Arab Emirates"
+        ]
+    },
+    "Al Ain": {
+        "region": [
+            "United Arab Emirates"
+        ]
+    },
+    "Dubai": {
+        "region": [
+            "United Arab Emirates"
+        ]
+    },
+    "Fujairah": {
+        "region": [
+            "United Arab Emirates"
+        ]
+    },
+    "Ras Al Khaimah": {
+        "region": [
+            "United Arab Emirates"
+        ]
+    },
+    "Sharjah": {
+        "region": [
+            "United Arab Emirates"
+        ]
+    }
+}
