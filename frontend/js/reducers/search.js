@@ -20,12 +20,36 @@ const initialState = {
   hotelList: [],
   competeList: [],
   redirectList: {},
+  componentList: {},
   remain: 0,
   error: ""
 }
 
 const search = (state = initialState, action) => {
+  let new_componentList = state.componentList
   switch (action.type) {
+    case 'COMPONENT_INIT':
+      if(new_componentList[action.componentKey]){
+        return state;
+      }
+      new_componentList[action.componentKey] = {toggled:false}
+      return Object.assign({}, state, {
+        componentList: new_componentList
+      })
+    case 'COMPONENT_TOGGLE':
+      new_componentList[action.componentKey].toggled = action.state
+      return Object.assign({}, state, {
+        componentList: new_componentList
+      })
+    case 'COMPONENT_GEO':
+      if(new_componentList[action.componentKey].geometry){
+        return state;
+      }
+      new_componentList[action.componentKey].geometry = action.geometry
+      new_componentList[action.componentKey].address = action.address
+      return Object.assign({}, state, {
+        componentList: new_componentList
+      })
     case 'REMAIN_REQUEST':
       return Object.assign({}, state, {
         remain: 1

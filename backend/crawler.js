@@ -121,8 +121,13 @@ app.get('/:encode', (req, res) => {
 
           fileName = hotelConverter[result.hotel_name]
           if(typeof fileName !== 'undefined' && fileName){
-            if(fileName.propertyId){
+            if(fileName.propertyId != 'TOADDID'){
               result.officialURL = `http://www.starwoodhotels.com/preferredguest/rates/room.html?departureDate=${req.query.checkout}&refPage=property&ctx=search&arrivalDate=${req.query.checkin}&priceMin=&iataNumber=&iATANumber=&sortOrder=&propertyId=${fileName.propertyId}&accessible=&numberOfRooms=1&numberOfAdults=1&bedType=&priceMax=&numberOfChildren=0&nonSmoking=&currencyCode=USD`
+            }
+            else if(fileName.geo != 'TOADDGEO' && fileName.address != 'TOADDADDRESS'){
+              result.geo = fileName.geo;
+              result.address = fileName.address;
+              result. img = fileName.img;
             }
             fileName = fileName.target;
           }

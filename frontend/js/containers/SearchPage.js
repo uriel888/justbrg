@@ -37,11 +37,36 @@ const mapStateToProps = (
     competeList: state.search.competeList,
     hotelList: state.search.hotelList,
     redirectList: state.search.redirectList,
+    componentList: state.search.componentList,
     remain: state.search.remain
   }
 }
 
 export default class SearchPage extends Component {
+  constructor(props) {
+    super(props);
+    this.codeAddress = this.codeAddress.bind(this);
+  }
+
+  codeAddress(address, dispatch)
+  {
+    let geocoder = new google.maps.Geocoder();
+    geocoder.geocode( {address:address}, function(results, status)
+    {
+      if (status == google.maps.GeocoderStatus.OK)
+      {
+        return dispatch({
+          type: 'COMPONENT_GEO',
+          componentKey: address,
+          geometry:results[0].geometry,
+          address: results[0].formatted_address
+        })
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+     }
+    });
+  }
+
   componentDidMount() {
     const {
       query
@@ -91,6 +116,10 @@ export default class SearchPage extends Component {
     const {
       query
     } = this.props.location
+    const listStyles={
+      width:1500,
+      margin:'0 auto',
+    }
 
     const {
       dispatch,
@@ -98,7 +127,8 @@ export default class SearchPage extends Component {
       competeFetching,
       hotelList,
       redirectList,
-      competeList
+      competeList,
+      componentList
     } = this.props
     let competeSearchCreater = bindActionCreators(competeSearch, dispatch)
     let redirectSearchCreater = bindActionCreators(redirectSearch, dispatch)
@@ -112,13 +142,21 @@ export default class SearchPage extends Component {
     }
     return (
       <div>
-        <label>{generalFetching?<LinearProgress mode="determinate" value={ (hotelList.length!=0&&generalFetching)?(competeList.length/hotelList.length*100):0 } />:false }</label><br />
         <label>{generalFetching?<CircularProgress size={0.5} style={{display:'inline-block', marginRight:'30'}}/>:false}{hotelList.length!=0&&generalFetching?<div style={{display:'inline-block'}}>Found {hotelList.length} hotels in request area, current search BRG for {competeList.length}/{hotelList.length}</div>:(generalFetching?<div style={{display:'inline-block'}}>Fetching Property List in reuqest area</div>:false)}</label><br />
-        {competeList.map(
-          function(result, index){
-            return <HotelListEntry key={uuid.v1()} hotel={hotelList[index]} compete={result} redirectSearch={redirectSearchCreater} query={query} redirectList={redirectList}/>
-          }
-        )}
+        <label>{generalFetching?<LinearProgress mode="determinate" value={ (hotelList.length!=0&&generalFetching)?(competeList.length/hotelList.length*100):0 } />:false }</label><br />
+        <div style={listStyles}>
+          {competeList.map(
+            function(result, index){
+              const key = uuid.v1()
+              this.props.dispatch({
+                type:"COMPONENT_INIT",
+                componentKey: hotelList[index].hotel_name
+              })
+              this.codeAddress(hotelList[index].hotel_name, this.props.dispatch);
+              return <HotelListEntry key={key} componentList={componentList} dispatch={dispatch} hotel={hotelList[index]} compete={result} redirectSearch={redirectSearchCreater} query={query} redirectList={redirectList}/>
+            }, this
+          )}
+        </div>
       </div>
     )
   }

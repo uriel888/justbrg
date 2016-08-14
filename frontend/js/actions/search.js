@@ -83,21 +83,20 @@ export function competeSearch(getState) {
     let current_index = state.search.competeList.length
     let target_hotel = state.search.hotelList[current_index]
     let url = target_hotel.targetURL
+
+    if (current_index == 0) {
+      fetch("http://hotels.justbrg.com/", {
+        method: 'GET',
+        credentials: 'include'
+      })
+    }
+
     if(url == undefined || url.indexOf('TOADD') > 0){
       return dispatch({type:"COMPETE_SEARCH_FAIL"});
     }
-    if (current_index == 0) {
-      return fetch("http://hotels.justbrg.com/", {
-        method: 'GET',
-        credentials: 'include'
-      }).then((response) => {
-        response.text().then((text) => {
-          dispatch(postCompeteSearch(url))
-        })
-      })
-    } else {
-      return dispatch(postCompeteSearch(url))
-    }
+
+    return dispatch(postCompeteSearch(url))
+
   }
 }
 

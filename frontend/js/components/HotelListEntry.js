@@ -1,6 +1,5 @@
 import React, {
-  Component,
-  PropTypes
+  Component
 } from 'react'
 import moment from "moment"
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
@@ -8,16 +7,78 @@ import {blue500, red500, green500} from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
 import SvgIcon from 'material-ui/SvgIcon';
 import Paper from 'material-ui/Paper';
+import Maps from './googleMaps';
+import Toggle from 'material-ui/Toggle';
 
 export default class HotelListEntry extends Component {
+
+  constructor(props) {
+    super(props);
+    const {componentList, hotel, dispatch} = this.props
+
+    this.state = {
+      showMap: componentList[hotel.hotel_name].toggled,
+    };
+
+    this.handleToggle = this.handleToggle.bind(this);
+  }
+
+  handleToggle(event, toggle){
+    this.setState({showMap: toggle});
+    const {dispatch, hotel} = this.props
+    dispatch({
+      type:"COMPONENT_TOGGLE",
+      componentKey: hotel.hotel_name,
+      state: toggle
+    })
+
+  };
+
   render() {
     const iconStyles = {
       marginRight: 24,
     };
+    const subCardStyles = {
+      left: {
+        width:"50%",
+        height:'auto',
+        display:'inline-block',
+      },
+      right: {
+        width:"50%",
+        display:'inline-block',
+        verticalAlign: 'top',
+        textAlign: 'right',
+      }
+    }
     const paperStyles = {
-      margin: 20,
+      main: {
+        margin: 20,
+      },
+      sub: {
+        margin: '0 auto',
+      }
     };
 
+
+    const fontStyles = {
+      head: {
+        fontSize: 25,
+        fontWeight: 900,
+      },
+      normal: {
+        fontSize: 20,
+        fontWeight: 600,
+      },
+      cancelOut: {
+        fontSize: 15,
+        fontWeight: 'normal',
+      },
+      message: {
+        fontSize: 18,
+        fontWeight: 'normal',
+      }
+    }
     const CheckIcon = (props) => (
       <SvgIcon {...props}>
         <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
@@ -41,7 +102,7 @@ export default class HotelListEntry extends Component {
         <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z" />
       </SvgIcon>
     );
-    const {hotel, compete, redirectSearch, query, redirectList} = this.props
+    const {hotel, compete, redirectSearch, query, redirectList, componentList, geometry} = this.props
     let competeRate = compete.competeRate
     let message = undefined
     let bestPlan = undefined
@@ -81,33 +142,62 @@ export default class HotelListEntry extends Component {
     }
 
     return (
-      <Paper style={paperStyles} zDepth={2}>
+      <Paper style={paperStyles.main} zDepth={2}>
         <Card>
-        <CardHeader
-          title={hotel.hotel_name}
-          subtitle={bestPlan?<div>Best Point Usage : {bestPlan.plan} With value($/Point) : {bestPlan.potential_value.toFixed(4)} {(bestPlan.potential_value>0.025)?<ThumbIcon style={iconStyles} color={green500}/>:false}<br /></div>:false}
-          avatar={message?(message.indexOf('error')>0?(<div><ErrorIcon style={iconStyles} color={red500}/><p>If you are not using Chrome, access  <a href="http://hotels.justbrg.com/" target='_blank'> this page </a> before your search might fixed the issue. </p></div>):<CrossIcon style={iconStyles} color={red500}/>):<CheckIcon style={iconStyles} color={green500}/>}
-        />
+          <div style={subCardStyles.left}>
+            <CardHeader
+              titleStyle = {fontStyles.head}
+              subtitleStyle = {fontStyles.normal}
+              title={hotel.hotel_name}
+              subtitle={bestPlan?<div>Best Point Usage : {bestPlan.plan} With value($/Point) : {bestPlan.potential_value.toFixed(4)} {(bestPlan.potential_value>0.025)?<ThumbIcon style={iconStyles} color={green500}/>:false}<br /></div>:false}
+              avatar={message?(message.indexOf('error')>0?(<ErrorIcon style={iconStyles} color={red500}/>):<CrossIcon style={iconStyles} color={red500}/>):<CheckIcon style={iconStyles} color={green500}/>}
+            />
 
-        <CardText>
-          Hotel official Price($/day):  {hotel.BAR} <br />
-          BRG Rate($/day):  {message?message:competeRate}<br />
-          {message?false:(<p>You can save around ${ ((hotel.BAR-competeRate*0.8)>(hotel.BAR-competeRate+40))? (hotel.BAR-competeRate*0.8).toFixed(1) : (hotel.BAR-competeRate+40).toFixed(1)}/day by choosing {((hotel.BAR-competeRate*0.8)>(hotel.BAR-competeRate+40))? '80% of BRG price' : '2000 points (2000 points round to $40)'}.</p>)}
-        </CardText>
-        <CardActions>
-          <FlatButton label="BRG" href={"http://hotelscombined.com"+compete.competeURL} target="_blank" disabled={message?true:false}/>
+            <CardText style={fontStyles.normal}>
+              {
+                message?(<div>${hotel.BAR}/night</div>):(<div><p>${competeRate}/night</p><p style={fontStyles.cancelOut}><s>${hotel.BAR}/night</s></p></div>)
+              }
+
+              {message?false:(<p style={fontStyles.message}>You can save around ${ ((hotel.BAR-competeRate*0.8)>(hotel.BAR-competeRate+40))? (hotel.BAR-competeRate*0.8).toFixed(1) : (hotel.BAR-competeRate+40).toFixed(1)}/night by choosing {((hotel.BAR-competeRate*0.8)>(hotel.BAR-competeRate+40))? '80% of BRG price' : '2000 points (2000 points round to $40)'}.</p>)}
+            </CardText>
+            <CardActions>
+              <FlatButton label="BRG" href={"http://hotelscombined.com"+compete.competeURL} target="_blank" disabled={message?true:false}/>
+              {
+                hotel.officialURL?<FlatButton label="Official" href={hotel.officialURL} target="_blank" />:false
+              }
+              {message?false:
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style={{display:'inline-block',}}>
+                  <input type="hidden" name="cmd" value="_s-xclick" />
+                  <input type="hidden" name="hosted_button_id" value="FV9N6YUBXCSY8" />
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+                  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+                </form>
+              }
+            </CardActions>
+          </div>
           {
-            hotel.officialURL?<FlatButton label="Official" href={hotel.officialURL} target="_blank" />:false
+            componentList[hotel.hotel_name].geometry?(
+              <div style={subCardStyles.right}>
+                <CardTitle
+                  titleStyle = {fontStyles.head}
+                  subtitleStyle = {fontStyles.normal}
+                  title={componentList[hotel.hotel_name].address}
+                  subtitle={componentList[hotel.hotel_name].address}
+                  />
+                <CardText>
+                <Toggle
+                    toggled={this.state.showMap}
+                    onToggle={this.handleToggle}
+                    label="Show Map (Under Construction)"
+                  />
+                </CardText>
+                {this.state.showMap?<CardMedia style={{float:'right'}}><Maps componentKey={hotel.hotel_name} componentList={componentList} geometry={geometry}/></CardMedia>:false}
+              </div>
+            ):(
+              false
+            )
           }
-          {message?false:
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style={{display:'inline-block',}}>
-              <input type="hidden" name="cmd" value="_s-xclick" />
-              <input type="hidden" name="hosted_button_id" value="FV9N6YUBXCSY8" />
-              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
-              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-            </form>
-          }
-        </CardActions>
+
         </Card>
       </Paper>
     )
