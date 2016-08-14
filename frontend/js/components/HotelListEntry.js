@@ -140,7 +140,7 @@ export default class HotelListEntry extends Component {
         bestPlan.potential_value = fn
       }
     }
-
+    console.log(hotel.geo);
     return (
       <Paper style={paperStyles.main} zDepth={2}>
         <Card>
