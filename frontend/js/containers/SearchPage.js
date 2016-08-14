@@ -43,30 +43,6 @@ const mapStateToProps = (
 }
 
 export default class SearchPage extends Component {
-  constructor(props) {
-    super(props);
-    this.codeAddress = this.codeAddress.bind(this);
-  }
-
-  codeAddress(address, dispatch)
-  {
-    let geocoder = new google.maps.Geocoder();
-    geocoder.geocode( {address:address}, function(results, status)
-    {
-      if (status == google.maps.GeocoderStatus.OK)
-      {
-        return dispatch({
-          type: 'COMPONENT_GEO',
-          componentKey: address,
-          geometry:results[0].geometry,
-          address: results[0].formatted_address
-        })
-      } else {
-        alert('Geocode was not successful for the following reason: ' + status);
-     }
-    });
-  }
-
   componentDidMount() {
     const {
       query
@@ -152,7 +128,6 @@ export default class SearchPage extends Component {
                 type:"COMPONENT_INIT",
                 componentKey: hotelList[index].hotel_name
               })
-              this.codeAddress(hotelList[index].hotel_name, this.props.dispatch);
               return <HotelListEntry key={key} componentList={componentList} dispatch={dispatch} hotel={hotelList[index]} compete={result} redirectSearch={redirectSearchCreater} query={query} redirectList={redirectList}/>
             }, this
           )}

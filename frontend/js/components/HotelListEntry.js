@@ -102,7 +102,7 @@ export default class HotelListEntry extends Component {
         <path d="M1 21h4V9H1v12zm22-11c0-1.1-.9-2-2-2h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.59C7.22 7.95 7 8.45 7 9v10c0 1.1.9 2 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73v-1.91l-.01-.01L23 10z" />
       </SvgIcon>
     );
-    const {hotel, compete, redirectSearch, query, redirectList, componentList, geometry} = this.props
+    const {hotel, compete, redirectSearch, query, componentList, geometry} = this.props
     let competeRate = compete.competeRate
     let message = undefined
     let bestPlan = undefined
@@ -140,7 +140,13 @@ export default class HotelListEntry extends Component {
         bestPlan.potential_value = fn
       }
     }
-    console.log(hotel.geo);
+    console.log(hotel.address);
+    let hotel_title = undefined;
+    let hotel_subtitle = undefined;
+    if(hotel.address){
+      hotel_title = hotel.address.substring(0,hotel.address.indexOf(','));
+      hotel_subtitle = hotel.address.substring(hotel.address.indexOf(',')+1);
+    }
     return (
       <Paper style={paperStyles.main} zDepth={2}>
         <Card>
@@ -175,29 +181,36 @@ export default class HotelListEntry extends Component {
               }
             </CardActions>
           </div>
-          {
-            componentList[hotel.hotel_name].geometry?(
-              <div style={subCardStyles.right}>
+          <div style={subCardStyles.right}>
+            {
+
+              (hotel_title && hotel_subtitle)?(
+
                 <CardTitle
                   titleStyle = {fontStyles.head}
                   subtitleStyle = {fontStyles.normal}
-                  title={componentList[hotel.hotel_name].address}
-                  subtitle={componentList[hotel.hotel_name].address}
+                  title={hotel_title}
+                  subtitle={hotel_subtitle}
                   />
-                <CardText>
-                <Toggle
-                    toggled={this.state.showMap}
-                    onToggle={this.handleToggle}
-                    label="Show Map (Under Construction)"
-                  />
-                </CardText>
-                {this.state.showMap?<CardMedia style={{float:'right'}}><Maps componentKey={hotel.hotel_name} componentList={componentList} geometry={geometry}/></CardMedia>:false}
-              </div>
-            ):(
-              false
-            )
-          }
-
+              ):false
+            }
+            {
+              hotel.geo?(
+                <div>
+                  <CardText>
+                  <Toggle
+                      toggled={this.state.showMap}
+                      onToggle={this.handleToggle}
+                      label="Show Map (Under Construction)"
+                    />
+                  </CardText>
+                  {
+                    this.state.showMap?<CardMedia style={{float:'right'}}><Maps componentKey={hotel.hotel_name} geo={hotel.geo}/></CardMedia>:false
+                  }
+                </div>
+              ):false
+            }
+          </div>
         </Card>
       </Paper>
     )
