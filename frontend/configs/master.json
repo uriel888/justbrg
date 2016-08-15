@@ -7,8 +7,8 @@
   "Status": "prod",
   "dev_api_address": "https://apis.justbrg.com/",
   "prod_api_address":"https://apis.justbrg.com/",
-  "dev_crawler_address": "http://52.37.71.194:8889/",
-  "prod_crawler_address": "http://52.37.71.194:8889/",
-  "dev_compete_address": "http://hotels.justbrg.com/",
-  "prod_compete_address": "http://hotels.justbrg.com/"
+  "dev_crawler_address": "https://52.37.71.194:8889/",
+  "prod_crawler_address": "https://52.37.71.194:8889/",
+  "dev_compete_address": "https://hotels.justbrg.com/",
+  "prod_compete_address": "https://hotels.justbrg.com/"
 }

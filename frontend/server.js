@@ -8,17 +8,7 @@ var http = require('http');
 var app = new (require('express'))()
 var app2 = new (require('express'))()
 var port = 8081
-var httpsPort = 8082
 var compiler = webpack(config)
-var privateKey  = fs.readFileSync('./configs/justbrg.key', 'utf8');
-var certificate = fs.readFileSync('./configs/justbrg.crt', 'utf8');
-
-var credentials = {key: privateKey, cert: certificate};
-
-// app.use(function(req, res, next) {
-//   console.log("headers: "+JSON.stringify(req.headers));
-//   return res.end(JSON.stringify(req.headers));
-// });
 
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))
@@ -32,16 +22,6 @@ app.get("/*", function(req, res) {
   res.sendFile(__dirname + '/index.html')
 })
 
-// app2.get('*',function(req,res){
-//   res.redirect('https://justbrg.com'+req.url)
-// })
-//
-// var httpServer = http.createServer(app2);
-// httpServer.listen(port);
-//
-//
-// var httpsServer = https.createServer(credentials, app);
-
 app.listen(port, function(error) {
   if (error) {
     console.error(error)
@@ -49,7 +29,3 @@ app.listen(port, function(error) {
     console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
   }
 })
-//
-// httpsServer.listen(httpsPort, function(){
-//     console.log("server running at https://IP_ADDRESS:"+httpsPort)
-// });

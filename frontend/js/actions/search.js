@@ -85,7 +85,7 @@ export function competeSearch(getState) {
     let url = target_hotel.targetURL
 
     if (current_index == 0) {
-      fetch("http://hotels.justbrg.com/", {
+      fetch("https://hotels.justbrg.com/", {
         method: 'GET',
         credentials: 'include'
       })
@@ -109,7 +109,7 @@ export const REDIRECT_SEARCH_REQUEST = 'REDIRECT_SEARCH_REQUEST'
 
 export function redirectSearch(url, hotel_name) {
   return (dispatch, getState) => {
-    return fetch("http://hotels.justbrg.com" + url, {
+    return fetch("https://hotels.justbrg.com" + url, {
       method: 'GET',
       credentials: 'include'
     }).then((response) => {
