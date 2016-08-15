@@ -9,7 +9,6 @@ import {
 
 import moment from "moment"
 
-import * as master_material_ui_options from '../static/json/material_ui_selector.json'
 import AutoComplete from 'material-ui/AutoComplete';
 import DatePicker from 'material-ui/DatePicker';
 import Toggle from 'material-ui/Toggle';
@@ -81,7 +80,7 @@ export default class Searchbox extends Component {
 
   updateLocation(location){
     const { dispatch, candidate } = this.props
-    if(location.length <= 3){
+    if(location.length < 3){
       dispatch({type:'AUTOCOMPLETE_FAIL'})
     }else{
       let autocompleteCreater = bindActionCreators(fetchCandidate, dispatch)
@@ -114,10 +113,6 @@ export default class Searchbox extends Component {
     }
 
     let input_checkout_date = checkout_date.format("YYYY-MM-DD")
-
-    let states_options = master_material_ui_options.states
-    let countries_options = master_material_ui_options.countries
-
 
     const textFieldStyle = {
       autocomplete: {

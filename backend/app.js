@@ -42,8 +42,14 @@ console.log(`Email: ${master.Email}`)
 
 
 //Initilize Connection with mongodb
-console.log(`Connect to DB: ${db_config.address}/${master.App}_${master.Status}`);
-mongoose.connect(`${db_config.address}/${master.App}_${master.Status}`);
+console.log(`Connect to DB: ds153715.mlab.com:53715/justbrg`);
+let db_options = {
+  user: db_config.username,
+  pass: db_config.pwd
+}
+// mongoose.createConnection(`mongodb://jiang181:jemit.uriel!@52.37.71.194:27017/justbrg?authSource=dbWithUserCredentials`)
+// mongoose.connect(`${db_config.address}/${master.App}_${master.Status}`,db_options);
+mongoose.connect(`mongodb://${db_config.username}:${db_config.pwd}@ds153715.mlab.com:53715/justbrg`);
 //mongoose.connect('mongodb://localhost/test');
 
 const db = mongoose.connection;

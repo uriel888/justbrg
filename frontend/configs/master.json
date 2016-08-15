@@ -4,7 +4,7 @@
   "Date": "2016-5-28",
   "Author": "Zhuosheng Jiang",
   "Email": "zhuoshengjiang@icloud.com",
-  "Status": "dev",
+  "Status": "prod",
   "dev_api_address": "http://apis.justbrg.com/",
   "prod_api_address":"http://apis.justbrg.com/",
   "dev_crawler_address": "http://52.37.71.194:8889/",

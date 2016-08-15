@@ -14,7 +14,7 @@ import {
 import { bindActionCreators } from 'redux'
 
 import Searchbox from '../components/Searchbox'
-import FreshEntry from './FreshEntry'
+import FreshEntry from '../components/FreshEntry'
 import Login_Register_Buttons from '../components/Login_Register_Buttons'
 import { search } from '../actions/search'
 

@@ -3,26 +3,45 @@ import React, {
 } from 'react'
 import moment from "moment"
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import {blue500, red500, green500} from 'material-ui/styles/colors';
+import {blue500, grey500, red500, green500} from 'material-ui/styles/colors';
 import FlatButton from 'material-ui/FlatButton';
 import SvgIcon from 'material-ui/SvgIcon';
 import Paper from 'material-ui/Paper';
 import Maps from './googleMaps';
 import Toggle from 'material-ui/Toggle';
+import Avatar from 'material-ui/Avatar';
 
+import { vatSPGInclusiveList } from '../static/json/lists'
 export default class HotelListEntry extends Component {
-
   constructor(props) {
     super(props);
-    const {componentList, hotel, dispatch} = this.props
+    const {componentList, hotel, compete, dispatch} = this.props
 
     this.state = {
-      showMap: componentList[hotel.hotel_name].toggled,
+      officialURL: hotel.officialURL,
+      competeURL: "http://hotelscombined.com"+compete.competeURL,
+      showMap: componentList[hotel.hotel_name].toggled
     };
 
     this.handleToggle = this.handleToggle.bind(this);
+    this.buttonOnClick = this.buttonOnClick.bind(this);
   }
 
+  buttonOnClick(type){
+    if(type == 'BRG'){
+        let win = window.open(this.state.competeURL, '_blank');
+        if(ga){
+          ga('send', 'event', 'button', 'click', 'SPGBRG');
+        }
+        win.focus();
+    }else if(type == 'OFFICIAL'){
+        let win = window.open(this.state.officialURL, '_blank');
+        if(ga){
+          ga('send', 'event', 'button', 'click', 'SPGOFFICIAL');
+        }
+        win.focus();
+    }
+  }
   handleToggle(event, toggle){
     this.setState({showMap: toggle});
     const {dispatch, hotel} = this.props
@@ -40,12 +59,12 @@ export default class HotelListEntry extends Component {
     };
     const subCardStyles = {
       left: {
-        width:"50%",
+        width:"60%",
         height:'auto',
         display:'inline-block',
       },
       right: {
-        width:"50%",
+        width:"40%",
         display:'inline-block',
         verticalAlign: 'top',
         textAlign: 'right',
@@ -77,8 +96,20 @@ export default class HotelListEntry extends Component {
       message: {
         fontSize: 18,
         fontWeight: 'normal',
+      },
+      submessage: {
+        fontSize: 12,
+        fontWeight: 'normal',
+        display: 'inline-block',
+        margin: 10
       }
     }
+
+    const MapIcon = (props) =>(
+      <SvgIcon {...props}>
+        <path d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z" />
+      </SvgIcon>
+    )
     const CheckIcon = (props) => (
       <SvgIcon {...props}>
         <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
@@ -106,6 +137,13 @@ export default class HotelListEntry extends Component {
     let competeRate = compete.competeRate
     let message = undefined
     let bestPlan = undefined
+    let BAR = hotel.BAR
+
+    if(BAR && vatSPGInclusiveList[query.country.toLowerCase()]){
+      BAR/= (1+vatSPGInclusiveList[query.country.toLowerCase()]);
+      BAR = BAR.toFixed(0)
+    }
+
     if(compete.competeRate != undefined){
       let arrivalMoment = moment(query.checkin, "MM/DD/YYYY")
       let departureMoment = moment(query.checkout, "MM/DD/YYYY")
@@ -117,36 +155,55 @@ export default class HotelListEntry extends Component {
     if(compete.competeRate == undefined){
       message = "Some error when mapping official hotel name to compete site"
     }
-    else if(competeRate+1 > hotel.BAR || compete.competeRate=="9999"){
+    else if(competeRate+1.5 >BAR || compete.competeRate=="9999"){
       message = "No BRG"
     }
 
-    if (hotel.BAR && (hotel.FN || hotel.CP)) {
+    if (BAR && (hotel.FN || hotel.CP)) {
       let fn = 0;
       let cp = 0;
       bestPlan = {}
       if (hotel.FN) {
-        fn = hotel.BAR / hotel.FN
+        fn = BAR / hotel.FN
       }
 
       if (hotel.CP) {
-        cp = (hotel.BAR - hotel.CP.c) / hotel.CP.p
+        cp = (BAR - hotel.CP.c) / hotel.CP.p
       }
       if (cp >= fn) {
-        bestPlan.plan = "Cash & Points"
+        bestPlan.plan = `Cash & Points: $${ hotel.CP.c} + ${hotel.CP.p} points`
         bestPlan.potential_value = cp
       }else{
-        bestPlan.plan = "Only Points"
+        bestPlan.plan = `Points Only: ${hotel.FN} points`
         bestPlan.potential_value = fn
       }
     }
-    console.log(hotel.address);
     let hotel_title = undefined;
     let hotel_subtitle = undefined;
     if(hotel.address){
-      hotel_title = hotel.address.substring(0,hotel.address.indexOf(','));
-      hotel_subtitle = hotel.address.substring(hotel.address.indexOf(',')+1);
+      hotel_title = "";
+      hotel_subtitle = "";
+      let hotel_title_array = hotel.address.split(',');
+      if((hotel_title_array.length - 1) == 1){
+        hotel_title += hotel_title_array[0];
+      }
+      else{
+        for(let i = 0 ; i < hotel_title_array.length - 1 ; i++){
+          if(i < (hotel_title_array.length - 1)/2){
+            hotel_title += hotel_title_array[i];
+          }else{
+            hotel_subtitle += hotel_title_array[i]
+          }
+        }
+      }
     }
+    if(!hotel.img){
+      hotel.img = "http://www.starwoodhotels.com/pub/media/4313/lux4313ex.173791_ss.jpg"
+    }else if(hotel.img.indexOf("http://www.starwoodhotels.com/") < 0){
+      hotel.img = ("http://www.starwoodhotels.com/"+hotel.img).replace(/tt.jpg/,"ss.jpg")
+    }
+
+    let button_label = message?(message.indexOf('error')>0?"MAPPING ERROR":"NO BRG"):"BRG"
     return (
       <Paper style={paperStyles.main} zDepth={2}>
         <Card>
@@ -155,45 +212,39 @@ export default class HotelListEntry extends Component {
               titleStyle = {fontStyles.head}
               subtitleStyle = {fontStyles.normal}
               title={hotel.hotel_name}
-              subtitle={bestPlan?<div>Best Point Usage : {bestPlan.plan} With value($/Point) : {bestPlan.potential_value.toFixed(4)} {(bestPlan.potential_value>0.025)?<ThumbIcon style={iconStyles} color={green500}/>:false}<br /></div>:false}
-              avatar={message?(message.indexOf('error')>0?(<ErrorIcon style={iconStyles} color={red500}/>):<CrossIcon style={iconStyles} color={red500}/>):<CheckIcon style={iconStyles} color={green500}/>}
+              subtitle={bestPlan?<div>{bestPlan.plan} with value($/Point) : {bestPlan.potential_value.toFixed(4)} {(bestPlan.potential_value>0.025)?<ThumbIcon style={iconStyles} color={green500}/>:false}<br /></div>:false}
+              avatar = {<Avatar src={hotel.img} size={55} />}
             />
 
             <CardText style={fontStyles.normal}>
               {
-                message?(<div>${hotel.BAR}/night</div>):(<div><p>${competeRate}/night</p><p style={fontStyles.cancelOut}><s>${hotel.BAR}/night</s></p></div>)
+                message?(<div>${BAR}/night{vatSPGInclusiveList[query.country.toLowerCase()]?(<div style={fontStyles.submessage}>(VAT exclude)</div>):false}</div>):(<div><p>${competeRate}/night{vatSPGInclusiveList[query.country.toLowerCase()]?(<div style={fontStyles.submessage}>(VAT exclude)</div>):false}</p><p style={fontStyles.cancelOut}><s>${BAR}/night</s></p></div>)
               }
 
-              {message?false:(<p style={fontStyles.message}>You can save around ${ ((hotel.BAR-competeRate*0.8)>(hotel.BAR-competeRate+40))? (hotel.BAR-competeRate*0.8).toFixed(1) : (hotel.BAR-competeRate+40).toFixed(1)}/night by choosing {((hotel.BAR-competeRate*0.8)>(hotel.BAR-competeRate+40))? '80% of BRG price' : '2000 points (2000 points round to $40)'}.</p>)}
+              {message?false:(<p style={fontStyles.message}>You can save around ${ ((BAR-competeRate*0.8)>(BAR-competeRate+40))? (BAR-competeRate*0.8).toFixed(1) : (BAR-competeRate+40).toFixed(1)}/night by choosing {((BAR-competeRate*0.8)>(BAR-competeRate+40))? '80% of BRG price' : '2000 points (2000 points round to $40)'}.</p>)}
             </CardText>
             <CardActions>
-              <FlatButton label="BRG" href={"http://hotelscombined.com"+compete.competeURL} target="_blank" disabled={message?true:false}/>
+              <FlatButton onClick={() => this.buttonOnClick('BRG')} label={button_label} icon={message?(message.indexOf('error')>0?(<ErrorIcon style={iconStyles} color={red500}/>):<CrossIcon style={iconStyles} color={red500}/>):<CheckIcon style={iconStyles} color={green500}/>} disabled={message?true:false}/>
               {
-                hotel.officialURL?<FlatButton label="Official" href={hotel.officialURL} target="_blank" />:false
+                this.state.officialURL?<FlatButton onClick={() => this.buttonOnClick('OFFICIAL')} label="Official" target="_blank" />:false
               }
               {message?false:
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style={{display:'inline-block',}}>
                   <input type="hidden" name="cmd" value="_s-xclick" />
                   <input type="hidden" name="hosted_button_id" value="FV9N6YUBXCSY8" />
-                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
+                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" name="submit" alt="PayPal - The safer, easier way to pay online!" />
                   <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
                 </form>
               }
             </CardActions>
           </div>
           <div style={subCardStyles.right}>
-            {
-
-              (hotel_title && hotel_subtitle)?(
-
-                <CardTitle
-                  titleStyle = {fontStyles.head}
-                  subtitleStyle = {fontStyles.normal}
-                  title={hotel_title}
-                  subtitle={hotel_subtitle}
-                  />
-              ):false
-            }
+            <CardTitle
+              titleStyle = {fontStyles.normal}
+              subtitleStyle = {fontStyles.normal}
+              title={hotel_title}
+              subtitle={hotel_subtitle}
+              />
             {
               hotel.geo?(
                 <div>
@@ -201,7 +252,7 @@ export default class HotelListEntry extends Component {
                   <Toggle
                       toggled={this.state.showMap}
                       onToggle={this.handleToggle}
-                      label="Show Map (Under Construction)"
+                      label={this.state.showMap?<MapIcon style={iconStyles} color={blue500}/>:<MapIcon style={iconStyles} color={grey500}/>}
                     />
                   </CardText>
                   {

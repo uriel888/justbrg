@@ -13,6 +13,9 @@ import {
 
 import { loadUser } from '../actions/account'
 import { bindActionCreators } from 'redux'
+import TextField from 'material-ui/TextField';
+import RaisedButton from 'material-ui/RaisedButton';
+import CircularProgress from 'material-ui/CircularProgress';
 
 const mapStateToProps = (
   state
@@ -26,6 +29,54 @@ const mapStateToProps = (
 
 
 export default class LoginPage extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: "",
+      password: "",
+      usernameErrorText: "",
+      passwordErrorText: ""
+    }
+    this.updateUsername = this.updateUsername.bind(this);
+    this.updatePassword = this.updatePassword.bind(this);
+    this.validateEmail = this.validateEmail.bind(this);
+  }
+
+  validateEmail(email) {
+      let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+  }
+
+  updateUsername(event, username){
+    if(!this.validateEmail(username)){
+      this.setState({
+        usernameErrorText: "Not a valid email address",
+      });
+    }else if(username == ''){
+      this.setState({
+        usernameErrorText: "Required Field",
+      });
+    }
+    this.setState({
+      username: username,
+    });
+  }
+
+  updatePassword(event, password){
+    if(password == ''){
+      this.setState({
+        passwordErrorText: "Required Field",
+        password: password
+      });
+    }else{
+      this.setState({
+        passwordErrorText: '',
+        password: password
+      });
+    }
+  }
+
   render() {
     const {
       isLoggedIn,
@@ -34,16 +85,76 @@ export default class LoginPage extends Component {
       dispatch
     } = this.props
     let loadUserCreater = bindActionCreators(loadUser, dispatch)
+
+    const textFieldStyle = {
+      autocomplete: {
+        width: 400,
+      },
+      display:'inline-block',
+      margin:'15px',
+    }
+    const textStyle = {
+      fontSize: 25,
+    }
+    const errorStyle ={
+      display:'table',
+    }
     return (
-      <form onSubmit={(e)=>{
+      <div style={{textAlign:'center'}}>
+      <form autoComplete="off" onSubmit={(e)=>{
         e.preventDefault()
-        loadUserCreater({username: this.refs.email.value, password: this.refs.pass.value})
+        let username = this.state.username
+        let password = this.state.password
+        let valid = true
+
+        if(!this.validateEmail(username)){
+          valid =false
+          this.setState({
+            usernameErrorText: "Not a valid email address",
+          });
+        }else if(username == ''){
+          valid =false
+          this.setState({
+            usernameErrorText: "Required Field",
+          });
+        }
+
+        if(password == ''){
+          valid = false
+          this.setState({
+            passwordErrorText: "Required Field",
+          });
+        }
+        if(valid){
+          loadUserCreater({username: this.state.username, password: this.state.password})
+        }
       }}>
-        <label>{isFetching?<i className="fa fa-spinner fa-spin" style={{"fontSize":"24px"}}></i>:false}</label><br />
-        <label><input ref="email" placeholder="email" defaultValue="just@brg.it" /></label>
-        <label><input type="password" ref="pass" placeholder="password" /></label><br />
-        <button type="submit">login</button>
+
+        <TextField
+          ref= "email"
+          inputStyle={textStyle}
+          floatingLabelText="Please type your login email here"
+          style={textFieldStyle}
+          errorStyle = {errorStyle}
+          errorText={this.state.usernameErrorText}
+          onChange={this.updateUsername}
+        />
+        <TextField
+          ref= "password"
+          floatingLabelText="Please type your password here"
+          inputStyle={textStyle}
+          style={textFieldStyle}
+          errorStyle = {errorStyle}
+          errorText={this.state.passwordErrorText}
+          onChange={this.updatePassword}
+          type="password"
+        />
+        <div style={{position:'fixed', display:'inline-block', margin:'15px'}}>
+          {isFetching?<CircularProgress />:<RaisedButton label="LOGIN" type="submit" primary={true} labelStyle={textStyle}/>}
+        </div>
       </form>
+
+      </div>
     )
     }
   }
