@@ -15,13 +15,10 @@ var certificate = fs.readFileSync('./configs/justbrg.crt', 'utf8');
 
 var credentials = {key: privateKey, cert: certificate};
 
-app.use(function(req, res, next) {
-  if((req.get('X-Forwarded-Proto') !== 'https')) {
-    return req.get('X-Forwarded-Proto')
-  }
-  else
-  next();
-});
+// app.use(function(req, res, next) {
+//   console.log("headers: "+JSON.stringify(req.headers));
+//   return res.end(JSON.stringify(req.headers));
+// });
 
 app.use(webpackDevMiddleware(compiler, { noInfo: true, publicPath: config.output.publicPath }))
 app.use(webpackHotMiddleware(compiler))

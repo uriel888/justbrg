@@ -35,7 +35,7 @@ if(tier == 1){
 
       // res.setHeader('content-type', 'text/jjj');
       res.setHeader('Access-Control-Allow-Credentials', true);
-      res.setHeader('Access-Control-Allow-Origin', "http://justbrg.com");
+      res.setHeader('Access-Control-Allow-Origin', "https://justbrg.com");
       res.setHeader('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE, OPTION');
       res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
 

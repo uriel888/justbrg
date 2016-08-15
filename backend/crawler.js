@@ -3,6 +3,8 @@ import passport from 'passport'
 import unidecode from 'unidecode'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
+import https from 'https';
+import fs from 'fs';
 import * as master from './configs/master.json'
 // import * as hotelConverter from './tools/hotelscombinedFileNameConverter.json'
 import * as hotelConverter from './tools/SPGCONVERTER.json'
@@ -12,7 +14,10 @@ import {
   decrypt
 } from './tools/crypt.js'
 
-
+let options = {
+  key: fs.readFileSync('./configs/justbrg.key'),
+  cert: fs.readFileSync('./configs/justbrg.crt')
+};
 
 let app = express();
 let port = process.env.PORT || master.dev_crawler_port;
@@ -30,7 +35,7 @@ if (master.Status == "dev") {
 } else {
   app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Origin', "http://justbrg.com");
+    res.header('Access-Control-Allow-Origin', "https://justbrg.com");
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE, OPTION');
     res.header('Access-Control-Allow-Headers', 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept');
     next();
@@ -153,5 +158,6 @@ app.get('/:encode', (req, res) => {
       .close();
   }
 });
-app.listen(port);
+https.createServer(options, app).listen(port);
+// app.listen(port);
 console.log(`Server ${master.Status} is listening on ${port}`);
