@@ -16,6 +16,7 @@ const initialState = {
   crawlerFetching: false,
   competeFetching: false,
   redirectFetching: false,
+  hotelscombinedCookieFetched: false,
   encryptedMessage: "",
   hotelList: [],
   competeList: [],
@@ -28,6 +29,10 @@ const initialState = {
 const search = (state = initialState, action) => {
   let new_componentList = state.componentList
   switch (action.type) {
+    case 'HOTELSCOMBINED_COOKIE_FETCHED':
+      return Object.assign({}, state, {
+        hotelscombinedCookieFetched: true
+      })
     case 'COMPONENT_INIT':
       if(new_componentList[action.componentKey]){
         return state;

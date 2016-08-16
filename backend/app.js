@@ -17,6 +17,9 @@ import {
 import {
   enableOPTION
 } from "./tools/enableOPTION.js"
+
+import connectMongo from 'connect-mongo';
+let MongoStore = connectMongo(session);
 //import apis
 import users from "./apis/users.js"
 import search from "./apis/engine.js"
@@ -90,7 +93,10 @@ if (master.Status === "dev") {
       next();
     });
   app.use(session({
-    secret: `${master.secret.sesson_secret}`
+    secret: `${master.secret.sesson_secret}`,
+    store: new MongoStore(
+      {mongooseConnection:mongoose.connection}
+    )
   }));
 } else {
   app.use(function(req, res, next) {
@@ -101,7 +107,10 @@ if (master.Status === "dev") {
     next();
   });
   app.use(session({
-    secret: `${master.secret.sesson_secret}`
+    secret: `${master.secret.sesson_secret}`,
+    store: new MongoStore(
+      {mongooseConnection:mongoose.connection}
+    )
   }));
 }
 app.use(passport.initialize());

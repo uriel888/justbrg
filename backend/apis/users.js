@@ -70,10 +70,17 @@ router.post('/login', (req, res) => {
   })(req, res);
 });
 
+router.post('/verify', isLoggedIn, (req, res) => {
+  res.json({Status:"Ok"});
+});
 
-router.get('/logout', isLoggedIn, (req, res) => {
+
+router.post('/logout', isLoggedIn, (req, res) => {
   req.logout()
-  res.json({Status:"Ok"})
+  if(req.session){
+    req.session.destroy()
+  }
+  res.json({Status:"Ok"});
 });
 
 

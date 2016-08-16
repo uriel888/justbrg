@@ -14,7 +14,7 @@ function fetchUser(creds, dispatch) {
       endpoint: `users/login`,
       body: creds,
       func: ()=>{
-        ReactGA.ga('send', 'pageview', '/');
+        ReactGA.ga('send', 'pageview', '/login');
         dispatch(push('/'))
       },
       mode: 'api'
@@ -41,7 +41,7 @@ function postRegisterUser(creds, dispatch) {
       endpoint: `users/register`,
       body: creds,
       func: ()=>{
-        ReactGA.ga('send', 'pageview', '/');
+        ReactGA.ga('send', 'pageview', '/register');
         dispatch(push('/'))
       },
       mode: 'api'
@@ -58,5 +58,32 @@ export function registerUser(creds) {
   }
   return (dispatch) => {
     return dispatch(postRegisterUser(creds, dispatch))
+  }
+}
+
+
+export const LOGOUT_FAIL = 'LOGOUT_FAIL'
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS'
+export const LOGOUT_REQUEST = 'LOGOUT_REQUEST'
+
+function postLogoutUser(dispatch) {
+  return {
+    [CALL_API]: {
+      types: [LOGOUT_REQUEST, LOGOUT_SUCCESS, LOGOUT_FAIL],
+      endpoint: `users/logout`,
+      func: ()=>{
+        ReactGA.ga('send', 'pageview', '/logout');
+        localStorage.removeItem('email')
+        dispatch(push('/'))
+      },
+      mode: 'api'
+    }
+  }
+}
+
+
+export function logoutUser() {
+  return (dispatch) => {
+    return dispatch(postLogoutUser(dispatch))
   }
 }

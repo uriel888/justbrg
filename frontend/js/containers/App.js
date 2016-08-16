@@ -16,19 +16,23 @@ import { bindActionCreators } from 'redux'
 import Searchbox from '../components/Searchbox'
 import FreshEntry from '../components/FreshEntry'
 import Login_Register_Buttons from '../components/Login_Register_Buttons'
+import ProfileMenuButton from '../components/ProfileMenuButton'
 import { search } from '../actions/search'
+import { logoutUser } from '../actions/account'
 
 
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import AppBar from 'material-ui/AppBar';
+import CircularProgress from 'material-ui/CircularProgress';
 
 
 const mapStateToProps = (
   state
 ) => {
   return {
+    isFetching: state.account.isFetching,
     isLoggedIn: state.account.isAuthenticated,
     generalFetching: state.search.generalFetching,
     candidate: state.autocomplete.candidate
@@ -44,6 +48,7 @@ export default class App extends Component {
       isLoggedIn,
       generalFetching,
       dispatch,
+      isFetching,
       candidate
     } = this.props
 
@@ -60,6 +65,8 @@ export default class App extends Component {
     }
 
     let searchCreater = bindActionCreators(search, dispatch)
+    let logoutUserCreater = bindActionCreators(logoutUser, dispatch)
+
     return (
       <MuiThemeProvider>
         <div>
@@ -68,7 +75,7 @@ export default class App extends Component {
             style={barStyle}
             titleStyle={titleStyle}
             showMenuIconButton={false}
-            iconElementRight={isLoggedIn ? null : <Login_Register_Buttons /> }
+            iconElementRight={isLoggedIn ? (isFetching?(<CircularProgress size='0.5'/>):<ProfileMenuButton logoutUser={logoutUserCreater} />) : <Login_Register_Buttons /> }
           />
           {isLoggedIn?<Searchbox searchButtonClick={searchCreater} query={query} generalFetching={generalFetching} candidate={candidate} dispatch={dispatch}/>:<FreshEntry />}
           {this.props.children}

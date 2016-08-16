@@ -198,9 +198,9 @@ export default class HotelListEntry extends Component {
       }
     }
     if(!hotel.img){
-      hotel.img = "http://www.starwoodhotels.com/pub/media/4313/lux4313ex.173791_ss.jpg"
-    }else if(hotel.img.indexOf("http://www.starwoodhotels.com/") < 0){
-      hotel.img = ("http://www.starwoodhotels.com/"+hotel.img).replace(/tt.jpg/,"ss.jpg")
+      hotel.img = "https://www.starwoodhotels.com/pub/media/4313/lux4313ex.173791_ss.jpg"
+    }else if(hotel.img.indexOf("https://www.starwoodhotels.com/") < 0){
+      hotel.img = ("https://www.starwoodhotels.com/"+hotel.img).replace(/tt.jpg/,"ss.jpg")
     }
 
     let button_label = message?(message.indexOf('error')>0?"MAPPING ERROR":"NO BRG"):"BRG"

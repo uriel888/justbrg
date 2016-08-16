@@ -34,6 +34,7 @@ const mapStateToProps = (
   return {
     generalFetching: state.search.generalFetching,
     competeFetching: state.search.competeFetching,
+    hotelscombinedCookieFetched: state.search.hotelscombinedCookieFetched,
     competeList: state.search.competeList,
     hotelList: state.search.hotelList,
     redirectList: state.search.redirectList,
@@ -104,12 +105,22 @@ export default class SearchPage extends Component {
       hotelList,
       redirectList,
       competeList,
-      componentList
+      componentList,
+      hotelscombinedCookieFetched
     } = this.props
     let competeSearchCreater = bindActionCreators(competeSearch, dispatch)
     let redirectSearchCreater = bindActionCreators(redirectSearch, dispatch)
     if(generalFetching && competeList.length < hotelList.length && !competeFetching){
-      setTimeout(competeSearchCreater, 5000);
+      if(!hotelscombinedCookieFetched){
+        fetch("https://hotels.justbrg.com/", {
+          method: 'GET',
+          credentials: 'include'
+        }).then(()=>{
+          dispatch({type:'HOTELSCOMBINED_COOKIE_FETCHED'});
+        })
+      }else{
+        setTimeout(competeSearchCreater, 5000);
+      }
     }
     if(competeList.length == hotelList.length && generalFetching && hotelList.length > 0){
       dispatch({

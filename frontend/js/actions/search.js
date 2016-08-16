@@ -35,6 +35,9 @@ function postEncryptSearch(detail) {
 
 
 export function generalSearch(detail) {
+  if(ga){
+    ga('send', 'event', 'button', 'click', 'SEARCHSPG');
+  }
   return (dispatch) => {
     return dispatch(postEncryptSearch(detail))
   }
@@ -83,13 +86,6 @@ export function competeSearch(getState) {
     let current_index = state.search.competeList.length
     let target_hotel = state.search.hotelList[current_index]
     let url = target_hotel.targetURL
-
-    if (current_index == 0) {
-      fetch("https://hotels.justbrg.com/", {
-        method: 'GET',
-        credentials: 'include'
-      })
-    }
 
     if(url == undefined || url.indexOf('TOADD') > 0){
       return dispatch({type:"COMPETE_SEARCH_FAIL"});
