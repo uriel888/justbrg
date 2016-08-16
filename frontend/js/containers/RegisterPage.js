@@ -54,16 +54,19 @@ export default class RegisterPage extends Component {
   updateUsername(event, username){
     if(!this.validateEmail(username)){
       this.setState({
+        username: username,
         usernameErrorText: "Not a valid email address",
       });
     }else if(username == ''){
       this.setState({
         usernameErrorText: "Required Field",
       });
+    }else{
+      this.setState({
+        username: username,
+        usernameErrorText: ""
+      });
     }
-    this.setState({
-      username: username,
-    });
   }
 
   updatePassword(event, password){

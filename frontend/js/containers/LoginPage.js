@@ -51,6 +51,7 @@ export default class LoginPage extends Component {
   updateUsername(event, username){
     if(!this.validateEmail(username)){
       this.setState({
+        username: username,
         usernameErrorText: "Not a valid email address",
       });
     }else if(username == ''){
@@ -58,9 +59,12 @@ export default class LoginPage extends Component {
         usernameErrorText: "Required Field",
       });
     }
-    this.setState({
-      username: username,
-    });
+    else{
+      this.setState({
+        username: username,
+        usernameErrorText: ""
+      });
+    }
   }
 
   updatePassword(event, password){
