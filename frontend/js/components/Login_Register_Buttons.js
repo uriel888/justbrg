@@ -14,7 +14,6 @@ export default class Login_Register_Buttons extends Component {
       margin: '5',
     };
     const labelStyle = {
-      color: "#D3D3D3",
       fontSize: 18,
       fontWeight: 900
     }

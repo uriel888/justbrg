@@ -46,9 +46,9 @@ export default class ProfileMenuButton extends Component {
       margin: '5',
     };
     const labelStyle = {
-      color: "#D3D3D3",
       fontSize: 18,
-      fontWeight: 900
+      fontWeight: 900,
+      backgroundColor: 'transparent',
     };
 
     return (
@@ -58,7 +58,7 @@ export default class ProfileMenuButton extends Component {
         open={this.state.openMenu}
         onChange={this.handleOnChange}
         onRequestChange={this.handleOnRequestChange}
-        menuStyle = {{backgroundColor:'black'}}
+        menuStyle = {{backgroundColor:'transparent'}}
       >
         <MenuItem value="logout" style={labelStyle} primaryText="Logout" />
       </IconMenu>

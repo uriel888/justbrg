@@ -137,6 +137,7 @@ export default class Searchbox extends Component {
     const buttonStyle = {
       marginLeft: 50,
       display: 'inline-block',
+      backgroundColor: 'transparent',
     };
     const iconStyles = {
       height: '48px',
@@ -220,7 +221,7 @@ export default class Searchbox extends Component {
               (<FlatButton label="Search" disabled={generalFetching} style={buttonStyle} type="submit" />):
               (<FlatButton
                 // onClick={() =>dispatch({type:"SEARCH_COMPLETE"})}
-                icon={ <CancelIcon style={iconStyles} /> }
+                label="Cancel"
                 style={buttonStyle}
                 type="submit"
               />)

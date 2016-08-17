@@ -57,14 +57,18 @@ export default class HotelListEntry extends Component {
     const iconStyles = {
       marginRight: '24px',
     };
+
+    const cardStyles = {
+      backgroundColor: 'rgba(188,187,169,0.67)',
+    }
     const subCardStyles = {
       left: {
-        width:"60%",
+        width:"70%",
         height:'auto',
         display:'inline-block',
       },
       right: {
-        width:"40%",
+        width:"30%",
         display:'inline-block',
         verticalAlign: 'top',
         textAlign: 'right',
@@ -73,6 +77,7 @@ export default class HotelListEntry extends Component {
     const paperStyles = {
       main: {
         margin: 20,
+        backgroundColor:' transparent'
       },
       sub: {
         margin: '0 auto',
@@ -206,7 +211,7 @@ export default class HotelListEntry extends Component {
     let button_label = message?(message.indexOf('error')>0?"MAPPING ERROR":"NO BRG"):"BRG"
     return (
       <Paper style={paperStyles.main} zDepth={2}>
-        <Card>
+        <Card style = {cardStyles}>
           <div style={subCardStyles.left}>
             <CardHeader
               titleStyle = {fontStyles.head}
