@@ -87,3 +87,25 @@ export function logoutUser() {
     return dispatch(postLogoutUser(dispatch))
   }
 }
+
+
+export const VERIFY_FAIL = 'VERIFY_FAIL'
+export const VERIFY_SUCCESS = 'VERIFY_SUCCESS'
+export const VERIFY_REQUEST = 'VERIFY_REQUEST'
+
+function postVerifyUser(dispatch) {
+  return {
+    [CALL_API]: {
+      types: [VERIFY_REQUEST, VERIFY_SUCCESS, VERIFY_FAIL],
+      endpoint: `users/verify`,
+      mode: 'api'
+    }
+  }
+}
+
+
+export function verifyUser() {
+  return (dispatch) => {
+    return dispatch(postVerifyUser(dispatch))
+  }
+}

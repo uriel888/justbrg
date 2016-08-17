@@ -59,6 +59,7 @@ const search = (state = initialState, action) => {
         generalFetching: true,
         hotelList: [],
         competeList: [],
+        componentList: {},
         encryptedMessage: "",
         error: ""
       })

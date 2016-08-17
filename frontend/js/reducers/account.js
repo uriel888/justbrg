@@ -7,7 +7,10 @@ import {
   REGISTER_FAIL,
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,
-  LOGOUT_FAIL
+  LOGOUT_FAIL,
+  VERIFY_REQUEST,
+  VERIFY_SUCCESS,
+  VERIFY_FAIL
 } from '../actions/account.js'
 const initialState = {
   isFetching: false,
@@ -18,6 +21,15 @@ const initialState = {
 
 const account = (state = initialState, action) => {
   switch (action.type) {
+    case VERIFY_REQUEST:
+      return state
+    case VERIFY_FAIL:
+      alert(action.error);
+      localStorage.removeItem('email')
+      location.reload();
+      return state
+    case VERIFY_SUCCESS:
+      return state
     case LOGOUT_REQUEST:
       return Object.assign({}, state, {
         isFetching: true,

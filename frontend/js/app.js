@@ -12,7 +12,6 @@ import {
   syncHistoryWithStore
 } from 'react-router-redux'
 import Root from './containers/Root'
-import MainPage from './containers/App.js'
 import configureStore from './store/configureStore.js'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 

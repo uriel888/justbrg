@@ -97,7 +97,6 @@ export default class SearchPage extends Component {
       width:1500,
       margin:'0 auto',
     }
-
     const {
       dispatch,
       generalFetching,

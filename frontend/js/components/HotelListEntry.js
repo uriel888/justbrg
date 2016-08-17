@@ -55,7 +55,7 @@ export default class HotelListEntry extends Component {
 
   render() {
     const iconStyles = {
-      marginRight: 24,
+      marginRight: '24px',
     };
     const subCardStyles = {
       left: {

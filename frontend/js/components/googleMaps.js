@@ -16,8 +16,8 @@ export default class Maps extends Component {
 
   render() {
     const style = {
-      width: '200',
-      height: '200',
+      width: '200px',
+      height: '200px',
     }
     const mapStyles = {
       height:'100%',

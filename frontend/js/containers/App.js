@@ -18,7 +18,7 @@ import FreshEntry from '../components/FreshEntry'
 import Login_Register_Buttons from '../components/Login_Register_Buttons'
 import ProfileMenuButton from '../components/ProfileMenuButton'
 import { search } from '../actions/search'
-import { logoutUser } from '../actions/account'
+import { verifyUser, logoutUser } from '../actions/account'
 
 
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
@@ -43,6 +43,13 @@ const mapStateToProps = (
 
 
 export default class App extends Component {
+  componentWillMount(){
+    const {dispatch, isLoggedIn} = this.props
+    let verifyUserCreater = bindActionCreators(verifyUser, dispatch)
+    if(isLoggedIn){
+      verifyUserCreater()
+    }
+  }
   render() {
     const {
       isLoggedIn,
