@@ -12,6 +12,8 @@ import {
   VERIFY_SUCCESS,
   VERIFY_FAIL
 } from '../actions/account.js'
+
+
 const initialState = {
   isFetching: false,
   isAuthenticated: localStorage.getItem('email') ? true : false,
@@ -24,7 +26,6 @@ const account = (state = initialState, action) => {
     case VERIFY_REQUEST:
       return state
     case VERIFY_FAIL:
-      alert(action.error);
       localStorage.removeItem('email')
       location.reload();
       return state
@@ -63,7 +64,6 @@ const account = (state = initialState, action) => {
         error: ""
       })
     case LOGIN_FAIL:
-      alert(action.error);
       return Object.assign({}, state, {
         isFetching: false,
         isAuthenticated: false,
@@ -84,7 +84,6 @@ const account = (state = initialState, action) => {
         error: ""
       })
     case REGISTER_FAIL:
-      alert(action.error);
       return Object.assign({}, state, {
         isFetching: false,
         isAuthenticated: false,

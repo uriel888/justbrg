@@ -4,7 +4,6 @@ import {
 import {
   push
 } from 'react-router-redux'
-import ReactGA from 'react-ga'
 
 export function search(query, city, state, country, checkin, checkout, source) {
   if( (query.city == city) && (query.state == state) && (query.country == country)  && (query.checkin == checkin) && (query.checkout == checkout)&& (query.source == source)){
@@ -13,7 +12,9 @@ export function search(query, city, state, country, checkin, checkout, source) {
     }
   }
   return (dispatch) => {
-    ReactGA.ga('send', 'pageview', '/search?city=' + city + '&state=' + state + '&country=' + country + '&checkin=' + checkin + '&checkout=' + checkout + "&source=" + source);
+    if(ga){
+      ga('send', 'pageview', '/search?city=' + city + '&state=' + state + '&country=' + country + '&checkin=' + checkin + '&checkout=' + checkout + "&source=" + source);
+    }
     return dispatch(push('/search?city=' + city + '&state=' + state + '&country=' + country + '&checkin=' + checkin + '&checkout=' + checkout + "&source=" + source))
   }
 }

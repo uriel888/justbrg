@@ -17,6 +17,8 @@ import Searchbox from '../components/Searchbox'
 import FreshEntry from '../components/FreshEntry'
 import Login_Register_Buttons from '../components/Login_Register_Buttons'
 import ProfileMenuButton from '../components/ProfileMenuButton'
+import AlertDialog from '../components/AlertDialog'
+
 import { search } from '../actions/search'
 import { verifyUser, logoutUser } from '../actions/account'
 
@@ -35,7 +37,8 @@ const mapStateToProps = (
     isFetching: state.account.isFetching,
     isLoggedIn: state.account.isAuthenticated,
     generalFetching: state.search.generalFetching,
-    candidate: state.autocomplete.candidate
+    candidate: state.autocomplete.candidate,
+    error: state.account.error?state.account.error:state.search.error
   }
 }
 
@@ -57,7 +60,7 @@ export default class App extends Component {
           itemTranslate = Math.min(0, scrollTop/3 - 60);
       let topDistance = document.body.scrollTop
 
-      if (topDistance == 0) {
+      if (topDistance <= 0) {
         this.setState({
           topColor : 'transparent'
         });
@@ -96,7 +99,8 @@ export default class App extends Component {
       generalFetching,
       dispatch,
       isFetching,
-      candidate
+      candidate,
+      error
     } = this.props
 
     const {
@@ -116,24 +120,53 @@ export default class App extends Component {
     }
     let searchCreater = bindActionCreators(search, dispatch)
     let logoutUserCreater = bindActionCreators(logoutUser, dispatch)
-
+    let versionError = "";
+    if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+      versionError = 'This website is currently not mobile friendly, but you can still use it without any issues. IOS version will be in development!'
+    } else if (/(Android)/i.test(navigator.userAgent)) {
+      versionError = 'This website is currently not mobile friendly, but you can still use it without any issues. Android version will be in development!'
+    }
     return (
       <MuiThemeProvider>
-        <StickyContainer>
-          <Sticky style={{zIndex: 1000}}>
-            <div style={wholeTopStyle}>
-              <AppBar
-                title="JustBRG"
-                style={barStyle}
-                titleStyle={titleStyle}
-                showMenuIconButton={false}
-                iconElementRight={isLoggedIn ? (isFetching?(<CircularProgress size='0.5'/>):<ProfileMenuButton logoutUser={logoutUserCreater} />) : <Login_Register_Buttons /> }
-              />
-              {isLoggedIn?<Searchbox searchButtonClick={searchCreater} query={query} generalFetching={generalFetching} candidate={candidate} dispatch={dispatch}/>:<FreshEntry />}
-            </div>
-          </Sticky>
-            {this.props.children}
-        </StickyContainer>
+      {
+        isLoggedIn?(
+          <StickyContainer>
+            <Sticky style={{zIndex: 1000}}>
+              <div style={wholeTopStyle}>
+                <AppBar
+                  title="JustBRG"
+                  style={barStyle}
+                  titleStyle={titleStyle}
+                  showMenuIconButton={false}
+                  iconElementRight={isLoggedIn ? (isFetching?(<CircularProgress size='0.5'/>):<ProfileMenuButton logoutUser={logoutUserCreater} />) : <Login_Register_Buttons /> }
+                />
+                <Searchbox searchButtonClick={searchCreater} query={query} generalFetching={generalFetching} candidate={candidate} dispatch={dispatch}/>
+              </div>
+            </Sticky>
+              {error?<AlertDialog message={error} />:false}
+              {this.props.children}
+          </StickyContainer>
+        ):(
+          <StickyContainer>
+            <Sticky style={{zIndex: 1000}}>
+              <div style={wholeTopStyle}>
+                <AppBar
+                  title="JustBRG"
+                  style={barStyle}
+                  titleStyle={titleStyle}
+                  showMenuIconButton={false}
+                  iconElementRight={isLoggedIn ? (isFetching?(<CircularProgress size='0.5'/>):<ProfileMenuButton logoutUser={logoutUserCreater} />) : <Login_Register_Buttons /> }
+                />
+                </div>
+                </Sticky>
+                <FreshEntry />
+                {versionError!=""?<AlertDialog message={versionError} />:false}
+                {error?<AlertDialog message={error} />:false}
+              {this.props.children}
+          </StickyContainer>
+        )
+      }
+
       </MuiThemeProvider>
     )
     }

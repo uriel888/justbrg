@@ -70,7 +70,6 @@ const search = (state = initialState, action) => {
         error: ""
       })
     case ENCRPTY_SEARCH_FAIL:
-      alert(action.error);
       if (action.error == "Unauthorized") {
         localStorage.removeItem('email')
         location.reload();
@@ -91,7 +90,6 @@ const search = (state = initialState, action) => {
         error: ""
       })
     case CRAWLER_SEARCH_FAIL:
-      alert(action.error);
       if (action.error == "Unauthorized") {
         localStorage.removeItem('email')
         location.reload();
@@ -114,7 +112,6 @@ const search = (state = initialState, action) => {
       })
     case COMPETE_SEARCH_FAIL:
       if (action.error == "Unauthorized") {
-        alert(action.error);
         localStorage.removeItem('email')
         location.reload();
         return Object.assign({}, state, {

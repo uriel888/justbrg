@@ -14,7 +14,7 @@ import {
 import { loadUser } from '../actions/account'
 import { bindActionCreators } from 'redux'
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import CircularProgress from 'material-ui/CircularProgress';
 
 const mapStateToProps = (
@@ -133,7 +133,6 @@ export default class LoginPage extends Component {
           loadUserCreater({username: this.state.username, password: this.state.password})
         }
       }}>
-
         <TextField
           ref= "email"
           inputStyle={textStyle}
@@ -153,8 +152,8 @@ export default class LoginPage extends Component {
           onChange={this.updatePassword}
           type="password"
         />
-        <div style={{position:'fixed', display:'inline-block', margin:'15px'}}>
-          {isFetching?<CircularProgress />:<RaisedButton label="LOGIN" type="submit" primary={true} labelStyle={textStyle}/>}
+        <div style={{display:'inline-block', margin:'15px', }}>
+          {isFetching?<CircularProgress />:<FlatButton label="LOGIN" type="submit" backgroundColor='rgba(188,187,169,0.4)' labelStyle={textStyle}/>}
         </div>
       </form>
 

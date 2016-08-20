@@ -11,7 +11,7 @@ import FlatButton from 'material-ui/FlatButton';
 export default class Login_Register_Buttons extends Component {
   render() {
     const buttonStyle = {
-      margin: '5',
+      margin: '5px',
     };
     const labelStyle = {
       fontSize: 18,

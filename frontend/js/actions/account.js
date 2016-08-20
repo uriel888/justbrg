@@ -2,7 +2,6 @@ import { CALL_API } from '../middleware/api'
 import {
   push
 } from 'react-router-redux'
-import ReactGA from 'react-ga'
 export const LOGIN_FAIL = 'LOGIN_FAIL'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_REQUEST = 'LOGIN_REQUEST'
@@ -14,7 +13,9 @@ function fetchUser(creds, dispatch) {
       endpoint: `users/login`,
       body: creds,
       func: ()=>{
-        ReactGA.ga('send', 'pageview', '/login');
+        if(ga){
+          ga('send', 'pageview', '/login');
+        }
         dispatch(push('/'))
       },
       mode: 'api'
@@ -41,7 +42,9 @@ function postRegisterUser(creds, dispatch) {
       endpoint: `users/register`,
       body: creds,
       func: ()=>{
-        ReactGA.ga('send', 'pageview', '/register');
+        if(ga){
+          ga('send', 'pageview', '/register');
+        }
         dispatch(push('/'))
       },
       mode: 'api'
@@ -72,7 +75,9 @@ function postLogoutUser(dispatch) {
       types: [LOGOUT_REQUEST, LOGOUT_SUCCESS, LOGOUT_FAIL],
       endpoint: `users/logout`,
       func: ()=>{
-        ReactGA.ga('send', 'pageview', '/logout');
+        if(ga){
+          ga('send', 'pageview', '/logout');
+        }
         localStorage.removeItem('email')
         dispatch(push('/'))
       },

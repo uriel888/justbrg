@@ -11,8 +11,6 @@ function logPageView() {
   ReactGA.set({ page: window.location.pathname });
   ReactGA.pageview(window.location.pathname);
 }
-// import UserPage from './containers/UserPage'
-// import RepoPage from './containers/RepoPage'
 
 export default(store) =>{
   const redirectAuth = (nextState, replace, callback) => {

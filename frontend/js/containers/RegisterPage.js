@@ -23,7 +23,7 @@ const mapStateToProps = (
 }
 
 import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import FlatButton from 'material-ui/FlatButton';
 import CircularProgress from 'material-ui/CircularProgress';
 
 export default class RegisterPage extends Component {
@@ -78,15 +78,13 @@ export default class RegisterPage extends Component {
     }else{
       if(!this.isMatch(password, this.state.repassword)){
         this.setState({
-          repasswordErrorText: 'Your re-entered password doesn\'t match',
-          password: password
-        });
-      }else{
-        this.setState({
-          passwordErrorText: '',
-          password: password
+          repasswordErrorText: 'Your re-entered password doesn\'t match'
         });
       }
+      this.setState({
+        passwordErrorText: '',
+        password: password
+      });
     }
   }
 
@@ -173,9 +171,6 @@ export default class RegisterPage extends Component {
               repasswordErrorText: 'Your re-entered password doesn\'t match',
             });
           }
-          console.log(username);
-          console.log(password);
-          console.log(repassword);
           if(valid){
             this.props.registerUser({username: username, password: password, repassword: repassword})
           }
@@ -210,8 +205,8 @@ export default class RegisterPage extends Component {
           onChange={this.updateRePassword}
           type="password"
         />
-          <div style={{position:'fixed', display:'inline-block', margin:'15px'}}>
-            {isFetching?<CircularProgress size={1.5} />:<RaisedButton label="REGISTER" type="submit" primary={true}  labelStyle={textStyle}/>}
+          <div style={{display:'inline-block', margin:'15px'}}>
+            {isFetching?<CircularProgress size={1.5} />:<FlatButton label="REGISTER" type="submit" backgroundColor='rgba(188,187,169,0.4)'  labelStyle={textStyle}/>}
           </div>
         </form>
       </div>

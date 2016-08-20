@@ -43,7 +43,7 @@ export default class ProfileMenuButton extends Component {
 
   render() {
     const buttonStyle = {
-      margin: '5',
+      margin: '5px',
     };
     const labelStyle = {
       fontSize: 18,

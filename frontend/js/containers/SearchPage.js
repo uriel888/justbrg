@@ -128,7 +128,7 @@ export default class SearchPage extends Component {
     }
     return (
       <div>
-        <label>{generalFetching?<CircularProgress size={0.5} style={{display:'inline-block', marginRight:'30'}}/>:false}{hotelList.length!=0&&generalFetching?<div style={{display:'inline-block'}}>Found {hotelList.length} hotels in request area, current search BRG for {competeList.length}/{hotelList.length}</div>:(generalFetching?<div style={{display:'inline-block'}}>Fetching Property List in reuqest area</div>:false)}</label><br />
+        <label>{generalFetching?<CircularProgress size={0.5} style={{display:'inline-block', marginRight:'30px'}}/>:false}{hotelList.length!=0&&generalFetching?<div style={{display:'inline-block'}}>Found {hotelList.length} hotels in request area, current search BRG for {competeList.length}/{hotelList.length}</div>:(generalFetching?<div style={{display:'inline-block'}}>Fetching Property List in reuqest area</div>:false)}</label><br />
         <label>{generalFetching?<LinearProgress mode="determinate" value={ (hotelList.length!=0&&generalFetching)?(competeList.length/hotelList.length*100):0 } />:false }</label><br />
         <div style={listStyles}>
           {competeList.map(
