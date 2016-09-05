@@ -6,7 +6,7 @@ var http = require('http'),
 //
 
 var port = 8081
-var url = "http://hotelscombined.com/"
+var url = "https://www.hotelscombined.com/"
 var proxy_url = "http://52.41.4.190/"
 var echo_url = "http://52.37.71.194:8000/"
 var tier = process.env['tier'];
@@ -62,8 +62,12 @@ if(tier == 1){
   var proxy = httpProxy.createProxyServer();
   proxy.on('proxyReq', function(proxyReq, req, res, options) {
     // proxyReq.setHeader('Host', 'www.hotelscombined.com');
-    // proxyReq.setHeader('x-forwarded-host', 'www.hotelscombined.com');
+    proxyReq.setHeader('connection', 'keep-alive');
     proxyReq.removeHeader('x-real-ip');
+    // proxyReq.removeHeader('x-forwarded-port');
+    // proxyReq.removeHeader('x-forwarded-proto');
+    // proxyReq.removeHeader('x-forwarded-host');
+    // proxyReq.removeHeader('x-forwarded-for');
     // proxyReq.removeHeader('Origin');
   });
 

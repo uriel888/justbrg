@@ -3,8 +3,6 @@ let fs = require('fs')
 let outputFilename = './SPGCONVERTER.json'
 let hotels = require('./SPGCONVERTER.json')
 let async = require('async')
-let jsdom = require('jsdom')
-let request = require('request')
 let url = require('url')
 const Browser = require('zombie')
 

@@ -31,13 +31,15 @@ export default class HotelListEntry extends Component {
     if(type == 'BRG'){
         let win = window.open(this.state.competeURL, '_blank');
         if(ga){
-          ga('send', 'event', 'button', 'click', 'SPGBRG');
+          const {query} = this.props
+          ga('send', 'event', 'button', 'click', `${query.source.toUpperCase()}BRG`);
         }
         win.focus();
     }else if(type == 'OFFICIAL'){
         let win = window.open(this.state.officialURL, '_blank');
         if(ga){
-          ga('send', 'event', 'button', 'click', 'SPGOFFICIAL');
+          const {query} = this.props
+          ga('send', 'event', 'button', 'click', `${query.source.toUpperCase()}OFFICIAL`);
         }
         win.focus();
     }
@@ -204,6 +206,8 @@ export default class HotelListEntry extends Component {
     }
     if(!hotel.img){
       hotel.img = "https://www.starwoodhotels.com/pub/media/4313/lux4313ex.173791_ss.jpg"
+    }else if(hotel.img.indexOf("http") >= 0){
+      hotel.img = hotel.img
     }else if(hotel.img.indexOf("https://www.starwoodhotels.com/") < 0){
       hotel.img = ("https://www.starwoodhotels.com/"+hotel.img).replace(/tt.jpg/,"ss.jpg")
     }
@@ -223,7 +227,7 @@ export default class HotelListEntry extends Component {
 
             <CardText style={fontStyles.normal}>
               {
-                message?(<div>${BAR}/night{vatSPGInclusiveList[query.country.toLowerCase()]?(<div style={fontStyles.submessage}>(VAT exclude)</div>):false}</div>):(<div><p>${competeRate}/night{vatSPGInclusiveList[query.country.toLowerCase()]?(<div style={fontStyles.submessage}>(VAT exclude)</div>):false}</p><p style={fontStyles.cancelOut}><s>${BAR}/night</s></p></div>)
+                message?(<div>${BAR}/night{vatSPGInclusiveList[query.country.toLowerCase()]?(<div style={fontStyles.submessage}>(VAT excluded)</div>):false}</div>):(<div><p>${competeRate}/night{vatSPGInclusiveList[query.country.toLowerCase()]?(<div style={fontStyles.submessage}>(VAT excluded)</div>):false}</p><p style={fontStyles.cancelOut}><s>${BAR}/night</s></p></div>)
               }
 
               {message?false:(<p style={fontStyles.message}>You can save around ${ ((BAR-competeRate*0.8)>(BAR-competeRate+40))? (BAR-competeRate*0.8).toFixed(1) : (BAR-competeRate+40).toFixed(1)}/night by choosing {((BAR-competeRate*0.8)>(BAR-competeRate+40))? '80% of BRG price' : '2000 points (2000 points round to $40)'}.</p>)}

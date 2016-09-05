@@ -37,7 +37,7 @@ function postEncryptSearch(detail) {
 
 export function generalSearch(detail) {
   if(ga){
-    ga('send', 'event', 'button', 'click', 'SEARCHSPG');
+    ga('send', 'event', 'button', 'click', `SEARCH${detail.source.toUpperCase()}`);
   }
   return (dispatch) => {
     return dispatch(postEncryptSearch(detail))

@@ -95,7 +95,7 @@ export default class Searchbox extends Component {
 
   updateMToggle(){
     this.setState({
-      toggle_option: 'marriot'
+      toggle_option: 'marriott'
     });
   }
 
@@ -204,11 +204,10 @@ export default class Searchbox extends Component {
                 onToggle={this.updateSPGToggle}
               />
               <Toggle
-                label="Marriot"
-                toggled = {('marriot'==this.state.toggle_option)}
+                label="marriott (BETA)"
+                toggled = {('marriott'==this.state.toggle_option)}
                 style={toggledStyles.toggle}
                 onToggle={this.updateMToggle}
-                disabled={true}
               />
               <Toggle
                 label="Hilton"

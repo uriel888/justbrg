@@ -3,12 +3,12 @@ import passport from 'passport'
 import unidecode from 'unidecode'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
-import https from 'https';
-import fs from 'fs';
 import * as master from './configs/master.json'
 // import * as hotelConverter from './tools/hotelscombinedFileNameConverter.json'
 import * as hotelConverter from './tools/SPGCONVERTER.json'
 import Horseman from 'node-horseman'
+import marriott from './apis/marriott.js'
+
 import {
   encrypt,
   decrypt
@@ -59,8 +59,12 @@ app.get('/:encode', (req, res) => {
     return res.status(500).end('Something went wrong!');
   }
   //TODO: ADD VERIFICATION
-  console.log(`url: ${url}`);
-  if (url.indexOf('starwoodhotels') > -1) {
+  // console.log(`url: ${url}`);
+  if(req.query.brand == 'marriott'){
+    marriott(req, res, url);
+  }
+
+  else if (url.indexOf('starwoodhotels') > -1) {
     //Only for spg
 
     horseman
